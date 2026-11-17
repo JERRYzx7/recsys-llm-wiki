@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你滑到的影片是誰決定的</title>
+<style>
+:root{
+  --paper:#ffffff; --ink:#222222; --pencil:#6b6f76; --rule:#d9dadc;
+  --pen:#d0202e; --pen-soft:rgba(208,32,46,.10); --bar:#222222; --bar2:#b9bcc1;
+  --head:"Kaiti TC","STKaiti","BiauKai","DFKai-SB","標楷體","KaiTi","Noto Serif TC",serif;
+  --body:"PingFang TC","Noto Sans TC","Microsoft JhengHei","微軟正黑體","Heiti TC",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1f2b26; --ink:#e9ece6; --pencil:#a9b3ac; --rule:#3b4a43;
+    --pen:#f0d66b; --pen-soft:rgba(240,214,107,.14); --bar:#e9ece6; --bar2:#6d7a73;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1f2b26; --ink:#e9ece6; --pencil:#a9b3ac; --rule:#3b4a43;
+  --pen:#f0d66b; --pen-soft:rgba(240,214,107,.14); --bar:#e9ece6; --bar2:#6d7a73;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);overflow:hidden;
+  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+
+/* ---------- stage ---------- */
+.stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;
+  transform:translate(-50%,-50%) scale(var(--s,1));transform-origin:center}
+.slide{position:absolute;inset:0;padding:64px 96px 72px;display:none;flex-direction:column}
+.slide.active{display:flex}
+.slide h1,.slide h2{font-family:var(--head);font-weight:400;margin:0 0 28px;line-height:1.25}
+.slide h2{font-size:54px;letter-spacing:.02em}
+.slide p,.slide li{font-size:28px;line-height:1.65;margin:0}
+.slide ul,.slide ol{margin:0;padding-left:1.2em}
+.slide li+li{margin-top:12px}
+.muted{color:var(--pencil)}
+.small{font-size:22px !important;line-height:1.6 !important}
+.slide .src{position:absolute;left:96px;bottom:26px;font-size:16px;color:var(--pencil);max-width:860px;line-height:1.5}
+.slide .pageno{position:absolute;right:96px;bottom:26px;font-size:16px;color:var(--pencil)}
+.body{flex:1;display:flex;flex-direction:column;justify-content:flex-start}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.cols.wide-left{grid-template-columns:1.25fr 1fr}
+.slide .big{font-family:var(--head);font-size:44px;line-height:1.45}
+.rule{border-top:1px solid var(--rule);margin:22px 0}
+.slide .quote{font-family:var(--head);font-size:34px;line-height:1.6;border-left:3px solid var(--pen);padding-left:24px}
+.tag{display:inline-block;font-size:20px;color:var(--pencil);border:1px solid var(--rule);padding:2px 10px;border-radius:3px;margin-left:10px;vertical-align:middle}
+.opinion{font-size:22px;color:var(--pencil);border:1px dashed var(--pencil);padding:2px 10px;border-radius:3px}
+table.plain{border-collapse:collapse;font-size:24px;width:100%}
+table.plain th,table.plain td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5}
+table.plain th{font-weight:600;color:var(--pencil);font-size:20px}
+
+/* ---------- cover & dividers ---------- */
+.cover{justify-content:center}
+.cover h1{font-size:84px;margin-bottom:24px}
+.cover .sub{font-size:30px;color:var(--pencil)}
+.divider{justify-content:center}
+.divider .part{font-family:var(--head);font-size:34px;color:var(--pencil)}
+.divider h2{font-size:80px;margin-top:8px}
+
+/* ---------- red pen ---------- */
+.circled{position:relative;display:inline-block;padding:0 .2em;margin:0 .3em;white-space:nowrap}
+.circled svg{position:absolute;left:-14%;top:-30%;width:128%;height:160%;overflow:visible;pointer-events:none}
+.pen path{fill:none;stroke:var(--pen);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:1}
+.slide.active .pen path{animation:draw .9s ease-out .35s forwards}
+.slide.active .pen path+path{animation-delay:.9s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.mark{width:42px;height:42px;flex:none}
+.mark path{fill:none;stroke:var(--pen);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- steps (click / → to reveal) ---------- */
+.step{opacity:0;transition:opacity .25s}
+.step.on{opacity:1}
+
+/* ---------- diagrams ---------- */
+svg.fig{width:100%;height:auto;overflow:visible}
+svg.fig text{fill:var(--ink);font-family:var(--body)}
+svg.fig .h{font-family:var(--head)}
+svg.fig .m{fill:var(--pencil)}
+svg.fig .ln{stroke:var(--ink);fill:none;stroke-width:2}
+svg.fig .lnm{stroke:var(--pencil);fill:none;stroke-width:1.5}
+svg.fig .box{stroke:var(--ink);fill:none;stroke-width:2}
+svg.fig .barA{fill:var(--bar)}
+svg.fig .barB{fill:var(--bar2)}
+svg.fig .penln{stroke:var(--pen);fill:none;stroke-width:3;stroke-linecap:round}
+svg.fig .pentx{fill:var(--pen)}
+
+/* ---------- myths list ---------- */
+.slide .refs li{font-size:18px !important;line-height:1.45 !important;margin-top:6px}
+.myth{display:grid;grid-template-columns:42px 1fr;gap:18px;align-items:start;margin-bottom:18px}
+.myth .q{font-size:26px;line-height:1.5}
+.myth .a{font-size:22px;line-height:1.55;color:var(--pencil);margin-top:4px}
+
+/* ---------- chrome ---------- */
+.nav{position:fixed;right:12px;top:10px;display:flex;gap:6px;z-index:5;opacity:.45;transition:opacity .2s}
+.nav:hover,.nav:focus-within{opacity:1}
+.nav button{font:inherit;font-size:14px;color:var(--pencil);background:transparent;border:1px solid var(--rule);
+  padding:6px 12px;border-radius:3px;cursor:pointer}
+.nav button:hover{color:var(--ink);border-color:var(--pencil)}
+.nav button:focus-visible{outline:2px solid var(--pen);outline-offset:2px}
+.notes{display:none}
+#notesPanel{position:fixed;left:0;right:0;bottom:0;max-height:42vh;overflow:auto;background:var(--paper);
+  border-top:2px solid var(--pen);padding:16px 24px 56px;font-size:16px;line-height:1.7;display:none;z-index:4}
+body.notes-on #notesPanel{display:block}
+#notesPanel h4{margin:0 0 6px;font-size:14px;color:var(--pencil);font-weight:600}
+#notesPanel ul{margin:4px 0 10px;padding-left:1.2em}
+.hint{position:fixed;left:12px;top:12px;font-size:13px;color:var(--pencil);z-index:5;transition:opacity .6s}
+.hint.gone{opacity:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- narrow screens: read as a scrolling handout ---------- */
+body.flow{overflow:auto}
+body.flow .stage{position:static;transform:none;width:auto;height:auto}
+body.flow .slide{display:flex;position:relative;inset:auto;padding:32px 16px 56px;border-bottom:1px solid var(--rule);min-height:auto}
+body.flow .slide h2{font-size:30px}
+body.flow .cover h1{font-size:40px}
+body.flow .divider h2{font-size:40px}
+body.flow .slide p,body.flow .slide li{font-size:17px}
+body.flow .slide .big{font-size:24px}
+body.flow .slide .quote{font-size:20px}
+body.flow .small,body.flow .myth .a{font-size:15px !important}
+body.flow .myth .q{font-size:17px}
+body.flow table.plain{font-size:15px}
+body.flow table.plain th{font-size:13px}
+body.flow .cols,body.flow .cols.wide-left{grid-template-columns:1fr;gap:20px}
+body.flow .slide .src{position:static;margin-top:16px;font-size:12px}
+body.flow .slide .pageno{position:absolute;right:16px;bottom:12px;font-size:12px}
+body.flow .step{opacity:1}
+body.flow .pen path{stroke-dashoffset:0;animation:none}
+body.flow .nav,body.flow .hint{display:none}
+body.flow .notes{display:block;margin-top:14px;font-size:14px;color:var(--pencil);border-left:2px solid var(--rule);padding-left:12px}
+body.flow:not(.notes-on) .notes{display:none}
+@media (prefers-reduced-motion: reduce){
+  .slide.active .pen path{animation:none;stroke-dashoffset:0}
+  .step{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+<!-- 1 -->
+<section class="slide cover">
+  <h1>你滑到的影片，<br>是誰決定的？</h1>
+  <p class="sub">推薦演算法入門：短影音與社群平台怎麼挑內容給你</p>
+  <p class="small muted" style="margin-top:48px">一堂給大學生的導論課。不需要程式或數學背景。</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>開場先問台下：今天第一個打開的 App 是什麼？滑了多久？</li><li>點出主題：你看到的內容不是隨機的，是系統替你挑的。</li></ul>
+    <h4>出處</h4><ul><li>整份簡報只取材自 wiki/，原始資料在 raw/ 共 10 份。</li></ul>
+  </aside>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <h2>今天想回答三個問題</h2>
+  <div class="body">
+    <ol>
+      <li>它是怎麼挑的？</li>
+      <li>它到底想要什麼？</li>
+      <li>它會不會改變我們？</li>
+    </ol>
+    <p class="muted" style="margin-top:40px">前兩個問題有比較明確的答案。第三個，研究者還在吵。</p>
+  </div>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>三個問題對應三個部分：運作原理、優化目標、社會影響。</li><li>先預告：第三題沒有標準答案，我們會看三篇研究怎麼吵。</li></ul>
+  </aside>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <h2>問題的起點：東西太多了</h2>
+  <div class="body cols">
+    <div>
+      <p class="big">YouTube 有<span class="circled">數百萬<svg viewBox="0 0 120 50" preserveAspectRatio="none" class="pen"><path pathLength="1" d="M8,30 C6,10 58,3 104,10 C124,15 120,40 78,46 C38,51 3,44 7,24 C9,15 26,9 44,7"/></svg></span>支影片，<br>系統要在幾十毫秒內<br>決定給你看哪幾支。</p>
+    </div>
+    <div>
+      <p>TikTok 自稱每個月超過十億人使用。</p>
+      <p style="margin-top:18px">沒有人能看完全部，所以一定需要「有人」幫你挑。</p>
+      <p class="muted" style="margin-top:18px">這個「有人」，就是推薦系統。</p>
+    </div>
+  </div>
+  <p class="src">出處：Covington et al., 2016（YouTube）p.2–3；TikTok 官方推薦系統說明頁 p.2</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>資訊過載是推薦系統存在的理由。</li><li>「幾十毫秒」：眨一次眼大約 100–400 毫秒（背景知識，可口頭補充，不放投影片）。</li></ul>
+    <h4>可能被問</h4><ul><li>「為什麼不讓我自己搜尋就好？」→ 可以，但大部分人打開 App 是滑，不是搜尋。</li></ul>
+    <h4>出處</h4><ul><li>wiki/sources/youtube-dnn-2016（raw p.2–3）</li><li>wiki/sources/tiktok-transparency（raw p.2）</li></ul>
+  </aside>
+</section>
+
+<!-- 4 -->
+<section class="slide divider">
+  <p class="part">第一部分</p>
+  <h2>它是怎麼挑的？</h2>
+  <aside class="notes"><h4>這頁要講</h4><ul><li>接下來十頁：漏斗、訊號、分數、多樣性、過濾、學習速度。</li></ul></aside>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <h2>像選秀節目：一關一關淘汰</h2>
+  <div class="body cols wide-left">
+    <svg class="fig" viewBox="0 0 620 400" role="img" aria-label="漏斗：數百萬支影片經過海選剩數百支，複賽剩數十支，最後到你的畫面">
+      <path class="ln" d="M20,30 L600,30 L470,150 L150,150 Z"/>
+      <path class="ln" d="M150,170 L470,170 L400,270 L220,270 Z"/>
+      <path class="ln" d="M220,290 L400,290 L360,370 L260,370 Z"/>
+      <text x="310" y="85" text-anchor="middle" font-size="30" class="h">海選（召回）</text>
+      <text x="310" y="125" text-anchor="middle" font-size="22" class="m">數百萬 → 數百</text>
+      <text x="310" y="215" text-anchor="middle" font-size="28" class="h">複賽（排序）</text>
+      <text x="310" y="250" text-anchor="middle" font-size="22" class="m">→ 數十</text>
+      <text x="310" y="337" text-anchor="middle" font-size="24" class="h">編排與審查</text>
+    </svg>
+    <div>
+      <p><b>海選</b>：用很快的方法，先撈出大概符合你口味的幾百支。</p>
+      <p style="margin-top:16px"><b>複賽</b>：仔細猜你對每一支的反應，打分數排名。</p>
+      <p style="margin-top:16px"><b>編排與審查</b>：避免同類連續出現，不合規定的不能上。</p>
+    </div>
+  </div>
+  <p class="src">出處：Covington et al., 2016 p.2（Figure 2）；X 開源說明 #Request Path</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>每一關都在「快」和「準」之間取捨：前面快但粗，後面慢但細。</li><li>比喻的限制：選秀只有一份結果，推薦系統是每個人各自一場選秀。</li></ul>
+    <h4>課堂互動（可選）</h4><ul><li>給 50 張影片卡，限時 30 秒挑 10 張，再花 2 分鐘排前三名。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/recommendation-funnel、wiki/teaching/funnel-analogy</li></ul>
+  </aside>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <h2>TikTok 官方怎麼說：五個步驟</h2>
+  <div class="body">
+    <ol>
+      <li>從<b>已通過審核</b>的影片中，撈出一大批候選</li>
+      <li>預測你會不會按讚、分享、留言、略過……</li>
+      <li>把這些預測合成一個總分，由高到低排</li>
+      <li>前幾名太像的話（例如同一段配樂），換掉一些</li>
+      <li>套用規則，例如一定要有同地區的創作者</li>
+    </ol>
+    <p class="muted" style="margin-top:28px">流程圖上的規模：數百萬支 → 數千支 → 你的 For You。</p>
+  </div>
+  <p class="src">出處：TikTok 官方推薦系統說明頁（© 2025）p.6–8、p.12</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>這是 TikTok 自己公開的版本，和上一頁的漏斗是同一個邏輯。</li><li>提醒：這是平台自述，沒有外部驗證，也沒有公開權重。</li></ul>
+    <h4>出處</h4><ul><li>wiki/sources/tiktok-transparency（raw p.6–8, p.12）</li></ul>
+  </aside>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <h2>你的每個動作，都是一張選票</h2>
+  <div class="body">
+    <table class="plain">
+      <tr><th style="width:40%">你做的事</th><th>系統怎麼看</th></tr>
+      <tr><td>把一支長影片看完</td><td>很強的「喜歡」訊號</td></tr>
+      <tr><td>停在一則貼文上</td><td>會被記錄，也會被預測</td></tr>
+      <tr><td>快速滑走、沒有停留</td><td>算是負面訊號</td></tr>
+      <tr><td>按「不感興趣」、封鎖、檢舉</td><td>強烈的負面訊號</td></tr>
+      <tr><td>和創作者在同一個國家</td><td>很弱的訊號</td></tr>
+    </table>
+    <p class="muted" style="margin-top:22px">你沒填過任何問卷，但系統一直在計票。</p>
+  </div>
+  <p class="src">出處：TikTok 官方部落格（2020）p.2；X 開源說明 #Scoring and Ranking</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>這叫「隱式回饋」：沒有明說，但行為透露了偏好。</li><li>YouTube 2016 年就說，行為資料比按讚、問卷多好幾個數量級。</li></ul>
+    <h4>可能被問</h4><ul><li>「我只是忘了關，也算看完嗎？」→ 算。這正是行為訊號的雜訊，第二部分會談。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/implicit-feedback；wiki/teaching/what-the-feed-learns-from-you</li></ul>
+  </aside>
+</section>
+
+<!-- 8 -->
+<section class="slide" data-steps>
+  <h2>猜猜看：TikTok 會預測你做這些事嗎？</h2>
+  <div class="body cols">
+    <ul style="list-style:none;padding:0">
+      <li>按讚 <span class="step tag">會</span></li>
+      <li>看完影片 <span class="step tag">會</span></li>
+      <li>點進影片的配樂 <span class="step tag">會</span></li>
+      <li>點進作者的個人頁 <span class="step tag">會</span></li>
+      <li>按「不感興趣」 <span class="step tag">會</span></li>
+    </ul>
+    <div class="step">
+      <p class="big">全部都會。</p>
+      <p style="margin-top:18px">官方列出十多種預測，再合成一個總分。</p>
+      <p class="muted" style="margin-top:18px">X 甚至會預測你會不會封鎖作者、檢舉貼文。</p>
+    </div>
+  </div>
+  <p class="src">出處：TikTok 官方推薦系統說明頁 p.13；X 開源說明 #Scoring and Ranking</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>先讓學生舉手猜，再按 → 逐一揭曉。</li><li>大部分人猜不到「點配樂」。</li></ul>
+    <h4>出處</h4><ul><li>wiki/teaching/guess-the-signal（raw p.13）</li></ul>
+  </aside>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <h2>「第三支影片」：陌生人也在影響你</h2>
+  <div class="body cols wide-left">
+    <svg class="fig" viewBox="0 0 600 380" role="img" aria-label="你和陌生人都看過貓咪彈琴和狗狗衝浪，陌生人還看過鸚鵡唱歌，所以系統推鸚鵡唱歌給你">
+      <text x="70" y="60" text-anchor="middle" font-size="28" class="h">你</text>
+      <text x="530" y="60" text-anchor="middle" font-size="28" class="h">陌生人</text>
+      <rect class="box" x="220" y="40" width="160" height="56"/><text x="300" y="76" text-anchor="middle" font-size="22">貓咪彈琴</text>
+      <rect class="box" x="220" y="140" width="160" height="56"/><text x="300" y="176" text-anchor="middle" font-size="22">狗狗衝浪</text>
+      <rect class="box" x="220" y="270" width="160" height="56" stroke-dasharray="6 6"/><text x="300" y="306" text-anchor="middle" font-size="22">鸚鵡唱歌</text>
+      <path class="ln" d="M100,70 L218,68"/><path class="ln" d="M100,80 L218,166"/>
+      <path class="ln" d="M500,70 L382,68"/><path class="ln" d="M500,80 L382,166"/><path class="ln" d="M500,90 L382,296"/>
+      <path class="penln" d="M100,100 C120,240 160,290 214,298"/>
+      <text x="96" y="250" font-size="20" class="pentx">推給你？</text>
+    </svg>
+    <div>
+      <p>你和一個陌生人都看過前兩支。他還看了第三支。</p>
+      <p style="margin-top:16px">系統就可能把第三支推給你。</p>
+      <p class="muted" style="margin-top:16px">這叫「協同過濾」，是 TikTok 官方自己舉的例子。</p>
+    </div>
+  </div>
+  <p class="src">出處：TikTok 官方推薦系統說明頁 p.5</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>協同過濾：不用理解內容，只看大家的行為有多像。</li><li>比喻：問「品味跟你很像的朋友」推薦電影。</li></ul>
+    <h4>可能被問</h4><ul><li>「那新上傳、還沒人看過的影片怎麼辦？」→ 冷啟動問題：平台會先推給一些人試水溫，或用內容本身的資訊。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/collaborative-filtering（raw p.5）</li></ul>
+  </aside>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <h2>把預測加起來，就是分數</h2>
+  <div class="body">
+    <p class="big">分數 ＝ 每種反應的「可能性」× 它的「權重」，全部加總</p>
+    <p style="margin-top:22px">按讚、停留是加分；封鎖、檢舉是扣分。X 把這些權重直接寫在公開的程式碼裡。</p>
+    <div class="rule"></div>
+    <p class="quote">常見誤解：「X 上一次檢舉，可以抵銷 468 個讚。」</p>
+    <p style="margin-top:16px">錯。權重乘的是「<b>你本人</b>會不會這樣做」的預測，不是全站的按讚數。</p>
+  </div>
+  <p class="src">出處：X 開源說明 #Scoring and Ranking、#August 14th, 2026</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>不用講公式符號，用「加權總分」就好，像學期成績：期中 30%、期末 40%……</li><li>468 是 X 官方在說明誤解時用的例子。</li></ul>
+    <h4>出處</h4><ul><li>wiki/sources/x-algorithm；wiki/teaching/myths-and-facts #3</li></ul>
+  </aside>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <h2>它想衝高的那個數字，一直在變</h2>
+  <div class="body">
+    <svg class="fig" viewBox="0 0 1088 220" role="img" aria-label="時間軸：只看點擊，2016 年 YouTube 改看觀看時間，2020 年起 TikTok 和 X 同時預測十多種反應">
+      <path class="ln" d="M20,70 L1068,70"/>
+      <circle cx="120" cy="70" r="8" fill="var(--ink)"/><circle cx="520" cy="70" r="8" fill="var(--ink)"/><circle cx="940" cy="70" r="8" fill="var(--ink)"/>
+      <text x="120" y="40" text-anchor="middle" font-size="24" class="h">只看點擊</text>
+      <text x="520" y="40" text-anchor="middle" font-size="24" class="h">看觀看時間</text>
+      <text x="940" y="40" text-anchor="middle" font-size="24" class="h">同時猜十多種反應</text>
+      <text x="120" y="115" text-anchor="middle" font-size="20" class="m">容易出現標題黨</text>
+      <text x="520" y="115" text-anchor="middle" font-size="20" class="m">YouTube 2016</text>
+      <text x="940" y="115" text-anchor="middle" font-size="20" class="m">TikTok、X</text>
+    </svg>
+    <p class="quote" style="margin-top:10px">「用點擊率排序，常會推升使用者不會看完的誘騙影片。」</p>
+    <p class="small muted" style="margin-top:12px">YouTube 工程師在 2016 年的論文裡寫的。</p>
+  </div>
+  <p class="src">出處：Covington et al., 2016 p.5；TikTok 官方推薦系統說明頁 p.7、p.13；X 開源說明 #Scoring and Ranking</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>比喻：老師用什麼標準打分，學生就往哪裡努力。只看出席率 → 人來了但不專心。</li><li>這是第二部分的伏筆：每一個數字都只是「代理」，不是真正的滿意。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/optimization-objective</li></ul>
+  </aside>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <h2>刻意加進來的多樣性</h2>
+  <div class="body">
+    <ul>
+      <li>TikTok：前幾名用同一段配樂，就換掉一些</li>
+      <li>TikTok：偶爾刻意推一支不符合你興趣的影片</li>
+      <li>X：同一個作者的第二則以後，分數打折</li>
+      <li>X：犧牲一點分數，讓相鄰的貼文不要太像</li>
+    </ul>
+    <p class="muted" style="margin-top:28px">這些都是平台說「設計上想做到」的事。實際效果有多大，外界沒有數據。</p>
+  </div>
+  <p class="src">出處：TikTok 官方推薦系統說明頁 p.8；TikTok 官方部落格（2020）p.3；X 開源說明 #Scoring and Ranking、#Components</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>比喻：常去的餐廳偶爾端一小碟新菜請你試吃。</li><li>為什麼要這樣做：避免單調、讓系統學到你的新興趣、給新創作者機會。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/diversity-and-exploration</li></ul>
+  </aside>
+</section>
+
+<!-- 13 -->
+<section class="slide">
+  <h2>不是什麼都能被推薦</h2>
+  <div class="body cols">
+    <div>
+      <p>分數再高，有些內容也上不了推薦頁：</p>
+      <ul style="margin-top:14px">
+        <li>違反社群規範的，直接刪除</li>
+        <li>不適合一般觀眾的，不推薦</li>
+        <li><span class="circled">未滿 16 歲<svg viewBox="0 0 120 50" preserveAspectRatio="none" class="pen"><path pathLength="1" d="M8,30 C6,10 58,3 104,10 C124,15 120,40 78,46 C38,51 3,44 7,24 C9,15 26,9 44,7"/></svg></span>帳號拍的影片，不推薦</li>
+      </ul>
+    </div>
+    <div>
+      <p>X 把「能不能顯示」交給另一套系統，四種結果：</p>
+      <p class="small" style="margin-top:14px">正常顯示／加註警告／遮起來點了才看／不顯示</p>
+      <p class="muted small" style="margin-top:14px">有些規則只擋「推給陌生人」，追蹤你的人還是看得到。</p>
+    </div>
+  </div>
+  <p class="src">出處：TikTok 官方推薦系統說明頁 p.8–10；X 開源說明 #Labeling Path、#Key Design Decisions</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>排序決定「順序」，可見度過濾決定「能不能出現」。</li><li>不被推薦 ≠ 被刪除，但在以推薦為主的平台上，幾乎等於沒人看到（wiki 觀點）。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/visibility-filtering</li></ul>
+  </aside>
+</section>
+
+<!-- 14 -->
+<section class="slide">
+  <h2>它學得有多快？</h2>
+  <div class="body cols">
+    <div>
+      <p class="big">有的系統<br>每<span class="circled">幾分鐘<svg viewBox="0 0 120 50" preserveAspectRatio="none" class="pen"><path pathLength="1" d="M8,30 C6,10 58,3 104,10 C124,15 120,40 78,46 C38,51 3,44 7,24 C9,15 26,9 44,7"/></svg></span>就更新一次。</p>
+    </div>
+    <div>
+      <p>字節跳動（TikTok 的母公司）發表的 Monolith 系統，上線後一邊服務一邊學，以分鐘為單位把新學到的東西推上線。</p>
+      <p class="small muted" style="margin-top:18px">注意：論文說用在字節的 BytePlus 產品，<b>沒有</b>說用在 TikTok。</p>
+    </div>
+  </div>
+  <p class="src">出處：Liu et al., 2022（Monolith）p.1、p.5、p.9</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>為什麼要這麼快：你的興趣「下一分鐘就可能轉移」（論文原話的意思）。</li><li>比喻：天氣預報員每小時看最新雷達圖。</li></ul>
+    <h4>可能被問</h4><ul><li>「所以 TikTok 就是用 Monolith？」→ 不能這樣說，論文沒寫。只能說母公司發表過這種技術。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/online-training；wiki/entities/bytedance</li></ul>
+  </aside>
+</section>
+
+<!-- 15 -->
+<section class="slide">
+  <h2>新做法：從選擇題變成申論題</h2>
+  <div class="body cols">
+    <div>
+      <p><b>傳統：選擇題</b></p>
+      <p class="small" style="margin-top:8px">先挑出幾百個選項，再一個一個打分。</p>
+      <p style="margin-top:26px"><b>新的：申論題</b></p>
+      <p class="small" style="margin-top:8px">像 ChatGPT 接龍一樣，直接「寫出」你下一支會看的影片。</p>
+    </div>
+    <div>
+      <p class="small">Meta 的模型做到 1.5 兆個參數，效果仍隨算力穩定變好。</p>
+      <p class="small" style="margin-top:16px">快手用一個模型取代整個漏斗，App 停留時間 +0.54% 到 +1.24%。</p>
+      <p class="small muted" style="margin-top:16px">但 X 和 TikTok 公開的資料，用的都還是漏斗。</p>
+    </div>
+  </div>
+  <p class="src">出處：Zhai et al., 2024（HSTU）p.1、p.8；OneRec 技術報告 2025 p.4、p.23</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>只用一頁帶過（依課程決定）。重點是「選擇題 vs. 申論題」的比喻。</li><li>+0.54% 看起來很小，但快手日活 4 億，0.1% 就算顯著。</li></ul>
+    <h4>可能被問</h4><ul><li>「這就是用 ChatGPT 推薦嗎？」→ 不是，是用行為紀錄從頭訓練的模型，借用的是「接龍」的方法。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/generative-recommendation；wiki/syntheses/cascade-vs-end-to-end；wiki/teaching/autocomplete-analogy</li></ul>
+  </aside>
+</section>
+
+<!-- 16 -->
+<section class="slide divider">
+  <p class="part">第二部分</p>
+  <h2>它想要什麼？<br>會不會改變我們？</h2>
+  <aside class="notes"><h4>這頁要講</h4><ul><li>從「怎麼做」轉到「做了之後呢」。</li></ul></aside>
+</section>
+
+<!-- 17 -->
+<section class="slide">
+  <h2>它量不到「你開不開心」</h2>
+  <div class="body cols">
+    <div>
+      <p>系統看得到的只有行為：點了沒、看多久。</p>
+      <p style="margin-top:16px">YouTube 工程師自己說，他們「很少能取得使用者滿意度的真實答案」。</p>
+    </div>
+    <div>
+      <p><b>一個真實的例子</b></p>
+      <p class="small" style="margin-top:10px">快手的 AI 只被要求衝高「看完率」。結果觀看時間上升了，但大家<span class="circled">看的影片數量變少<svg viewBox="0 0 120 50" preserveAspectRatio="none" class="pen"><path pathLength="1" d="M5,30 C4,10 58,2 106,9 C126,15 122,41 78,47 C38,52 1,45 5,24 C8,15 26,8 44,6"/></svg></span>。</p>
+      <p class="small muted" style="margin-top:10px">作者承認 AI 鑽了評分規則的漏洞。</p>
+    </div>
+  </div>
+  <p class="src">出處：Covington et al., 2016 p.1；OneRec 技術報告 2025 p.19–21（Table 6）</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>這叫「代理指標」：量不到真正想要的，只好量一個看得到的替代數字。</li><li>「鑽漏洞」的英文是 reward hacking。</li></ul>
+    <h4>討論題</h4><ul><li>如果你只用「看得久不久」幫 AI 打分，它可能學會推什麼？</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/optimization-objective；wiki/sources/onerec</li></ul>
+  </aside>
+</section>
+
+<!-- 18 -->
+<section class="slide">
+  <h2>你會點的，不等於你想要的</h2>
+  <div class="body cols wide-left">
+    <div>
+      <p class="quote">半夜一口接一口吃洋芋片。<br>但如果有人問：「你想多吃洋芋片嗎？」<br>你大概會說不要。</p>
+    </div>
+    <div>
+      <p>Twitter 的研究直接問了使用者：演算法挑的政治推文，你想看嗎？</p>
+      <p class="big" style="margin-top:18px">比較<span class="circled">不想<svg viewBox="0 0 120 50" preserveAspectRatio="none" class="pen"><path pathLength="1" d="M8,30 C6,10 58,3 104,10 C124,15 120,40 78,46 C38,51 3,44 7,24 C9,15 26,9 44,7"/></svg></span>。</p>
+      <p class="small muted" style="margin-top:12px">但同一套演算法，會讓大家花更多時間在平台上。</p>
+    </div>
+  </div>
+  <p class="src">出處：Milli et al.（arXiv v6, 2024）p.8–9；806 位美國使用者，2023 年 2 月</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>「顯示偏好」：從行為推測。「陳述偏好」：直接問。</li><li>數字：政治推文的陳述偏好 −0.18 個標準差。所有推文合計只有 +0.06。</li><li>「花更多時間」是作者引用 Twitter 內部 A/B 測試，不是這篇自己測的。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/engagement-vs-stated-preference；wiki/sources/milli-2025</li></ul>
+  </aside>
+</section>
+
+<!-- 19 -->
+<section class="slide">
+  <h2>Twitter：演算法放大了憤怒</h2>
+  <div class="body cols wide-left">
+    <svg class="fig" viewBox="0 0 640 380" role="img" aria-label="演算法動態相對時間序動態的效果：政治推文作者的憤怒 0.75，讀者憤怒 0.37，敵視對立陣營 0.24，黨派性 0.24，單位是標準差">
+      <path class="lnm" d="M200,20 L200,340"/>
+      <text x="190" y="66" text-anchor="end" font-size="20">作者的憤怒</text>
+      <rect class="barA" x="200" y="44" width="375" height="34"/>
+      <text x="190" y="136" text-anchor="end" font-size="20">讀者的憤怒</text>
+      <rect class="barA" x="200" y="114" width="185" height="34"/>
+      <text x="190" y="206" text-anchor="end" font-size="20">敵視對方陣營</text>
+      <rect class="barA" x="200" y="184" width="120" height="34"/>
+      <text x="190" y="276" text-anchor="end" font-size="20">黨派性</text>
+      <rect class="barA" x="200" y="254" width="120" height="34"/>
+      <text x="585" y="68" font-size="20">0.75</text><text x="395" y="138" font-size="20">0.37</text>
+      <text x="330" y="208" font-size="20">0.24</text><text x="330" y="278" font-size="20">0.24</text>
+      <path class="penln" d="M560,34 C640,30 650,92 590,96 C540,100 530,40 575,32"/>
+      <text x="200" y="370" font-size="18" class="m">比時間序多出幾個標準差（政治推文）</text>
+    </svg>
+    <div>
+      <p>同一批使用者，比較「演算法動態」和「時間序動態」的前 10 則推文。</p>
+      <p style="margin-top:16px">讀完演算法挑的推文，對<b>對立陣營</b>感覺更差。</p>
+    </div>
+  </div>
+  <p class="src">出處：Milli et al.（arXiv v6, 2024）p.6–8，Figure 1；憤怒兩項只計政治推文</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>「標準差」不用解釋太多，說「越長代表差越多」即可。</li><li>讀者對對立陣營的感覺 −0.17，對自己陣營 +0.08。</li><li>作者原本以為讀者會比較快樂，結果四種情緒（包括快樂）都上升。</li></ul>
+    <h4>限制</h4><ul><li>只測一個時間點；樣本偏年輕、偏民主黨。</li></ul>
+    <h4>出處</h4><ul><li>wiki/sources/milli-2025（raw p.6–8, p.11）</li></ul>
+  </aside>
+</section>
+
+<!-- 20 -->
+<section class="slide">
+  <h2>Facebook：改回時間序三個月之後</h2>
+  <div class="body cols">
+    <div>
+      <p><b>變了很多</b></p>
+      <ul class="small" style="margin-top:10px">
+        <li>花在 Facebook 的時間大幅減少</li>
+        <li>按讚率從 6.7% 掉到 3.1%</li>
+        <li>很多人跑去 TikTok、YouTube</li>
+        <li>看到的內容組成完全不同</li>
+      </ul>
+    </div>
+    <div>
+      <p><b>沒有改變</b></p>
+      <ul class="small" style="margin-top:10px">
+        <li>對政策的看法有多兩極</li>
+        <li>有多討厭對方陣營的人</li>
+        <li>政治知識、投票意願</li>
+      </ul>
+      <p class="small muted" style="margin-top:16px">約 4 萬人參加，2020 美國大選期間，Meta 與外部學者合作的隨機實驗。</p>
+    </div>
+  </div>
+  <p class="src">出處：Guess et al., 2023（Science 381）p.3–4；Facebook n=23,391、Instagram n=21,373</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>這是目前規模最大、最嚴謹的實驗之一：隨機分組、事先註冊、三個月。</li><li>結論：行為和內容大變，態度沒變。作者說可以排除「連中等程度」的效果。</li></ul>
+    <h4>可能被問</h4><ul><li>「Meta 出錢，結果可信嗎？」→ Meta 付了研究費用，但沒有發表前審查權，學術主筆擁有最終控制權。可以讓學生自己判斷。</li></ul>
+    <h4>出處</h4><ul><li>wiki/sources/guess-2023（raw p.3–4, p.6）</li></ul>
+  </aside>
+</section>
+
+<!-- 21 -->
+<section class="slide">
+  <h2>但時間序也有代價</h2>
+  <div class="body cols wide-left">
+    <svg class="fig" viewBox="0 0 620 360" role="img" aria-label="Facebook：不可信來源演算法 2.6%、時間序 4.4%；不文明內容演算法 3.2%、時間序 1.8%">
+      <path class="lnm" d="M40,300 L580,300"/>
+      <text x="155" y="330" text-anchor="middle" font-size="22" class="h">不可信來源</text>
+      <text x="465" y="330" text-anchor="middle" font-size="22" class="h">不文明內容</text>
+      <rect class="barA" x="80" y="157" width="70" height="143"/><rect class="barB" x="160" y="58" width="70" height="242"/>
+      <rect class="barA" x="390" y="124" width="70" height="176"/><rect class="barB" x="470" y="201" width="70" height="99"/>
+      <text x="115" y="148" text-anchor="middle" font-size="20">2.6%</text><text x="195" y="50" text-anchor="middle" font-size="20" class="pentx">4.4%</text>
+      <text x="425" y="115" text-anchor="middle" font-size="20">3.2%</text><text x="505" y="192" text-anchor="middle" font-size="20">1.8%</text>
+      <rect class="barA" x="380" y="0" width="18" height="18"/><text x="406" y="16" font-size="18">演算法</text>
+      <rect class="barB" x="490" y="0" width="18" height="18"/><text x="516" y="16" font-size="18">時間序</text>
+    </svg>
+    <div>
+      <p>改回時間序，不文明的內容少了快一半。</p>
+      <p style="margin-top:16px">但來自<b>不可信來源</b>的內容多了 68.8%。</p>
+      <p class="muted" style="margin-top:16px">所以「關掉演算法」不是萬靈丹。</p>
+    </div>
+  </div>
+  <p class="src">出處：Guess et al., 2023 p.4（Figure 2），Facebook 資料</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>演算法同時在「衝互動」和「壓低低品質來源」，兩股力量方向不同。</li><li>作者推測不可信來源較少，和平台壓低低品質來源的措施有關。</li></ul>
+    <h4>出處</h4><ul><li>wiki/sources/guess-2023；wiki/syntheses/do-algorithms-polarize</li></ul>
+  </aside>
+</section>
+
+<!-- 22 -->
+<section class="slide">
+  <h2>YouTube：派十萬個假帳號去看</h2>
+  <div class="body cols">
+    <div>
+      <p class="small">研究者讓假帳號只看某一種政治立場的影片，再記錄 YouTube 推薦什麼。</p>
+      <ul class="small" style="margin-top:16px">
+        <li>首頁第一個推薦：極右帳號有 65.5% 是同立場，極左帳號 58.0%</li>
+        <li>一路點「下一部」，影片沒有明顯變得更極端</li>
+        <li>但陰謀論、極端主義等問題頻道的比例上升了</li>
+      </ul>
+    </div>
+    <svg class="fig" viewBox="0 0 480 320" role="img" aria-label="問題頻道佔推薦的比例：第 1 層 1.2%，第 10 層 2.5%">
+      <path class="lnm" d="M50,260 L450,260"/><path class="lnm" d="M50,40 L50,260"/>
+      <path class="ln" d="M70,200 L420,90"/>
+      <circle cx="70" cy="200" r="6" fill="var(--ink)"/><circle cx="420" cy="90" r="6" fill="var(--ink)"/>
+      <text x="86" y="224" font-size="20">1.2%</text>
+      <text x="420" y="70" text-anchor="middle" font-size="22" class="pentx">2.5%</text>
+      <text x="70" y="290" text-anchor="middle" font-size="18" class="m">第 1 層</text>
+      <text x="420" y="290" text-anchor="middle" font-size="18" class="m">第 10 層</text>
+      <text x="250" y="318" text-anchor="middle" font-size="18" class="m">一路點「下一部」的深度</text>
+    </svg>
+  </div>
+  <p class="src">出處：Haroon et al., 2023（PNAS 120）p.3–5；問題頻道清單來自前人研究</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>比例很低（最多 2.5%），但平均 36.1% 的假帳號至少遇到一次，極右帳號 40%。</li><li>這些頻道都不在訓練影片裡，是 YouTube 自己推的。</li><li>研究還發現偏右的傾向：立場平衡的帳號拿到的推薦也偏右。</li></ul>
+    <h4>限制</h4><ul><li>假帳號一定會點下一部，真人不一定；沒有測對人的影響。</li><li>論文摘要寫 36.1%、引言寫 32%，以結果段落為準。</li></ul>
+    <h4>出處</h4><ul><li>wiki/sources/haroon-2023（raw p.3–5, p.7）</li></ul>
+  </aside>
+</section>
+
+<!-- 23 -->
+<section class="slide">
+  <h2>三篇研究怎麼拼在一起</h2>
+  <div class="body">
+    <svg class="fig" viewBox="0 0 1088 250" role="img" aria-label="因果鏈：演算法、推了什麼、你看到什麼、當下感受、幾個月後的態度。前四段有研究證據，最後一段實驗沒有偵測到變化">
+      <rect class="box" x="0" y="60" width="170" height="70"/><text x="85" y="104" text-anchor="middle" font-size="24" class="h">演算法</text>
+      <rect class="box" x="228" y="60" width="190" height="70"/><text x="323" y="104" text-anchor="middle" font-size="24" class="h">推了什麼</text>
+      <rect class="box" x="476" y="60" width="190" height="70"/><text x="571" y="104" text-anchor="middle" font-size="24" class="h">當下感受</text>
+      <rect class="box" x="724" y="60" width="364" height="70" stroke-dasharray="8 6"/><text x="906" y="104" text-anchor="middle" font-size="24" class="h">幾個月後的態度</text>
+      <path class="ln" d="M172,95 L222,95 M212,87 L222,95 L212,103"/>
+      <path class="ln" d="M420,95 L470,95 M460,87 L470,95 L460,103"/>
+      <path class="ln" d="M668,95 L718,95 M708,87 L718,95 L708,103"/>
+      <text x="323" y="170" text-anchor="middle" font-size="20" class="m">YouTube 假帳號</text>
+      <text x="323" y="196" text-anchor="middle" font-size="20" class="m">Twitter 研究</text>
+      <text x="571" y="170" text-anchor="middle" font-size="20" class="m">Twitter 研究</text>
+      <text x="906" y="170" text-anchor="middle" font-size="20" class="m">Facebook 實驗：沒有偵測到</text>
+      <text x="906" y="40" text-anchor="middle" font-size="22" class="pentx">還不確定</text>
+    </svg>
+    <p style="margin-top:18px">三篇不矛盾：它們量的是這條鏈上不同的環節。</p>
+    <p style="margin-top:12px">目前證據比較支持「演算法會放大分裂性內容、影響短期感受」，而不是「演算法是社會極化的主因」。<span class="opinion">本課整理的觀點</span></p>
+  </div>
+  <p class="src">出處：Haroon et al., 2023 p.3–5；Milli et al. p.6–9；Guess et al., 2023 p.4、p.6</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>這是整份課的核心頁。強調「觀點」標籤：這是 wiki 綜合判斷，不是任何一篇論文說的。</li><li>三個保留：Guess 只比較了時間序一種替代方案；所有研究都測不到「演算法改變大家生產什麼內容」的整體效應；都在美國進行。</li><li>Guess 作者自己說：結果暗示演算法可能不是極化的根本原因，要去找其他因素（廣告模式、黨派媒體、貧富差距）。</li></ul>
+    <h4>出處</h4><ul><li>wiki/syntheses/do-algorithms-polarize；wiki/concepts/polarization</li></ul>
+  </aside>
+</section>
+
+<!-- 24 -->
+<section class="slide">
+  <h2>五分鐘辯論</h2>
+  <div class="body">
+    <p class="big">「為了社會好，社群平台應該預設使用時間序動態。」</p>
+    <div class="cols" style="margin-top:30px">
+      <div>
+        <p><b>贊成可以用的證據</b></p>
+        <ul class="small" style="margin-top:8px"><li>演算法放大憤怒和敵意</li><li>演算法動態的不文明內容較多</li><li>使用者不想看演算法挑的政治推文</li></ul>
+      </div>
+      <div>
+        <p><b>反對可以用的證據</b></p>
+        <ul class="small" style="margin-top:8px"><li>時間序的不可信來源多了 68.8%</li><li>改了三個月，極化沒有改變</li><li>使用者會跑去別的平台</li></ul>
+      </div>
+    </div>
+  </div>
+  <p class="src">出處：Milli et al. p.6–8；Guess et al., 2023 p.3–4</p>
+  <aside class="notes">
+    <h4>進行方式</h4><ul><li>分正方、反方、評審。各 2 分鐘，評審 1 分鐘總結。</li><li>提醒學生注意每個證據的平台、年份和方法。</li><li>收尾：每種排序都有取捨，重點是「優化什麼目標」。</li></ul>
+    <h4>延伸</h4><ul><li>如果你是 X 的工程師，你會在權重公式裡加入什麼新的扣分項目？</li></ul>
+    <h4>出處</h4><ul><li>wiki/teaching/chronological-feed-debate</li></ul>
+  </aside>
+</section>
+
+<!-- 25 -->
+<section class="slide" data-steps>
+  <h2>迷思與事實</h2>
+  <div class="body">
+    <div class="myth">
+      <svg class="mark step" viewBox="0 0 42 42"><path d="M8,8 L34,34 M34,8 L8,34"/></svg>
+      <div><p class="q">「研究已經證明演算法造成政治極化。」</p><p class="a step">最大型的實驗沒有偵測到三個月內的態度變化；但演算法確實放大了憤怒的內容。</p></div>
+    </div>
+    <div class="myth">
+      <svg class="mark step" viewBox="0 0 42 42"><path d="M8,8 L34,34 M34,8 L8,34"/></svg>
+      <div><p class="q">「改回時間序就沒問題了。」</p><p class="a step">不文明內容變少，但不可信來源多了 68.8%。</p></div>
+    </div>
+    <div class="myth">
+      <svg class="mark step" viewBox="0 0 42 42"><path d="M8,8 L34,34 M34,8 L8,34"/></svg>
+      <div><p class="q">「我花很多時間看的，就是我想看的。」</p><p class="a step">使用者其實比較不想看演算法挑的政治推文。</p></div>
+    </div>
+    <div class="myth">
+      <svg class="mark step" viewBox="0 0 42 42"><path d="M6,22 L17,33 L36,9"/></svg>
+      <div><p class="q">「滑走也會被記錄。」</p><p class="a step">對。X 把「沒有停留」列為負面訊號。</p></div>
+    </div>
+  </div>
+  <p class="src">出處：Guess et al., 2023 p.4；Milli et al. p.6–8；X 開源說明 #Scoring and Ranking</p>
+  <aside class="notes">
+    <h4>進行方式</h4><ul><li>先念題目讓學生舉手判斷真假，再按 → 打紅筆、揭曉答案。</li></ul>
+    <h4>更多題目</h4><ul><li>「X 一次檢舉抵銷 468 個讚」（假）；「TikTok 用的就是 Monolith」（論文沒這樣說）；「國中生的影片也會被推上 For You」（未滿 16 歲不推薦）。</li></ul>
+    <h4>出處</h4><ul><li>wiki/teaching/myths-and-facts #4、#12–14</li></ul>
+  </aside>
+</section>
+
+<!-- 26 -->
+<section class="slide">
+  <h2>你可以怎麼做</h2>
+  <div class="body cols">
+    <div>
+      <p><b>直接告訴它</b></p>
+      <ul class="small" style="margin-top:10px">
+        <li>長按影片，選「不感興趣」</li>
+        <li>設定關鍵字過濾</li>
+        <li>封鎖或靜音帳號</li>
+        <li>TikTok 可以重設整個 For You</li>
+      </ul>
+    </div>
+    <div>
+      <p><b>留意自己的停留</b></p>
+      <p class="small" style="margin-top:10px">你停下來看吵架，系統會以為你想看更多吵架。</p>
+      <p style="margin-top:22px"><b>主動找不同的來源</b></p>
+      <p class="small" style="margin-top:10px">演算法不會完全擋掉不同觀點，但你可以自己多走一步。</p>
+    </div>
+  </div>
+  <p class="src">出處：TikTok 官方推薦系統說明頁 p.11；X 開源說明 #Filtering；Milli et al. p.10</p>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>研究指出，平台很少收到使用者「說出口」的偏好，所以這些按鈕是少數能讓它知道你真正想要什麼的管道（wiki 觀點）。</li><li>誠實說明：三篇研究都沒有直接測量這些按鈕的效果。</li></ul>
+    <h4>課後作業（可選）</h4><ul><li>開一個新帳號，連續 10 分鐘只看料理影片，記錄第 1、5、10 分鐘推薦頁的變化。</li></ul>
+    <h4>出處</h4><ul><li>wiki/concepts/user-controls</li></ul>
+  </aside>
+</section>
+
+<!-- 27 -->
+<section class="slide">
+  <h2>帶走三句話</h2>
+  <div class="body">
+    <ol>
+      <li>推薦系統一關一關淘汰，最後挑出它猜你最會有反應的內容。</li>
+      <li>它衝的是看得到的數字，像觀看時間、互動，不一定是你真正想要的。</li>
+      <li>它影響你<b>看到什麼</b>，這點很確定；它會不會改變<b>你怎麼想</b>，研究還在爭論。</li>
+    </ol>
+  </div>
+  <aside class="notes">
+    <h4>這頁要講</h4><ul><li>三句話對應開場的三個問題。</li><li>留時間問答。</li></ul>
+  </aside>
+</section>
+
+<!-- 28 -->
+<section class="slide">
+  <h2>參考資料</h2>
+  <div class="body">
+    <ul class="small refs" style="list-style:none;padding:0">
+      <li>Covington, Adams, Sargin（2016）。Deep Neural Networks for YouTube Recommendations。RecSys '16。</li>
+      <li>Liu et al.（2022）。Monolith: Real Time Recommendation System With Collisionless Embedding Table。ORSUM@RecSys。</li>
+      <li>Zhai et al.（2024）。Actions Speak Louder than Words（HSTU）。ICML 2024。</li>
+      <li>OneRec Team（2025）。OneRec Technical Report。arXiv:2506.13695。</li>
+      <li>Guess et al.（2023）。How do social media feed algorithms affect attitudes and behavior in an election campaign? Science 381。</li>
+      <li>Milli et al.（arXiv v6, 2024）。Engagement, User Satisfaction, and the Amplification of Divisive Content on Social Media。</li>
+      <li>Haroon et al.（2023）。Auditing YouTube's recommendation system…。PNAS 120(50)。</li>
+      <li>TikTok（2020）。How TikTok recommends videos #ForYou；TikTok（© 2025）。Introduction to the TikTok recommendation system。</li>
+      <li>X（2026）。X For You Feed Algorithm，GitHub README。</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    <h4>說明</h4><ul><li>完整摘要與頁碼在 wiki/sources/ 底下各頁；目錄見 wiki/index.md。</li></ul>
+  </aside>
+</section>
+
+</div>
+
+<div id="notesPanel" aria-live="polite"></div>
+<p class="hint" id="hint">← → 翻頁　N 講者備忘　T 切換黑板／白紙</p>
+<nav class="nav" aria-label="簡報控制">
+  <button type="button" id="prev" aria-label="上一頁">上一頁</button>
+  <button type="button" id="next" aria-label="下一頁">下一頁</button>
+  <button type="button" id="notesBtn" aria-pressed="false">備忘</button>
+</nav>
+<p class="sr" id="live" aria-live="polite"></p>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length, cur = 0;
+  var stage = document.getElementById('stage');
+  var panel = document.getElementById('notesPanel');
+  var live = document.getElementById('live');
+  var notesBtn = document.getElementById('notesBtn');
+
+  slides.forEach(function(s, i){
+    var n = document.createElement('p');
+    n.className = 'pageno';
+    n.textContent = '第 ' + (i + 1) + ' 頁／共 ' + total + ' 頁';
+    s.appendChild(n);
+  });
+
+  function flowMode(){ return window.matchMedia('(max-width: 760px)').matches; }
+
+  function fit(){
+    document.body.classList.toggle('flow', flowMode());
+    if (flowMode()) return;
+    var s = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+    stage.style.setProperty('--s', s);
+  }
+
+  function steps(s){ return Array.prototype.slice.call(s.querySelectorAll('.step')); }
+
+  function show(i){
+    i = Math.max(0, Math.min(total - 1, i));
+    slides[cur].classList.remove('active');
+    cur = i;
+    var s = slides[cur];
+    void s.offsetWidth;            /* restart the red-pen animation */
+    s.classList.add('active');
+    var note = s.querySelector('.notes');
+    panel.innerHTML = note ? note.innerHTML : '<p>這頁沒有備忘。</p>';
+    live.textContent = '第 ' + (cur + 1) + ' 頁，共 ' + total + ' 頁';
+    if (location.hash !== '#' + (cur + 1)) history.replaceState(null, '', '#' + (cur + 1));
+  }
+
+  function next(){
+    var hidden = steps(slides[cur]).filter(function(e){ return !e.classList.contains('on'); });
+    if (hidden.length && !flowMode()) { hidden[0].classList.add('on'); return; }
+    show(cur + 1);
+  }
+  function prev(){ show(cur - 1); }
+
+  function toggleNotes(){
+    var on = document.body.classList.toggle('notes-on');
+    notesBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function toggleTheme(){
+    var root = document.documentElement;
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+  }
+
+  document.addEventListener('keydown', function(e){
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === ' ' || k === 'PageDown') { e.preventDefault(); next(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); prev(); }
+    else if (k === 'Home') show(0);
+    else if (k === 'End') show(total - 1);
+    else if (k === 'n' || k === 'N') toggleNotes();
+    else if (k === 't' || k === 'T') toggleTheme();
+  });
+  document.getElementById('next').addEventListener('click', next);
+  document.getElementById('prev').addEventListener('click', prev);
+  notesBtn.addEventListener('click', toggleNotes);
+
+  var x0 = null;
+  document.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if (x0 === null || flowMode()) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+    x0 = null;
+  });
+
+  var hint = document.getElementById('hint');
+  function hideHint(){ hint.classList.add('gone'); }
+  setTimeout(hideHint, 6000);
+  document.addEventListener('keydown', hideHint, {once:true});
+
+  window.addEventListener('resize', fit);
+  fit();
+  var start = parseInt((location.hash || '').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+})();
+</script>
+</body>
+</html>

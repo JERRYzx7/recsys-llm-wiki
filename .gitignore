@@ -1,0 +1,6 @@
+.DS_Store
+.obsidian/workspace*.json
+.obsidian/cache
+
+# 原始來源受出版社版權保護，不放進 repo（只保留在本機）
+raw/
