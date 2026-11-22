@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>平台透明度：部落格、論文、開源程式碼各能告訴我們什麼｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="../concepts/user-controls.html">使用者控制工具</a></li><li><a href="../concepts/optimization-objective.html">優化目標</a></li><li><a href="../concepts/cold-start.html">冷啟動</a></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="../concepts/retrieval.html">召回／候選生成</a></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="../concepts/embedding.html">嵌入向量</a></li><li><a href="../concepts/ranking.html">排序</a></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="../concepts/polarization.html">極化</a></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="../concepts/scaling-law.html">規模定律</a></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="platform-transparency.html" aria-current="page">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Syntheses</p>
+<div class="meta-row"><span class="chip type">整合</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/tiktok-foryou.html">TikTok 2020</a><a class="chip" href="../sources/youtube-dnn-2016.html">YouTube 2016</a><a class="chip" href="../sources/monolith.html">Monolith 2022</a><a class="chip" href="../sources/x-algorithm.html">X 開源 README</a><a class="chip" href="../sources/guess-2023.html">Guess 2023</a><a class="chip" href="../sources/haroon-2023.html">Haroon 2023</a><a class="chip" href="../sources/milli-2025.html">Milli</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="平台透明度我們到底能知道多少">平台透明度：我們到底能知道多少？</h1>
+<p><strong>結論摘要</strong>：</p>
+<ul>
+<li>本批四份來源代表三種公開方式：官方部落格、工程論文、開源程式碼，可信度和細節程度各不相同。</li>
+<li><strong>沒有一種方式能告訴我們「演算法實際上對社會造成什麼影響」</strong>，這需要獨立研究。</li>
+</ul>
+<h2 id="比較">比較</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>公開方式</th>
+<th>例子</th>
+<th>能知道什麼</th>
+<th>不能知道什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>官方部落格</strong></td>
+<td><a href="../sources/tiktok-foryou.html">TikTok 2020</a></td>
+<td>平台想讓大眾理解的原則：訊號種類、多樣性措施（p.1–3）</td>
+<td>技術細節、權重、實際成效；內容無法驗證</td>
+</tr>
+<tr>
+<td><strong>工程論文</strong></td>
+<td><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>、<a href="../sources/monolith.html">Monolith 2022</a></td>
+<td>架構、方法、部分實驗數字</td>
+<td>是否仍在使用、實際線上設定；論文聚焦工程，不談社會影響</td>
+</tr>
+<tr>
+<td><strong>開源程式碼＋README</strong></td>
+<td><a href="../sources/x-algorithm.html">X 開源 README</a></td>
+<td>管線、權重參數、過濾規則，原則上可以檢查</td>
+<td>部分規則和 prompt 未公開；實驗中的設定可能和預設值不同（#What's not in this repo?, #Experiments and Configuration）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="透明度的兩難">透明度的兩難</h2>
+<ul>
+<li><strong>公開 → 被鑽漏洞</strong>：X 明說部分規則不公開，是為了降低被規避的風險（<a href="../sources/x-algorithm.html">X 開源 README</a>, #What's not in this repo?）。</li>
+<li><strong>X 的折衷</strong>：程式碼加上「結果透明」。Under the Hood 讓使用者看到自己被貼了哪些標籤（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Under the Hood Label Transparency Tool）。</li>
+<li><strong>TikTok 的折衷</strong>：讓受邀專家到透明中心看原始碼，但一般大眾看不到（<a href="../sources/tiktok-foryou.html">TikTok 2020</a>, p.4）。</li>
+</ul>
+<h2 id="wiki-觀點">🧭 wiki 觀點</h2>
+<ul>
+<li>對教學來說，這三種來源<strong>互補</strong>：<ul>
+<li>部落格告訴我們「平台想做什麼」。</li>
+<li>論文告訴我們「技術上怎麼做」。</li>
+<li>程式碼告訴我們「實際上寫了什麼」。</li>
+</ul>
+</li>
+<li>但三者都不等於「實際造成什麼結果」。</li>
+<li>教學時要提醒學生：<strong>平台自述 ≠ 獨立驗證</strong>。</li>
+</ul>
+<h2 id="第四種管道獨立研究批次-3">第四種管道：獨立研究（批次 3）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>例子</th>
+<th>能知道什麼</th>
+<th>限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平台合作實驗</td>
+<td><a href="../sources/guess-2023.html">Guess 2023</a></td>
+<td>真人、隨機分組、測態度</td>
+<td>需要平台同意，費用由 Meta 支付（p.6）</td>
+</tr>
+<tr>
+<td>外部稽核（假帳號）</td>
+<td><a href="../sources/haroon-2023.html">Haroon 2023</a></td>
+<td>不需要平台同意</td>
+<td>不是真人；Haroon 的作者呼籲平台應更透明（p.7）</td>
+</tr>
+<tr>
+<td>使用者外掛加問卷</td>
+<td><a href="../sources/milli-2025.html">Milli</a></td>
+<td>真實動態、使用者感受</td>
+<td>單一時間點、樣本有偏</td>
+</tr>
+</tbody>
+</table></div>
+<p>方法比較見 <a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a>。</p>
+<p>🧭 <strong>wiki 觀點</strong>：開源程式碼（X）和透明中心（TikTok）讓外界知道「演算法怎麼寫」；獨立研究才能回答「演算法造成什麼結果」。兩者缺一不可。</p>
+<h2 id="尚未解決的問題">尚未解決的問題</h2>
+<ul>
+<li>本 wiki 沒有 TikTok 的獨立稽核研究。</li>
+<li>Milli 研究的是 2023 年的 Twitter；X 在 2026 年開源後，是否有研究者用公開程式碼重新驗證，本 wiki 沒有來源。</li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a><span>概念</span></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a><span>概念</span></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a><span>概念</span></li><li><a href="../entities/tiktok.html">TikTok</a><span>實體</span></li><li><a href="../entities/x-twitter.html">X</a><span>實體</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="../sources/guess-2023.html">Guess 2023</a><span>來源</span></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a><span>來源</span></li><li><a href="../sources/x-algorithm.html">X 開源 README</a><span>來源</span></li><li><a href="cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a><span>整合</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/syntheses/platform-transparency.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

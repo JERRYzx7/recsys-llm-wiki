@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>冷啟動｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="ab-testing.html">A/B 測試與離線指標</a></li><li><a href="transformer.html">Transformer 與注意力機制</a></li><li><a href="engagement-vs-stated-preference.html">互動</a></li><li><a href="user-controls.html">使用者控制工具</a></li><li><a href="optimization-objective.html">優化目標</a></li><li><a href="cold-start.html" aria-current="page">冷啟動</a></li><li><a href="collaborative-filtering.html">協同過濾</a></li><li><a href="online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="retrieval.html">召回／候選生成</a></li><li><a href="visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="diversity-and-exploration.html">多樣性與探索</a></li><li><a href="embedding.html">嵌入向量</a></li><li><a href="ranking.html">排序</a></li><li><a href="recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="polarization.html">極化</a></li><li><a href="algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="generative-recommendation.html">生成式推薦</a></li><li><a href="scaling-law.html">規模定律</a></li><li><a href="filter-bubble.html">過濾泡泡</a></li><li><a href="implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Concepts</p>
+<div class="meta-row"><span class="chip type">概念</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/tiktok-foryou.html">TikTok 2020</a><a class="chip" href="../sources/youtube-dnn-2016.html">YouTube 2016</a><a class="chip" href="../sources/x-algorithm.html">X 開源 README</a><a class="chip" href="../sources/monolith.html">Monolith 2022</a><a class="chip" href="../sources/onerec.html">OneRec 2025</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="冷啟動cold-start">冷啟動（Cold Start）</h1>
+<p><strong>一句話定義</strong>：新使用者沒有任何紀錄，新內容沒人看過，推薦系統「不知道該推什麼給誰」的問題。</p>
+<h2 id="白話解釋">白話解釋</h2>
+<p><strong>比喻：新轉學生的第一天午餐。</strong></p>
+<ul>
+<li>學餐阿姨不知道你愛吃什麼，只好先給你今天最多人點的菜（<strong>熱門內容</strong>），或者先問你「你吃不吃辣？」（<strong>選興趣類別</strong>）。</li>
+<li>吃了幾天後，阿姨就記住你的口味了。</li>
+</ul>
+<h2 id="為什麼是問題">為什麼是問題</h2>
+<p><a href="collaborative-filtering.html">協同過濾</a>靠的是行為紀錄。沒有紀錄，就找不到「和你相似的人」，也不知道「哪些人會喜歡這個新內容」。</p>
+<h2 id="各平台的做法">各平台的做法</h2>
+<h3 id="新使用者">新使用者</h3>
+<ul>
+<li><strong>TikTok</strong>：請新使用者選興趣類別（例如寵物、旅行）；沒選的人先看熱門影片，再依最初的按讚、留言、重看快速調整（<a href="../sources/tiktok-foryou.html">TikTok 2020</a>, p.2）。</li>
+<li><strong>YouTube 2016</strong>：用人口統計特徵（地區、裝置、性別、年齡、是否登入）作為「先驗」，讓新使用者也能拿到合理的推薦（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, §3.3, p.3）。</li>
+<li><strong>X</strong>：新帳號看到的未追蹤貼文必須達到一定的互動門檻（<code>NewUserMinEngagementFilter</code>）（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Filtering）。</li>
+</ul>
+<h3 id="新內容與新創作者">新內容與新創作者</h3>
+<ul>
+<li><strong>YouTube</strong>：用「樣本年齡」特徵，讓模型懂得新影片剛上架時特別熱門（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, §3.3, p.3）。</li>
+<li><strong>X</strong>：新作者加成；雜湊 embedding 讓新貼文立刻可以被表示（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Scoring and Ranking, #Key Design Decisions）。</li>
+<li><strong>Monolith</strong>：雜湊表可以動態插入新 ID，並用線上訓練快速學到新內容（<a href="../sources/monolith.html">Monolith 2022</a>, §2.1–2.2）。</li>
+</ul>
+<h3 id="生成式推薦">生成式推薦</h3>
+<ul>
+<li>OneRec 的語意 ID 讓相似影片共享前綴，「對新影片有更好的泛化」（<a href="../sources/onerec.html">OneRec 2025</a>, p.5）；作者也報告影片冷啟動指標有改善（p.4）。</li>
+</ul>
+<h2 id="相關">相關</h2>
+<ul>
+<li><a href="collaborative-filtering.html">協同過濾</a>、<a href="diversity-and-exploration.html">多樣性與探索</a>、<a href="embedding.html">嵌入向量</a>、<a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="collaborative-filtering.html">協同過濾</a><span>概念</span></li><li><a href="diversity-and-exploration.html">多樣性與探索</a><span>概念</span></li><li><a href="../glossary.html">詞彙表</a><span>詞彙表</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a><span>來源</span></li><li><a href="../sources/x-algorithm.html">X 開源 README</a><span>來源</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/concepts/cold-start.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>嵌入向量｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="ab-testing.html">A/B 測試與離線指標</a></li><li><a href="transformer.html">Transformer 與注意力機制</a></li><li><a href="engagement-vs-stated-preference.html">互動</a></li><li><a href="user-controls.html">使用者控制工具</a></li><li><a href="optimization-objective.html">優化目標</a></li><li><a href="cold-start.html">冷啟動</a></li><li><a href="collaborative-filtering.html">協同過濾</a></li><li><a href="online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="retrieval.html">召回／候選生成</a></li><li><a href="visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="diversity-and-exploration.html">多樣性與探索</a></li><li><a href="embedding.html" aria-current="page">嵌入向量</a></li><li><a href="ranking.html">排序</a></li><li><a href="recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="polarization.html">極化</a></li><li><a href="algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="generative-recommendation.html">生成式推薦</a></li><li><a href="scaling-law.html">規模定律</a></li><li><a href="filter-bubble.html">過濾泡泡</a></li><li><a href="implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Concepts</p>
+<div class="meta-row"><span class="chip type">概念</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/youtube-dnn-2016.html">YouTube 2016</a><a class="chip" href="../sources/monolith.html">Monolith 2022</a><a class="chip" href="../sources/x-algorithm.html">X 開源 README</a><a class="chip" href="../sources/hstu.html">HSTU 2024</a><a class="chip" href="../sources/onerec.html">OneRec 2025</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="嵌入向量embedding">嵌入向量（Embedding）</h1>
+<p><strong>一句話定義</strong>：把「使用者」「影片」「搜尋詞」這類只是一個編號的東西，轉成一串有意義的數字（向量），讓電腦可以計算它們之間有多相似。</p>
+<h2 id="白話解釋">白話解釋</h2>
+<p><strong>比喻：用一組分數描述一個人的口味。</strong></p>
+<ul>
+<li>假設用三個分數描述你：「喜歡搞笑 0.9、喜歡運動 0.2、喜歡美食 0.7」。</li>
+<li>每支影片也用同樣三個分數描述。</li>
+<li>你的分數和影片的分數越接近，你就越可能喜歡它。</li>
+</ul>
+<p>實際系統會用幾十到上千個數字，而且這些數字<strong>不是人訂的</strong>，是模型從大量行為資料中自己學出來的，所以通常說不出每個數字代表什麼。</p>
+<h2 id="為什麼需要它">為什麼需要它</h2>
+<ul>
+<li>電腦沒辦法直接比較「影片 #384729」和「影片 #102938」像不像，因為編號本身沒有意義。</li>
+<li>轉成向量後，就能用數學算相似度，用來做<a href="retrieval.html">召回</a>的最近鄰搜尋。</li>
+<li>YouTube 的定義：embedding 是把稀疏的個體（單一影片、使用者）對應到一個密集向量（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, §3.1, p.2）。</li>
+</ul>
+<h2 id="怎麼運作">怎麼運作</h2>
+<ul>
+<li><strong>一起學出來</strong>：embedding 和模型其他參數一起用梯度下降訓練（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, §3.2, p.3）。</li>
+<li><strong>把一串東西變成一個向量</strong>：例如你看過的 50 支影片，取它們 embedding 的平均（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.3）。</li>
+<li><strong>參數大多在這裡</strong>：一百萬個 ID 用 32 維 embedding，參數量是 2048 寬全連接層的 7 倍（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.6）。Monolith 也說稀疏參數（embedding）主導了模型大小，正式環境的模型有好幾 TB（<a href="../sources/monolith.html">Monolith 2022</a>, p.5）。</li>
+</ul>
+<h2 id="大問題id-太多還一直增加怎麼辦">大問題：ID 太多、還一直增加，怎麼辦？</h2>
+<p>這是三份來源給出不同解法的地方：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>做法</th>
+<th>來源</th>
+<th>優點</th>
+<th>代價</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>截斷詞彙表</strong>：只保留最常出現的前 N 個 ID，其他 ID 對應到零向量</td>
+<td><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.6</td>
+<td>簡單，記憶體固定</td>
+<td>冷門或新 ID 沒有自己的向量</td>
+</tr>
+<tr>
+<td><strong>無碰撞雜湊表</strong>＋頻率過濾＋過期刪除</td>
+<td><a href="../sources/monolith.html">Monolith 2022</a>, §2.1, p.3–4</td>
+<td>每個 ID 有專屬向量，可以動態增加</td>
+<td>系統較複雜</td>
+</tr>
+<tr>
+<td><strong>多雜湊函數 embedding</strong>（不維護詞彙表）</td>
+<td><a href="../sources/x-algorithm.html">X 開源 README</a>, #Key Design Decisions</td>
+<td>新貼文可以立刻被表示</td>
+<td>可能有雜湊碰撞（README 沒有討論）</td>
+</tr>
+<tr>
+<td><strong>語意 ID</strong>：用內容和協同訊號把影片編成 3 層、由粗到細的 token，相似影片共享前綴</td>
+<td><a href="../sources/onerec.html">OneRec 2025</a>, §2.1, p.5–7</td>
+<td>詞彙固定、新影片也能表示；參數和通訊量大減（p.18）</td>
+<td>需要另外訓練 tokenizer；生成的 ID 可能對不到真實影片（p.21）</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout warning"><p class="callout-title">⚠️ 爭議：雜湊碰撞到底傷不傷模型？</p>
+<ul>
+<li><strong>說法 A</strong>：雜湊造成的 ID 碰撞會傷害模型品質，所以應該做無碰撞的雜湊表。在 MovieLens 和內部正式模型上，無碰撞版本的 AUC 都比較高（<a href="../sources/monolith.html">Monolith 2022</a>, p.2, p.7, Figure 7–8）。條件：2022 年；字節跳動；DeepFM 與多塔模型；比較對象是「雜湊後映射到較小空間」的碰撞版本（p.6）。</li>
+<li><strong>說法 B</strong>：X 在召回和排序都採用「多個雜湊函數」的 embedding，理由是不用維護詞彙表、新貼文可以立刻被表示（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Key Design Decisions）。條件：2026 年；X；README 只說明設計理由，沒有提供碰撞影響的數據。</li>
+</ul>
+<p><strong>🧭 wiki 觀點</strong>：這比較像<strong>不同取捨</strong>，不是直接矛盾。</p>
+<ul>
+<li>Monolith 證明的是「單純雜湊到較小空間造成的碰撞」有害。</li>
+<li>X 用的是多個雜湊函數。一般認為這種做法能降低碰撞的影響（背景知識，非本 wiki 來源），而且 X 更重視「新貼文立刻可用」，因為 X 的貼文 48 小時後就會被過濾掉（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Filtering）。</li>
+<li>目前證據不足以判斷哪個做法比較好，因為兩者的資料、模型和評估指標都不同。</li>
+<li>教學時可以用這個例子說明「工程沒有標準答案，只有取捨」。</li>
+</ul>
+</aside>
+<p><strong>規模感</strong>：HSTU 指出，100 億個 ID、每個 512 維，光是 embedding 加優化器狀態就要 <strong>60TB</strong> 記憶體（<a href="../sources/hstu.html">HSTU 2024</a>, p.5）。這就是為什麼大家想盡辦法處理 embedding 表。</p>
+<h2 id="在各來源中的樣貌">在各來源中的樣貌</h2>
+<ul>
+<li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>：召回和排序都用 embedding，同一個 ID 空間共用 embedding（p.6）。</li>
+<li><a href="../sources/monolith.html">Monolith 2022</a>：核心貢獻就是 embedding 表的儲存方式（§2.1）。</li>
+<li><a href="../sources/x-algorithm.html">X 開源 README</a>：Phoenix 把使用者和貼文 embed 成向量；vm-ranker 用貼文 embedding 計算相似度來做多樣性重排（#Components）。</li>
+</ul>
+<h2 id="相關">相關</h2>
+<ul>
+<li><a href="retrieval.html">召回／候選生成</a>、<a href="collaborative-filtering.html">協同過濾</a>、<a href="online-training.html">即時／線上訓練與概念漂移</a>、<a href="diversity-and-exploration.html">多樣性與探索</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="cold-start.html">冷啟動</a><span>概念</span></li><li><a href="collaborative-filtering.html">協同過濾</a><span>概念</span></li><li><a href="diversity-and-exploration.html">多樣性與探索</a><span>概念</span></li><li><a href="online-training.html">即時／線上訓練與概念漂移</a><span>概念</span></li><li><a href="retrieval.html">召回／候選生成</a><span>概念</span></li><li><a href="transformer.html">Transformer 與注意力機制</a><span>概念</span></li><li><a href="../entities/bytedance.html">字節跳動</a><span>實體</span></li><li><a href="../glossary.html">詞彙表</a><span>詞彙表</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="../sources/monolith.html">Monolith 2022</a><span>來源</span></li><li><a href="../sources/onerec.html">OneRec 2025</a><span>來源</span></li><li><a href="../sources/x-algorithm.html">X 開源 README</a><span>來源</span></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a><span>來源</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/concepts/embedding.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

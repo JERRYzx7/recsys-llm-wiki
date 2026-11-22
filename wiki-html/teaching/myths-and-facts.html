@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>推薦演算法的常見迷思與事實｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="../concepts/user-controls.html">使用者控制工具</a></li><li><a href="../concepts/optimization-objective.html">優化目標</a></li><li><a href="../concepts/cold-start.html">冷啟動</a></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="../concepts/retrieval.html">召回／候選生成</a></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="../concepts/embedding.html">嵌入向量</a></li><li><a href="../concepts/ranking.html">排序</a></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="../concepts/polarization.html">極化</a></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="../concepts/scaling-law.html">規模定律</a></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="myths-and-facts.html" aria-current="page">推薦演算法的常見迷思與事實</a></li><li><a href="autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Teaching</p>
+<div class="meta-row"><span class="chip type">教學</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/tiktok-foryou.html">TikTok 2020</a><a class="chip" href="../sources/youtube-dnn-2016.html">YouTube 2016</a><a class="chip" href="../sources/monolith.html">Monolith 2022</a><a class="chip" href="../sources/x-algorithm.html">X 開源 README</a><a class="chip" href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a><a class="chip" href="../sources/hstu.html">HSTU 2024</a><a class="chip" href="../sources/onerec.html">OneRec 2025</a><a class="chip" href="../sources/guess-2023.html">Guess 2023</a><a class="chip" href="../sources/milli-2025.html">Milli</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="推薦演算法的常見迷思與事實">推薦演算法的常見迷思與事實</h1>
+<blockquote>
+<p>這一頁會隨著每批 ingest 持續增加。目前根據批次 1（工業界技術）、TikTok 新版說明頁（<a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a>）和批次 2（生成式推薦）、批次 3（社會影響）。辯論素材見 <a href="chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a>。更多互動遊戲見 <a href="guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a>。</p>
+</blockquote>
+<h2 id="常見迷思-vs-事實">常見迷思 vs. 事實</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>迷思</th>
+<th>事實（出處）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>「粉絲多的人一定會被推更多」</td>
+<td>TikTok 2020 說創作者的粉絲數不是直接因素，但承認粉絲多的人自然可能獲得更多觀看（<a href="../sources/tiktok-foryou.html">TikTok 2020</a>, p.2）。不過「<strong>你</strong>追蹤了誰」是 TikTok 新版說明列出的訊號（<a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a>, p.13）。X 則有「新作者加成」（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Scoring and Ranking）。各平台不同</td>
+</tr>
+<tr>
+<td>2</td>
+<td>「演算法只想要你點進去」</td>
+<td>YouTube 在 2016 年就改用觀看時間，因為點擊率會助長標題黨（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.5）。X 預測十多種行為（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Scoring and Ranking）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>「X 的一次檢舉等於抵銷 468 個讚」</td>
+<td>錯誤。權重乘的是「你本人做出該行為的預測機率」，不是全站累積的次數（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Scoring and Ranking）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>「推薦不到＝被刪文」</td>
+<td>不一定。X 的可見度過濾有四種結果，有些規則只影響「推薦給非追蹤者」，追蹤者仍然看得到（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Labeling Path）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>「TikTok 用的就是 Monolith」</td>
+<td>論文沒有這樣說，只說用在 BytePlus Recommend（<a href="../sources/monolith.html">Monolith 2022</a>, p.1），見 <a href="../entities/bytedance.html">字節跳動</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>「平台完全不管推薦有沒有多樣性」</td>
+<td>至少在設計上都有多樣性機制，例如 TikTok 不連續推同一位創作者、X 的 DPP（<a href="../sources/tiktok-foryou.html">TikTok 2020</a>, p.3；<a href="../sources/x-algorithm.html">X 開源 README</a>, #Components）。實際效果需要獨立驗證</td>
+</tr>
+<tr>
+<td>7</td>
+<td>「演算法一年才更新一次」</td>
+<td>有的系統以分鐘為單位更新（<a href="../sources/monolith.html">Monolith 2022</a>, p.9）；X 的 README 在 2026 年 8–10 月就有 6 次重要更新（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Notable Updates）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>「TikTok 會連續推同一首爆紅配樂的影片」</td>
+<td>前幾名太像（例如同一段配樂）會被換掉（<a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a>, p.8）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>「國中生的影片也會被推上 For You」</td>
+<td>未滿 16 歲帳號做的內容不會被推薦（<a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a>, p.10）</td>
+</tr>
+<tr>
+<td>10</td>
+<td>「推薦 AI 就是 ChatGPT」</td>
+<td>生成式推薦借用了 ChatGPT 的「接龍」方法，但模型是用行為紀錄從頭訓練的，不是語言模型（<a href="../sources/hstu.html">HSTU 2024</a>, p.9；<a href="../sources/onerec.html">OneRec 2025</a>, p.25）</td>
+</tr>
+<tr>
+<td>12</td>
+<td>「研究已經證明演算法造成政治極化」</td>
+<td>最大型的隨機實驗（FB/IG，約 4 萬人，3 個月）沒有偵測到態度變化（<a href="../sources/guess-2023.html">Guess 2023</a>, p.4）；但演算法確實放大憤怒和敵意的內容（<a href="../sources/milli-2025.html">Milli</a>, p.6）</td>
+</tr>
+<tr>
+<td>13</td>
+<td>「改回時間序動態就沒問題了」</td>
+<td>時間序的不文明內容較少，但不可信來源多了 68.8%（<a href="../sources/guess-2023.html">Guess 2023</a>, p.4）</td>
+</tr>
+<tr>
+<td>14</td>
+<td>「我花很多時間看的東西，就是我想看的」</td>
+<td>使用者其實比較不想看演算法挑的政治推文（−0.18 SD），即使演算法讓人用得更久（<a href="../sources/milli-2025.html">Milli</a>, p.8–9）</td>
+</tr>
+<tr>
+<td>11</td>
+<td>「讓 AI 衝高觀看時間，推薦就會變好」</td>
+<td>OneRec 只用看完率當獎勵時，使用者看的影片數反而變少，作者承認有 reward hacking（<a href="../sources/onerec.html">OneRec 2025</a>, p.19–21）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="比喻">比喻</h2>
+<p><strong>迷思像「都市傳說」</strong>：每個都有一點真實成分，但被簡化或誇大了。教學時的重點是<strong>回到原始來源看它到底怎麼說</strong>。</p>
+<h2 id="課堂例子互動點子">課堂例子／互動點子</h2>
+<ul>
+<li><strong>「真的假的」投票</strong>：課堂上逐條念出迷思，學生先舉手投票，再揭曉事實和出處。</li>
+<li><strong>延伸討論</strong>：為什麼這些迷思會流傳？（例如：權重數字被斷章取義、平台過去不透明。）</li>
+</ul>
+<h2 id="可上簡報的圖解構想">可上簡報的圖解構想</h2>
+<p>一張「真／假」翻牌卡：正面寫迷思，翻過來是事實加上出處小字。</p>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="../concepts/filter-bubble.html">過濾泡泡</a><span>概念</span></li><li><a href="../concepts/optimization-objective.html">優化目標</a><span>概念</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/teaching/myths-and-facts.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

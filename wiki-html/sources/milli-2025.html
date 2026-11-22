@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milli｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="guess-2023.html">Guess 2023</a></li><li><a href="hstu.html">HSTU 2024</a></li><li><a href="haroon-2023.html">Haroon 2023</a></li><li><a href="milli-2025.html" aria-current="page">Milli</a></li><li><a href="monolith.html">Monolith 2022</a></li><li><a href="onerec.html">OneRec 2025</a></li><li><a href="tiktok-foryou.html">TikTok 2020</a></li><li><a href="tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="x-algorithm.html">X 開源 README</a></li><li><a href="youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="../concepts/user-controls.html">使用者控制工具</a></li><li><a href="../concepts/optimization-objective.html">優化目標</a></li><li><a href="../concepts/cold-start.html">冷啟動</a></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="../concepts/retrieval.html">召回／候選生成</a></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="../concepts/embedding.html">嵌入向量</a></li><li><a href="../concepts/ranking.html">排序</a></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="../concepts/polarization.html">極化</a></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="../concepts/scaling-law.html">規模定律</a></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Sources</p>
+<div class="meta-row"><span class="chip type">來源</span><span class='chip-label'>引用來源</span><a class="chip" href="milli-2025.html">Milli</a><span class="chip-label">更新 2026-11-17</span><span class="chip-label">原始檔 raw/07-milli-2025.pdf（未公開）</span></div>
+<h1 id="milli-2025互動導向的演算法給的是使用者想要的嗎">Milli 2025：互動導向的演算法，給的是使用者「想要」的嗎？</h1>
+<p><strong>一句話</strong>：比較 Twitter 的「演算法動態」和「時間序動態」，發現演算法會放大<strong>憤怒、黨派性強、敵視對立陣營</strong>的推文，讓讀者對對立陣營感覺更差。而且使用者<strong>並不比較想看</strong>演算法挑出來的政治推文。也就是說，演算法迎合的是「<strong>你會點的</strong>」，不是「<strong>你說你想要的</strong>」。</p>
+<blockquote>
+<p>頁碼說明：PDF 共 93 頁。正文 p.1–12，參考文獻 p.13–16，補充資料 p.17–93（方法、人口統計、額外分析、問卷）。</p>
+</blockquote>
+<h2 id="背景它想解決什麼問題">背景：它想解決什麼問題</h2>
+<ul>
+<li><strong>互動導向排序（engagement-based ranking）</strong>：預測你會不會轉推、回覆、看影片、停留，再依此排序（p.2）。<ul>
+<li>例如 Twitter 在 2023 年 4 月預測 10 種互動，包括「停留至少兩分鐘」（p.2）。</li>
+<li>這種排序優化的是「<strong>顯示偏好（revealed preferences）</strong>」，也就是你的行為（p.2）。</li>
+</ul>
+</li>
+<li><strong>擔憂</strong>：演算法可能利用人類的直覺偏誤（例如偏好情緒性、群體內的內容），放大吸睛但不符合你反思後價值的內容（p.2）。</li>
+<li><strong>過去研究的問題</strong>：分不清楚是<strong>演算法推的</strong>，還是<strong>使用者自己選擇追蹤</strong>的（p.2）。例如 YouTube 兔子洞的研究後來發現，很多人是透過外部連結和訂閱接觸到極端頻道（p.2）。</li>
+</ul>
+<h2 id="研究設計p36">研究設計（p.3–6）</h2>
+<ul>
+<li><strong>時間</strong>：2023-02-11 到 02-27，分 4 波（p.5）。</li>
+<li><strong>受試者</strong>：<ul>
+<li>在 CloudResearch Connect 平台招募的美國 Twitter 使用者，每週至少用幾次、追蹤至少 50 人（p.5）。</li>
+<li>最終資料是 <strong>806 位使用者、1,730 份回答</strong>（p.3；補充資料 p.19）。</li>
+</ul>
+</li>
+<li><strong>蒐集方式</strong>：受試者安裝研究團隊做的 Chrome 外掛（p.5）。<ul>
+<li>外掛抓取使用者的<strong>演算法動態</strong>前 10 則推文。</li>
+<li>同時用 Twitter API 抓<strong>時間序動態</strong>前 10 則（p.3, p.5）。</li>
+<li>只蒐集公開推文，不含廣告（p.5）。</li>
+</ul>
+</li>
+<li><strong>問卷</strong>：兩邊的推文混在一起、隨機排序，請使用者逐則評估（p.5–6）：<ul>
+<li>推文是否和政治有關、立場、作者的情緒、自己讀完的情緒。</li>
+<li>讀完後對自己陣營、對立陣營的感覺。</li>
+<li>「<strong>你想在 Twitter 上看到這種推文嗎？</strong>」，也就是陳述偏好（stated preference）。</li>
+</ul>
+</li>
+<li><strong>事先註冊</strong>了 5 個假設和 4 個研究問題，共檢定 26 個結果；所有顯著結果在 FDR 0.01 下仍然顯著（p.6）。</li>
+<li>另外用 GPT-4 標註同樣的問題，結果和讀者的判斷方向一致（p.6）。</li>
+</ul>
+<h2 id="主要結果p68-figure-1">主要結果（p.6–8, Figure 1）</h2>
+<p>效果以「相對時間序動態的標準差（SD）」表示（表中數值皆出自 p.6）：</p>
+<h3 id="政治面">政治面</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>結果</th>
+<th>演算法動態相對時間序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推文的黨派性</td>
+<td>+0.24 SD</td>
+</tr>
+<tr>
+<td>敵視對立陣營的程度</td>
+<td>+0.24 SD</td>
+</tr>
+<tr>
+<td>讀者對<strong>對立陣營</strong>的感覺</td>
+<td><strong>−0.17 SD</strong>（更差）</td>
+</tr>
+<tr>
+<td>讀者對<strong>自己陣營</strong>的感覺</td>
+<td>+0.08 SD（更好）</td>
+</tr>
+</tbody>
+</table></div>
+<p>（p.6）</p>
+<h3 id="情緒面">情緒面</h3>
+<ul>
+<li><strong>作者表達的情緒</strong>：憤怒 +0.47 SD、悲傷 +0.22 SD、焦慮 +0.23 SD（p.6–8）。</li>
+<li><strong>讀者感受到的情緒</strong>：憤怒 +0.27、悲傷 +0.09、焦慮 +0.12、快樂 +0.12 SD（p.8）。</li>
+<li><strong>只看政治推文時</strong>，憤怒是被放大最多的情緒：作者 +0.75 SD、讀者 +0.37 SD（p.8）。</li>
+<li>作者原本預期讀者會比較快樂、比較不生氣（H5），這是<strong>唯一沒有得到支持的假設</strong>；實際上四種情緒都上升了（p.4）。</li>
+</ul>
+<h3 id="使用者想不想看">使用者想不想看</h3>
+<ul>
+<li><strong>所有推文</strong>：演算法挑的推文只略受偏好（+0.06 SD，p = 0.022）（p.8）。</li>
+<li><strong>政治推文</strong>：演算法挑的<strong>反而比較不受偏好</strong>（<strong>−0.18 SD</strong>，p = 0.005）（p.8）。</li>
+<li>作者指出，Twitter 內部的 A/B 測試顯示，演算法動態會讓使用者花更多時間在平台上（p.5, p.9）。</li>
+<li>所以演算法迎合的是「<strong>顯示偏好</strong>」（使用時間），而不是「<strong>陳述偏好</strong>」（你說你想要什麼），在政治內容上特別明顯（p.9）。</li>
+</ul>
+<h3 id="探索性分析如果照使用者說想看的排序p78-p10">探索性分析：如果照「使用者說想看的」排序？（p.7–8, p.10）</h3>
+<ul>
+<li>研究者從每位使用者評過的大約 20 則推文中，挑出他「最想看」的 10 則，組成「<strong>陳述偏好動態</strong>」（p.7）。</li>
+<li>結果：憤怒、悲傷、焦慮減少，快樂增加；黨派性和敵意也降低（p.7）。</li>
+<li><strong>但是</strong>，敵意降低主要是因為<strong>對立陣營的推文變少了</strong>，也就是對「自己陣營」的敵意減少，對「對立陣營」的敵意並沒有減少。這可能<strong>加深同溫層</strong>（p.7–8, Figure 2；p.9–10）。</li>
+<li>一個改良版本是：同樣想看的推文，優先排沒有敵意的。這個版本可以大幅減少敵意內容，又不會增加同溫內容（p.10，補充資料 S4.9）。</li>
+</ul>
+<h2 id="限制作者自述p1011">限制（作者自述，p.10–11）</h2>
+<ul>
+<li><strong>只觀察一個時間點</strong>，不知道長期效果。演算法會改變大家生產什麼內容，長期效果可能更大，也可能更小（p.10）。</li>
+<li><strong>樣本偏年輕、偏民主黨</strong>：18–34 歲佔 53%（ANES 調查的 Twitter 使用者是 33%），民主黨佔 56%（ANES 是 43%）（p.11）。</li>
+<li><strong>只看前 10 則推文</strong>，問卷又問了約 20 則，可能有疲勞效應（p.11）。</li>
+<li><strong>陳述偏好動態只能從約 20 則推文裡選</strong>，平台實際可選的內容多得多（p.10）。</li>
+<li><strong>長期來看，演算法也會影響你追蹤誰</strong>，所以「時間序動態」本身也可能早就被演算法間接影響了（p.11）。</li>
+<li><strong>研究對象是 2023 年 2 月、改名為 X 之前的 Twitter</strong>（p.3 註腳）。</li>
+</ul>
+<h2 id="與其他來源的關係">與其他來源的關係</h2>
+<ul>
+<li><strong>直接對話</strong> <a href="guess-2023.html">Guess 2023</a>：<ul>
+<li>作者在討論中指出，Guess 發現對極化<strong>沒有</strong>顯著影響，但 Guess 測的是 2 週到 3 個月後的整體態度，本研究測的是讀完<strong>每則推文當下</strong>的感受。</li>
+<li>兩者都無法涵蓋「演算法改變大家生產什麼內容」的一般均衡效果（p.9）。</li>
+<li>見 <a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a>。</li>
+</ul>
+</li>
+<li><strong>研究對象是 X 的前身</strong>：<a href="x-algorithm.html">X 開源 README</a> 是 2026 年的 X，預測十多種行為並加權（#Scoring and Ranking），和本研究描述的 2023 年 Twitter「預測 10 種互動」是同一類設計（p.2）。<ul>
+<li>但 2026 年的 X 已經加入負面訊號、DPP 多樣性重排等元件。本研究的結果是否還適用，沒有證據。</li>
+</ul>
+</li>
+<li><strong>呼應</strong> <a href="onerec.html">OneRec 2025</a> 的 reward hacking：OneRec 只用看完率當獎勵時，使用者看的影片數變少（<a href="onerec.html">OneRec 2025</a>, p.19–21）。本研究則顯示，優化互動會放大使用者其實不想要的政治內容。兩者都是「<strong>代理指標 ≠ 使用者真正想要的</strong>」的例子。見 <a href="../concepts/optimization-objective.html">優化目標</a>。</li>
+<li><strong>呼應</strong> <a href="tiktok-foryou.html">TikTok 2020</a> 承認的「engagement bias」（p.3）。</li>
+</ul>
+<h2 id="相關頁面">相關頁面</h2>
+<ul>
+<li><a href="../entities/x-twitter.html">X</a>、<a href="../concepts/engagement-vs-stated-preference.html">互動</a>、<a href="../concepts/polarization.html">極化</a>、<a href="../concepts/optimization-objective.html">優化目標</a>、<a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a>、<a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a><span>概念</span></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a><span>概念</span></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a><span>概念</span></li><li><a href="../concepts/optimization-objective.html">優化目標</a><span>概念</span></li><li><a href="../concepts/polarization.html">極化</a><span>概念</span></li><li><a href="../concepts/user-controls.html">使用者控制工具</a><span>概念</span></li><li><a href="../entities/x-twitter.html">X</a><span>實體</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="guess-2023.html">Guess 2023</a><span>來源</span></li><li><a href="haroon-2023.html">Haroon 2023</a><span>來源</span></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a><span>整合</span></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a><span>整合</span></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a><span>教學</span></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a><span>教學</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/sources/milli-2025.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

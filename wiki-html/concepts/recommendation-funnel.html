@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>推薦漏斗／多階段管線｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs';
+const dark = document.documentElement.dataset.theme === 'dark' ||
+  (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+mermaid.initialize({startOnLoad: true, theme: dark ? 'dark' : 'neutral', fontFamily: 'PingFang TC, Noto Sans TC, sans-serif'});
+</script>
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="ab-testing.html">A/B 測試與離線指標</a></li><li><a href="transformer.html">Transformer 與注意力機制</a></li><li><a href="engagement-vs-stated-preference.html">互動</a></li><li><a href="user-controls.html">使用者控制工具</a></li><li><a href="optimization-objective.html">優化目標</a></li><li><a href="cold-start.html">冷啟動</a></li><li><a href="collaborative-filtering.html">協同過濾</a></li><li><a href="online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="retrieval.html">召回／候選生成</a></li><li><a href="visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="diversity-and-exploration.html">多樣性與探索</a></li><li><a href="embedding.html">嵌入向量</a></li><li><a href="ranking.html">排序</a></li><li><a href="recommendation-funnel.html" aria-current="page">推薦漏斗／多階段管線</a></li><li><a href="polarization.html">極化</a></li><li><a href="algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="generative-recommendation.html">生成式推薦</a></li><li><a href="scaling-law.html">規模定律</a></li><li><a href="filter-bubble.html">過濾泡泡</a></li><li><a href="implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Concepts</p>
+<div class="meta-row"><span class="chip type">概念</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/youtube-dnn-2016.html">YouTube 2016</a><a class="chip" href="../sources/x-algorithm.html">X 開源 README</a><a class="chip" href="../sources/tiktok-foryou.html">TikTok 2020</a><a class="chip" href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a><a class="chip" href="../sources/onerec.html">OneRec 2025</a><a class="chip" href="../sources/hstu.html">HSTU 2024</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="推薦漏斗多階段管線recommendation-funnel">推薦漏斗／多階段管線（Recommendation Funnel）</h1>
+<p><strong>一句話定義</strong>：推薦系統不會一次把幾億則內容全部仔細打分，而是分好幾關逐步篩選：先粗略撈出幾百到幾千則候選（<a href="retrieval.html">召回</a>），再精細打分（<a href="ranking.html">排序</a>），最後做多樣性調整和安全過濾，才送到你的畫面上。</p>
+<h2 id="白話解釋">白話解釋</h2>
+<p><strong>比喻：選秀節目。</strong></p>
+<ul>
+<li><strong>海選（召回）</strong>：幾百萬人報名，評審不可能每個人都看完整表演，所以先用快速規則刷掉大多數人，例如只看 10 秒影片、看類型符不符合。</li>
+<li><strong>複賽（排序）</strong>：剩下幾百人，評審仔細看每個人的完整表演，打出詳細分數。</li>
+<li><strong>決賽編排（重排與過濾）</strong>：最後上電視的十幾個人，還要考慮節目節奏（不要連續三個都唱情歌）和節目規範（不能播出不當內容）。</li>
+</ul>
+<p>所以每一關都在「速度」和「準確度」之間取捨：前面的關卡快但粗，後面的關卡慢但細。</p>
+<h2 id="為什麼需要它">為什麼需要它</h2>
+<ul>
+<li>內容量太大：YouTube 有<strong>數百萬</strong>支影片，要在<strong>數十毫秒</strong>內回應（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.2–3）。</li>
+<li>精細模型很貴：每多算一則內容都要時間和運算資源，不可能對全部內容都用最複雜的模型。</li>
+<li>分階段還有一個好處：可以<strong>混入多種候選來源</strong>，例如追蹤的人、熱門內容、相似使用者喜歡的內容（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.2；<a href="../sources/x-algorithm.html">X 開源 README</a>, #Overview）。</li>
+</ul>
+<h2 id="怎麼運作">怎麼運作</h2>
+<pre class="mermaid">flowchart LR
+  A[全部內容&lt;br/&gt;數百萬～數億] --&gt;|召回 Retrieval| B[候選&lt;br/&gt;數百～數千]
+  B --&gt;|排序 Ranking| C[已排序&lt;br/&gt;數十～數百]
+  C --&gt;|重排／多樣性| D[調整順序]
+  D --&gt;|可見度過濾| E[你的動態]
+</pre>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>階段</th>
+<th>YouTube 2016</th>
+<th>X 2026</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>召回</td>
+<td>候選生成網路，數百萬 → 數百（p.2）</td>
+<td>Thunder（追蹤中）＋ Phoenix 雙塔 ＋ SimClusters ＋ 熱門貼文（#Overview）</td>
+</tr>
+<tr>
+<td>排序</td>
+<td>預測觀看時間的深度網路（p.5）</td>
+<td>Phoenix Transformer 預測多種行為的機率再加權（#Scoring and Ranking）</td>
+</tr>
+<tr>
+<td>重排／多樣性</td>
+<td>曝光頻率特徵讓列表有變化（p.6）</td>
+<td>作者多樣性衰減、DPP 重排（#Scoring and Ranking, #Components）</td>
+</tr>
+<tr>
+<td>過濾</td>
+<td>論文未討論</td>
+<td>前置過濾器 ＋ 選取後的可見度過濾（#Filtering）</td>
+</tr>
+</tbody>
+</table></div>
+<p>TikTok 2020 年的說明沒有描述管線架構（<a href="../sources/tiktok-foryou.html">TikTok 2020</a>, p.2–3）。後來的官方說明頁則明確寫出五個步驟：挑選影片 → 預測 → 排序 → 相似度檢查 → 推薦規則。流程圖上的規模是<strong>數百萬 → 數千</strong>（<a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a>, p.6–8, p.12）。</p>
+<h2 id="在各來源中的樣貌">在各來源中的樣貌</h2>
+<ul>
+<li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>：明確提出「漏斗（funnel）」的說法，見 Figure 2（p.2）。</li>
+<li><a href="../sources/x-algorithm.html">X 開源 README</a>：七步驟的 Post Pipeline，外面再包一層混排廣告的 Blending Pipeline（#Request Path）。</li>
+<li><a href="../sources/tiktok-foryou.html">TikTok 2020</a>：沒有說明架構，只描述排序因素（p.1–2）。</li>
+<li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a>：五步驟，外加「所有上傳影片先審核」這一關（p.9, p.12）。</li>
+</ul>
+<h2 id="新挑戰端到端生成">新挑戰：端到端生成</h2>
+<ul>
+<li>快手的 OneRec 主張用<strong>一個生成模型</strong>取代整個漏斗，理由是算力碎片化和各階段目標衝突（<a href="../sources/onerec.html">OneRec 2025</a>, p.3–4）。</li>
+<li>Meta 的 HSTU 則保留召回和排序兩個任務，但都改用生成式方法（<a href="../sources/hstu.html">HSTU 2024</a>, Table 1, p.3）。</li>
+<li>爭議整理見 <a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a>。</li>
+</ul>
+<h2 id="相關">相關</h2>
+<ul>
+<li><a href="generative-recommendation.html">生成式推薦</a>、<a href="retrieval.html">召回／候選生成</a>、<a href="ranking.html">排序</a>、<a href="diversity-and-exploration.html">多樣性與探索</a>、<a href="visibility-filtering.html">可見度過濾與推薦資格</a>、<a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a>、<a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="diversity-and-exploration.html">多樣性與探索</a><span>概念</span></li><li><a href="generative-recommendation.html">生成式推薦</a><span>概念</span></li><li><a href="ranking.html">排序</a><span>概念</span></li><li><a href="retrieval.html">召回／候選生成</a><span>概念</span></li><li><a href="visibility-filtering.html">可見度過濾與推薦資格</a><span>概念</span></li><li><a href="../entities/youtube.html">YouTube</a><span>實體</span></li><li><a href="../glossary.html">詞彙表</a><span>詞彙表</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a><span>來源</span></li><li><a href="../sources/x-algorithm.html">X 開源 README</a><span>來源</span></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a><span>來源</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/concepts/recommendation-funnel.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

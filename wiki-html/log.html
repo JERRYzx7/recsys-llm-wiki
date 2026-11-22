@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>操作紀錄｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../index.html">首頁</a><a href="../wiki-html/index.html" aria-current="page">Wiki</a><a href="../slides.html">簡報</a><a href="../workflow.html">流程設計</a><a href="../record.html">執行紀錄</a><a href="../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="index.html">目錄 index</a></li><li><a href="glossary.html">詞彙表 glossary</a></li><li><a href="log.html" aria-current="page">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="sources/guess-2023.html">Guess 2023</a></li><li><a href="sources/hstu.html">HSTU 2024</a></li><li><a href="sources/haroon-2023.html">Haroon 2023</a></li><li><a href="sources/milli-2025.html">Milli</a></li><li><a href="sources/monolith.html">Monolith 2022</a></li><li><a href="sources/onerec.html">OneRec 2025</a></li><li><a href="sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="sources/x-algorithm.html">X 開源 README</a></li><li><a href="sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="concepts/user-controls.html">使用者控制工具</a></li><li><a href="concepts/optimization-objective.html">優化目標</a></li><li><a href="concepts/cold-start.html">冷啟動</a></li><li><a href="concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="concepts/retrieval.html">召回／候選生成</a></li><li><a href="concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="concepts/embedding.html">嵌入向量</a></li><li><a href="concepts/ranking.html">排序</a></li><li><a href="concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="concepts/polarization.html">極化</a></li><li><a href="concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="concepts/scaling-law.html">規模定律</a></li><li><a href="concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="entities/meta.html">Meta</a></li><li><a href="entities/tiktok.html">TikTok</a></li><li><a href="entities/x-twitter.html">X</a></li><li><a href="entities/youtube.html">YouTube</a></li><li><a href="entities/bytedance.html">字節跳動</a></li><li><a href="entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="index.html">Wiki</a></p>
+<div class="meta-row"></div>
+<h1 id="log">Log</h1>
+<blockquote>
+<p>只能往後追加，不修改舊紀錄。格式：<code>## [YYYY-MM-DD] &lt;ingest|query|lint|slides|schema&gt; | &lt;標題&gt;</code>
+最近紀錄：<code>grep "^## \[" wiki/log.md | tail -5</code></p>
+</blockquote>
+<h2 id="2026-11-17-schema-建立-wiki-骨架">[2026-11-17] schema | 建立 wiki 骨架</h2>
+<ul>
+<li>變更：新增 AGENTS.md、CLAUDE.md、.claude/skills/{wiki-ingest,wiki-lint,wiki-slides}、wiki/index.md、wiki/log.md、wiki/glossary.md、wiki/{sources,concepts,entities,syntheses,teaching}/、output/、.raw-manifest.md5（9 份 raw 的 MD5）</li>
+<li>備註：來源 9 份，分三批 ingest（1：01/02/03/06；2：04/05；3：07/08/09）。下一步：批次 1 ingest。</li>
+</ul>
+<h2 id="2026-11-17-ingest-批次-1工業界技術01-tiktok02-youtube-dnn03-monolith06-x-readme">[2026-11-17] ingest | 批次 1：工業界技術（01 TikTok、02 YouTube DNN、03 Monolith、06 X README）</h2>
+<ul>
+<li>新增 sources（4）：tiktok-foryou、youtube-dnn-2016、monolith、x-algorithm</li>
+<li>新增 concepts（13）：recommendation-funnel、retrieval、ranking、embedding、collaborative-filtering、implicit-feedback、optimization-objective、online-training、filter-bubble、diversity-and-exploration、cold-start、visibility-filtering、ab-testing</li>
+<li>新增 entities（4）：tiktok、bytedance、youtube、x-twitter</li>
+<li>新增 syntheses（2）：platform-pipeline-comparison、platform-transparency</li>
+<li>新增 teaching（3）：funnel-analogy、what-the-feed-learns-from-you、myths-and-facts</li>
+<li>更新：glossary（27 個術語）、index</li>
+<li>爭議：①雜湊碰撞（Monolith vs. X）→ concepts/embedding；②「追蹤」的角色（TikTok vs. X）→ syntheses/platform-pipeline-comparison。兩者都判定為「不同取捨或定位」，不是直接矛盾</li>
+<li>備註：Monolith 論文沒有說用在 TikTok，已在 bytedance 和 myths 頁註明；Monolith 的 Table 3「AUC 提升 14–18%」沒有定義計算方式，已標示要保守引用</li>
+<li>待辦：Transformer 被 5 頁提到但沒有獨立頁面，留到批次 2（HSTU）建立 concepts/transformer 一併處理</li>
+</ul>
+<h2 id="2026-11-17-lint-批次-1-後">[2026-11-17] lint | 批次 1 後</h2>
+<ul>
+<li>結構：5 項全數 OK（29 頁）</li>
+<li>內容：#6 補上 7 處數字的頁碼；#7 把「追蹤」的爭議改成標準 ⚠️ 區塊；#9 所有 concept 頁都有白話解釋；#10 補齊 3 處 🧭 標記；修正 3 個表格內的別名連結（Obsidian 會把 <code>|</code> 當成表格分隔線）</li>
+<li>
+<h1 id="8transformer5-頁phoenix6-頁simclusters5-頁沒有獨立頁面phoenix-和-simclusters-屬於-x-的元件由-entitiesx-twitter-涵蓋transformer-留到批次-2">8：Transformer（5 頁）、Phoenix（6 頁）、SimClusters（5 頁）沒有獨立頁面。Phoenix 和 SimClusters 屬於 X 的元件，由 entities/x-twitter 涵蓋；Transformer 留到批次 2</h1>
+</li>
+<li>待人類決定：見批次 1 回報</li>
+</ul>
+<h2 id="2026-11-17-ingest-單篇10-tiktok-官方推薦系統說明頁-2025">[2026-11-17] ingest | 單篇：10 TikTok 官方推薦系統說明頁（© 2025）</h2>
+<ul>
+<li>流程：照單篇模式，先跟人類討論 5 個重點；人類指示「要有趣一點」、新增 user-controls、raw 檔改名為 10-tiktok-transparency.pdf</li>
+<li>新增：sources/tiktok-transparency、concepts/user-controls、teaching/guess-the-signal</li>
+<li>更新：entities/tiktok、sources/tiktok-foryou、concepts/{recommendation-funnel, optimization-objective, collaborative-filtering, visibility-filtering, diversity-and-exploration, implicit-feedback, filter-bubble}、syntheses/platform-pipeline-comparison（TikTok 欄改成 2020→2025；「追蹤」爭議加入說法 A'）、teaching/myths-and-facts（修正 #1，新增 #8 #9）、glossary（+3 個術語）、index</li>
+<li>爭議更新：「追蹤」——區分「創作者有多少粉絲」和「你追蹤了誰」；新版把後者列為訊號，判定不是矛盾</li>
+<li>備註：TikTok USDS Joint Venture（2026-01）只寫在 entities/tiktok 的時間線，標為「待補來源、不可引用」</li>
+</ul>
+<h2 id="2026-11-17-schema-來源清單新增第-10-份">[2026-11-17] schema | 來源清單新增第 10 份</h2>
+<ul>
+<li>AGENTS.md §3 加入 10-tiktok-transparency.pdf（單篇）；來源總數 9 → 10</li>
+</ul>
+<h2 id="2026-11-17-lint-單篇-10-後">[2026-11-17] lint | 單篇 10 後</h2>
+<ul>
+<li>結構：1–4 項 OK（32 頁）；第 5 項有 1 個問題：raw 檔尚未改名，所以 MD5 還沒登記（等人類改名後補登記）</li>
+</ul>
+<h2 id="2026-11-17-lint-raw-10-改名後">[2026-11-17] lint | raw 10 改名後</h2>
+<ul>
+<li>人類已把檔案改名為 raw/10-tiktok-transparency.pdf；MD5 已追加到 .raw-manifest.md5</li>
+<li>結構：5 項全部 OK（32 頁）</li>
+</ul>
+<h2 id="2026-11-17-ingest-批次-2生成式推薦04-hstu05-onerec">[2026-11-17] ingest | 批次 2：生成式推薦（04 HSTU、05 OneRec）</h2>
+<ul>
+<li>讀法：PDF 超過 20 頁，用 macOS PDFKit 把文字抽到 scratchpad 再讀（raw/ 沒有變動）。HSTU 正文與 Impact Statement、附錄 A–B 細讀，附錄 C–H（GPU 實作）看過節標題；OneRec 正文與附錄 B 細讀，附錄 C 案例略讀</li>
+<li>新增 sources（2）：hstu、onerec</li>
+<li>新增 concepts（3）：generative-recommendation、transformer（處理批次 1 留下的 #8 待辦）、scaling-law</li>
+<li>新增 entities（2）：meta、kuaishou</li>
+<li>新增 syntheses（1）：cascade-vs-end-to-end（含 ⚠️ 爭議：漏斗會被端到端取代嗎）</li>
+<li>新增 teaching（1）：autocomplete-analogy</li>
+<li>更新：concepts/{embedding（第四種做法：語意 ID）, optimization-objective（P-Score、reward hacking 實例、平台目標寫進獎勵）, recommendation-funnel, ranking, retrieval, online-training, collaborative-filtering, diversity-and-exploration, cold-start, ab-testing（顯著門檻、實驗範圍）}、syntheses/platform-pipeline-comparison、teaching/myths-and-facts（+#10 #11）、glossary（+10 個術語 → 40 個）、index</li>
+<li>重要註記：①OneRec 的「25% QPS」是原本用快取應付的流量（附錄 B p.30）；②HSTU 沒有寫明部署平台；③HSTU 的 Impact Statement 宣稱可能減少標題黨和假新聞，但沒有實證，待批次 3 對照</li>
+<li>背景知識標註：Meta 是 Facebook 和 Instagram 的母公司、快手與抖音是競爭對手（皆已標「非本 wiki 來源」）</li>
+</ul>
+<h2 id="2026-11-17-lint-批次-2-後">[2026-11-17] lint | 批次 2 後</h2>
+<ul>
+<li>結構：5 項全數 OK（41 頁）</li>
+<li>內容：#6 補上 7 處頁碼；#9 所有 concept 頁都有白話解釋；#10 🧭 標記齊全；表格內沒有別名連結</li>
+<li>
+<h1 id="8批次-1-留下的-transformer-已建頁">8：批次 1 留下的 Transformer 已建頁</h1>
+</li>
+</ul>
+<h2 id="2026-11-17-schema-批次-2-確認">[2026-11-17] schema | 批次 2 確認</h2>
+<ul>
+<li>人類決定：「漏斗 vs. 端到端」在簡報只用一頁帶過（已寫進 syntheses/cascade-vs-end-to-end）；批次 3 照原計畫一次做完</li>
+</ul>
+<h2 id="2026-11-17-ingest-批次-3社會影響07-milli08-guess09-haroon">[2026-11-17] ingest | 批次 3：社會影響（07 Milli、08 Guess、09 Haroon）</h2>
+<ul>
+<li>讀法：PDFKit 抽文字到 scratchpad。Guess 正文加兩份勘誤（p.1–10）全讀；Haroon 全讀（p.1–8）；Milli 正文 p.1–12 全讀，補充資料讀了目錄、S1（方法、樣本）、S2 摘要，其餘表格和問卷沒有逐頁細讀</li>
+<li>新增 sources（3）：guess-2023、milli-2025、haroon-2023</li>
+<li>新增 concepts（3）：polarization、engagement-vs-stated-preference、algorithmic-audit</li>
+<li>新增 syntheses（1）：do-algorithms-polarize（核心整合頁，含 ⚠️ 爭議與「因果鏈」觀點）</li>
+<li>新增 teaching（1）：chronological-feed-debate（正反方證據卡）</li>
+<li>更新：concepts/{filter-bubble（實證 + ⚠️ 爭議：演算法 vs. 人的選擇）, optimization-objective, user-controls}、syntheses/platform-transparency（第四種管道：獨立研究）、entities/{meta, youtube, x-twitter}、sources/hstu（Impact Statement 連到整合頁）、teaching/myths-and-facts（+#12–14）、glossary（→ 49 個術語）、index</li>
+<li>註記：①Milli 的 raw 是 arXiv v6（2024-12），檔名標 2025，期刊正式版資訊不在 raw 中；②Haroon 的摘要和引言對「遇到問題頻道的比例」說法不一致（36.1% vs. 32%），以結果段落為準；③Guess 有兩份勘誤，只影響 Instagram 的指標</li>
+<li>🧭 主要觀點：三篇研究測的是因果鏈上的不同環節，所以不矛盾；證據較支持「演算法放大分裂性內容、影響短期感受」，而不是「演算法是極化主因」</li>
+</ul>
+<h2 id="2026-11-17-lint-批次-3-後全部-10-份來源-ingest-完畢">[2026-11-17] lint | 批次 3 後（全部 10 份來源 ingest 完畢）</h2>
+<ul>
+<li>結構：5 項全數 OK（49 頁）</li>
+<li>內容：#6 補上 9 處頁碼；#7 新增 2 個 ⚠️ 爭議區塊（polarization、filter-bubble），加上整合頁；#9 所有 concept 頁都有白話解釋；#10 🧭 標記齊全</li>
+</ul>
+<h2 id="2026-11-17-lint-簡報前">[2026-11-17] lint | 簡報前</h2>
+<ul>
+<li>結構：5 項全數 OK（49 頁）；內容檢查沿用批次 3 後的結果，沒有新增頁面</li>
+</ul>
+<h2 id="2026-11-17-slides-outputrecsys-slideshtml">[2026-11-17] slides | output/recsys-slides.html</h2>
+<ul>
+<li>28 頁，單一 HTML 檔，沒有外部資源；← → 翻頁、N 講者備忘、T 切換黑板／白紙；寬度 760px 以下改成可捲動的講義模式</li>
+<li>設計：依人類要求「不要太 AI 美感」，採「老師批改考卷」的風格：白紙或黑板、楷體／明體標題、只在關鍵數字畫紅筆圈（暗色模式改用黃色粉筆）</li>
+<li>取材頁：concepts/{recommendation-funnel, implicit-feedback, collaborative-filtering, optimization-objective, diversity-and-exploration, visibility-filtering, online-training, generative-recommendation, engagement-vs-stated-preference, polarization, user-controls}、sources/*（10 份）、syntheses/{do-algorithms-polarize, cascade-vs-end-to-end}、teaching/{funnel-analogy, guess-the-signal, chronological-feed-debate, myths-and-facts, autocomplete-analogy}</li>
+<li>照人類決定：漏斗 vs. 端到端只用一頁（第 15 頁）；wiki 觀點標示為「本課整理的觀點」（第 23 頁）</li>
+<li>驗證：headless Chrome 截圖檢查 28 頁（深色、淺色、600px 寬），修正 CSS 權重衝突（出處和頁碼被放大）、圖表標籤重疊、參考資料溢出；用模擬按鍵測試翻頁、逐步揭曉、備忘和主題切換，沒有 JS 錯誤；28 頁都有講者備忘</li>
+<li>尚缺：沒有 TikTok 和快手的獨立社會影響研究；TikTok 美國合資公司（2026）沒有 raw 來源，所以沒放進簡報</li>
+</ul>
+<h2 id="2026-11-22-lint-手動建網站前">[2026-11-22] lint | 手動（建網站前）</h2>
+<ul>
+<li>結構：5 項全數 OK（49 頁）</li>
+<li>另做簡報 ↔ wiki 追溯檢查：簡報 28 頁中的 32 個數字，全部能在 wiki 找到</li>
+</ul>
+<h2 id="2026-11-22-schema-新增發佈網站步驟">[2026-11-22] schema | 新增「發佈網站」步驟</h2>
+<ul>
+<li>變更：新增 tools/build_site.py（wiki/ 與 report/ 轉成 GitHub Pages 網站，上方導覽列可切換 Wiki、簡報、流程設計、執行紀錄、反思）、tools/make_workflow.py（流程圖 assets/workflow.png）、report/{workflow, record, reflection}.md；AGENTS.md §2 補目錄、§9 新增「發佈網站」；README 補網站連結</li>
+<li>驗證：54 個 HTML 檔、4,340 個內部連結沒有斷鏈；headless Chrome 截圖檢查桌面、390px 手機寬度、深色，沒有橫向溢出</li>
+</ul>
+
+<p class="src-note">這一頁由 <code>wiki/log.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../assets/site.js"></script>
+</body>
+</html>

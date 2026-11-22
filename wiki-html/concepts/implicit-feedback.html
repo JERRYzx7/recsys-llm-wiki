@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隱式回饋與互動訊號｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="ab-testing.html">A/B 測試與離線指標</a></li><li><a href="transformer.html">Transformer 與注意力機制</a></li><li><a href="engagement-vs-stated-preference.html">互動</a></li><li><a href="user-controls.html">使用者控制工具</a></li><li><a href="optimization-objective.html">優化目標</a></li><li><a href="cold-start.html">冷啟動</a></li><li><a href="collaborative-filtering.html">協同過濾</a></li><li><a href="online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="retrieval.html">召回／候選生成</a></li><li><a href="visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="diversity-and-exploration.html">多樣性與探索</a></li><li><a href="embedding.html">嵌入向量</a></li><li><a href="ranking.html">排序</a></li><li><a href="recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="polarization.html">極化</a></li><li><a href="algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="generative-recommendation.html">生成式推薦</a></li><li><a href="scaling-law.html">規模定律</a></li><li><a href="filter-bubble.html">過濾泡泡</a></li><li><a href="implicit-feedback.html" aria-current="page">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Concepts</p>
+<div class="meta-row"><span class="chip type">概念</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/youtube-dnn-2016.html">YouTube 2016</a><a class="chip" href="../sources/tiktok-foryou.html">TikTok 2020</a><a class="chip" href="../sources/x-algorithm.html">X 開源 README</a><a class="chip" href="../sources/monolith.html">Monolith 2022</a><a class="chip" href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="隱式回饋與互動訊號implicit-feedback">隱式回饋與互動訊號（Implicit Feedback）</h1>
+<p><strong>一句話定義</strong>：使用者沒有明說「我喜歡」，但透過行為透露了偏好，例如看完、重看、停留、分享、快速滑走。推薦系統主要就是靠這些行為學習。</p>
+<h2 id="白話解釋">白話解釋</h2>
+<p><strong>比喻：餐廳老闆觀察客人。</strong></p>
+<ul>
+<li>客人很少填滿意度問卷（<strong>明確回饋</strong>），但老闆看得到他把哪道菜吃光、哪道剩一半、下次又點了什麼（<strong>隱式回饋</strong>）。</li>
+<li>後者多得多，也更誠實。</li>
+</ul>
+<p><strong>你在滑手機時，每個動作都是在「投票」</strong>：停留兩秒、看完、重看、往回滑、按「不感興趣」。</p>
+<h2 id="為什麼需要它">為什麼需要它</h2>
+<ul>
+<li><strong>數量差太多</strong>：YouTube 雖然有按讚／倒讚和問卷，但訓練時用的是觀看紀錄，因為隱式資料「多了好幾個數量級」，連冷門內容都能學到（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, §3.1, p.2）。</li>
+<li><strong>真實答案很難取得</strong>：YouTube 說它們「很少能取得使用者滿意度的真實答案」，只能用帶雜訊的隱式回饋（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.1）。</li>
+</ul>
+<h2 id="各平台看哪些訊號">各平台看哪些訊號</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>平台</th>
+<th>訊號</th>
+<th>出處</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TikTok</td>
+<td>按讚、分享、追蹤、留言、自己的創作；<strong>看完長影片是強訊號</strong>；國家相同是弱訊號；裝置和語言權重較低</td>
+<td><a href="../sources/tiktok-foryou.html">TikTok 2020</a>, p.1–2</td>
+</tr>
+<tr>
+<td>TikTok（© 2025 說明頁）</td>
+<td>看了、看完、按讚、略過、<strong>追蹤關係</strong>；會預測點配樂、觀看一定時間、和作者個人頁互動</td>
+<td><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a>, p.12–13</td>
+</tr>
+<tr>
+<td>YouTube 2016</td>
+<td>看完影片算正例；觀看時間用來加權；搜尋歷史</td>
+<td><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.2, p.7</td>
+</tr>
+<tr>
+<td>X 2026</td>
+<td>喜歡、回覆、轉發、分享、點擊、<strong>停留與停留時間</strong>、影片續看秒數、追蹤；<strong>負面</strong>：不感興趣、靜音、封鎖、檢舉、沒停留</td>
+<td><a href="../sources/x-algorithm.html">X 開源 README</a>, #Scoring and Ranking</td>
+</tr>
+<tr>
+<td>Monolith</td>
+<td>點擊、按讚、轉換（購買）等使用者行為，以串流方式即時收集</td>
+<td><a href="../sources/monolith.html">Monolith 2022</a>, p.4</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="注意事項">注意事項</h2>
+<ul>
+<li><strong>訊號 ≠ 滿意</strong>：看完不代表喜歡，可能只是忘了關；停留久也可能是被激怒。這就是「代理指標」的問題，見 <a href="optimization-objective.html">優化目標</a>。</li>
+<li><strong>負面訊號也很重要</strong>：TikTok 的「不感興趣」、隱藏創作者或音樂（<a href="../sources/tiktok-foryou.html">TikTok 2020</a>, p.2）；X 給負面行為負權重（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Scoring and Ranking）。</li>
+<li><strong>你的行為主要影響你自己的推薦</strong>：X 特別澄清，權重乘的是「你本人」做出某行為的預測機率，這個機率主要取決於你自己的行為（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Scoring and Ranking）。</li>
+</ul>
+<h2 id="相關">相關</h2>
+<ul>
+<li><a href="ranking.html">排序</a>、<a href="optimization-objective.html">優化目標</a>、<a href="collaborative-filtering.html">協同過濾</a>、<a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="collaborative-filtering.html">協同過濾</a><span>概念</span></li><li><a href="engagement-vs-stated-preference.html">互動</a><span>概念</span></li><li><a href="optimization-objective.html">優化目標</a><span>概念</span></li><li><a href="ranking.html">排序</a><span>概念</span></li><li><a href="user-controls.html">使用者控制工具</a><span>概念</span></li><li><a href="../glossary.html">詞彙表</a><span>詞彙表</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a><span>來源</span></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a><span>來源</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/concepts/implicit-feedback.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

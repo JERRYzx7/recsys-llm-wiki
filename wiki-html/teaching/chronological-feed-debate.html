@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>課堂辯論：該不該把動態改回「時間序」？｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="../concepts/user-controls.html">使用者控制工具</a></li><li><a href="../concepts/optimization-objective.html">優化目標</a></li><li><a href="../concepts/cold-start.html">冷啟動</a></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="../concepts/retrieval.html">召回／候選生成</a></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="../concepts/embedding.html">嵌入向量</a></li><li><a href="../concepts/ranking.html">排序</a></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="../concepts/polarization.html">極化</a></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="../concepts/scaling-law.html">規模定律</a></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="chronological-feed-debate.html" aria-current="page">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Teaching</p>
+<div class="meta-row"><span class="chip type">教學</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/guess-2023.html">Guess 2023</a><a class="chip" href="../sources/milli-2025.html">Milli</a><a class="chip" href="../sources/haroon-2023.html">Haroon 2023</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="課堂辯論該不該把動態改回時間序">課堂辯論：該不該把動態改回「時間序」？</h1>
+<h2 id="比喻">比喻</h2>
+<p><strong>演算法動態 vs. 時間序動態，就像「餐廳主廚推薦」vs.「照上菜順序吃」。</strong></p>
+<ul>
+<li><strong>主廚推薦</strong>（演算法）：主廚觀察你愛吃什麼，挑最可能讓你吃不停的菜，但可能都是重口味。</li>
+<li><strong>照順序上</strong>（時間序）：廚房做好什麼就先上什麼，比較平淡，但也可能混進品質不穩的菜。</li>
+</ul>
+<h2 id="辯論題目">辯論題目</h2>
+<blockquote>
+<p>「為了社會好，社群平台應該預設使用時間序動態。」</p>
+</blockquote>
+<h3 id="正方論點附證據">正方論點（附證據）</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>論點</th>
+<th>證據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>演算法放大憤怒和敵意</td>
+<td>Twitter 演算法動態的敵意內容 +0.24 SD，政治推文的憤怒 +0.75 SD（<a href="../sources/milli-2025.html">Milli</a>, p.6–8）</td>
+</tr>
+<tr>
+<td>演算法動態有更多不文明內容</td>
+<td>Facebook 演算法 3.2% vs. 時間序 1.8%（<a href="../sources/guess-2023.html">Guess 2023</a>, p.4）</td>
+</tr>
+<tr>
+<td>使用者其實不想看演算法挑的政治內容</td>
+<td>政治推文的偏好 −0.18 SD（<a href="../sources/milli-2025.html">Milli</a>, p.8）</td>
+</tr>
+<tr>
+<td>時間序能減少使用時間，降低成癮</td>
+<td>FB 使用時間從「比一般人多 73%」降到「多 37%」（<a href="../sources/guess-2023.html">Guess 2023</a>, p.3）</td>
+</tr>
+<tr>
+<td>YouTube 推薦會逐漸帶向問題頻道</td>
+<td>1.2% → 2.5%；36% 的假帳號遇到過（<a href="../sources/haroon-2023.html">Haroon 2023</a>, p.5）</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="反方論點附證據">反方論點（附證據）</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>論點</th>
+<th>證據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>時間序有<strong>更多不可信來源</strong></td>
+<td>Facebook 2.6% → 4.4%（+68.8%）（<a href="../sources/guess-2023.html">Guess 2023</a>, p.4）</td>
+</tr>
+<tr>
+<td>改了 3 個月，極化<strong>沒有改變</strong></td>
+<td>議題極化、情感極化 p ≈ 1（<a href="../sources/guess-2023.html">Guess 2023</a>, p.4）</td>
+</tr>
+<tr>
+<td>使用者會跑去其他平台</td>
+<td>Instagram 時間序組在 TikTok 的時間 +36%（<a href="../sources/guess-2023.html">Guess 2023</a>, p.3）</td>
+</tr>
+<tr>
+<td>照使用者「想看的」排序，反而可能加深同溫</td>
+<td>減少的主要是對立陣營的推文（<a href="../sources/milli-2025.html">Milli</a>, p.7–10）</td>
+</tr>
+<tr>
+<td>時間序本身也被演算法間接影響</td>
+<td>你追蹤的人可能是演算法推薦的（<a href="../sources/milli-2025.html">Milli</a>, p.11）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="常見迷思-vs-事實">常見迷思 vs. 事實</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>迷思</th>
+<th>事實（出處）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「研究已經證明演算法造成極化」</td>
+<td>最大型的隨機實驗沒有偵測到 3 個月內的態度變化（<a href="../sources/guess-2023.html">Guess 2023</a>, p.4）</td>
+</tr>
+<tr>
+<td>「研究已經證明演算法無害」</td>
+<td>演算法確實放大憤怒和敵意的內容（<a href="../sources/milli-2025.html">Milli</a>, p.6），而且長期、整體的效果還沒有被測量（<a href="../sources/guess-2023.html">Guess 2023</a>, p.6）</td>
+</tr>
+<tr>
+<td>「YouTube 會把每個人都拉進極端兔子洞」</td>
+<td>極端程度只增加一點點（+0.77 → +0.79）；但問題頻道的推薦確實在增加，右派帳號最明顯（<a href="../sources/haroon-2023.html">Haroon 2023</a>, p.5）</td>
+</tr>
+<tr>
+<td>「時間序比較乾淨」</td>
+<td>時間序的不文明內容比較少，但<strong>不可信來源比較多</strong>（<a href="../sources/guess-2023.html">Guess 2023</a>, p.4）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="課堂進行方式">課堂進行方式</h2>
+<ol>
+<li><strong>分組</strong>（5 分鐘）：正方、反方、評審團。</li>
+<li><strong>讀證據卡</strong>（10 分鐘）：每組拿到上面的證據卡，提醒他們注意「平台、年份、方法」。</li>
+<li><strong>辯論</strong>（15 分鐘）。</li>
+<li><strong>評審總結</strong>（5 分鐘）：引導到結論，「每種排序都有取捨；重點是<strong>優化什麼目標</strong>。」</li>
+<li><strong>延伸提問</strong>：如果你是平台工程師，你會在 X 的權重公式裡加入什麼新的負面訊號？（連到 <a href="../concepts/optimization-objective.html">優化目標</a>）</li>
+</ol>
+<h2 id="可上簡報的圖解構想">可上簡報的圖解構想</h2>
+<ul>
+<li>天平：左邊放「演算法」的代價（憤怒、敵意、不文明），右邊放「時間序」的代價（不可信來源、使用者流失），中間寫「沒有免費的午餐」。</li>
+<li>因果鏈：演算法 → 推了什麼 → 你看到什麼 → 當下感受 → 長期態度，每一段標上對應的研究，最後一段打一個問號。</li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="../concepts/polarization.html">極化</a><span>概念</span></li><li><a href="../glossary.html">詞彙表</a><span>詞彙表</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="../sources/guess-2023.html">Guess 2023</a><span>來源</span></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a><span>整合</span></li><li><a href="myths-and-facts.html">推薦演算法的常見迷思與事實</a><span>教學</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/teaching/chronological-feed-debate.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

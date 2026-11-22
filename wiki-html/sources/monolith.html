@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monolith 2022｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="guess-2023.html">Guess 2023</a></li><li><a href="hstu.html">HSTU 2024</a></li><li><a href="haroon-2023.html">Haroon 2023</a></li><li><a href="milli-2025.html">Milli</a></li><li><a href="monolith.html" aria-current="page">Monolith 2022</a></li><li><a href="onerec.html">OneRec 2025</a></li><li><a href="tiktok-foryou.html">TikTok 2020</a></li><li><a href="tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="x-algorithm.html">X 開源 README</a></li><li><a href="youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="../concepts/user-controls.html">使用者控制工具</a></li><li><a href="../concepts/optimization-objective.html">優化目標</a></li><li><a href="../concepts/cold-start.html">冷啟動</a></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="../concepts/retrieval.html">召回／候選生成</a></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="../concepts/embedding.html">嵌入向量</a></li><li><a href="../concepts/ranking.html">排序</a></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="../concepts/polarization.html">極化</a></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="../concepts/scaling-law.html">規模定律</a></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Sources</p>
+<div class="meta-row"><span class="chip type">來源</span><span class='chip-label'>引用來源</span><a class="chip" href="monolith.html">Monolith 2022</a><span class="chip-label">更新 2026-11-17</span><span class="chip-label">原始檔 raw/03-monolith.pdf（未公開）</span></div>
+<h1 id="monolith字節跳動的即時推薦系統monolith-real-time-recommendation-system-with-collisionless-embedding-table">Monolith：字節跳動的即時推薦系統（Monolith: Real Time Recommendation System With Collisionless Embedding Table）</h1>
+<p><strong>一句話</strong>：推薦系統面對的使用者興趣「每分鐘都在變」，所以 Monolith 讓模型<strong>上線後繼續邊服務邊學習</strong>，並以分鐘級的頻率把新參數推到線上。它也用一種「不會撞號」的雜湊表，讓每個使用者和影片都有自己專屬的 embedding。</p>
+<h2 id="背景它想解決什麼問題">背景：它想解決什麼問題</h2>
+<p>推薦資料和語言、影像資料有兩點根本不同（p.1）：</p>
+<ol>
+<li><strong>特徵大多是稀疏、類別型、而且一直在變</strong>：使用者 ID 和影片 ID 的數量多到單機記憶體放不下，而且會持續增加（p.2）。</li>
+<li><strong>資料分布不穩定</strong>，也就是<strong>概念漂移（Concept Drift）</strong>：<blockquote>
+<p>"Visual and linguistic patterns barely develop in a time scale of centuries, while the same user interested in one topic could shift their zeal every next minute."（p.2）
+（視覺和語言模式要以世紀為尺度才會改變，同一個使用者對某個主題的熱情卻可能下一分鐘就轉移。）</p>
+</blockquote>
+</li>
+</ol>
+<p>傳統框架（TensorFlow、PyTorch）把「批次訓練」和「上線服務」完全分開，模型無法即時吸收使用者回饋（p.1）。</p>
+<h2 id="核心做法">核心做法</h2>
+<h3 id="1-無碰撞雜湊表collisionless-hashtable21-p34">1. 無碰撞雜湊表（Collisionless HashTable）（§2.1, p.3–4）</h3>
+<ul>
+<li><strong>問題</strong>：很多系統用「雜湊技巧」把大量 ID 壓進固定大小的表，不同 ID 可能共用同一個 embedding（碰撞）。這個做法假設 ID 出現頻率很平均、碰撞無害，但實際上少數熱門使用者和物品出現次數多得多，碰撞會傷害模型品質（p.2）。</li>
+<li><strong>做法</strong>：用 <strong>Cuckoo Hashing（布穀鳥雜湊）</strong> 實作 key-value 雜湊表，新 key 插入時不會和舊 key 衝突（p.3）。</li>
+<li><strong>省記憶體的兩個過濾機制</strong>（p.3–4）：<ul>
+<li><strong>頻率過濾</strong>：只出現幾次的 ID 不納入。ID 呈長尾分布，冷門 ID 的 embedding 本來就學不好，對結果影響不大（p.3）。</li>
+<li><strong>過期機制</strong>：長期沒出現的 ID 自動刪除，例如不再活躍的使用者、過時的短影音（p.3–4）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-線上訓練online-training22-p45-figure-1-4">2. 線上訓練（Online Training）（§2.2, p.4–5, Figure 1, 4）</h3>
+<ul>
+<li><strong>兩個階段</strong>：先用歷史資料做<strong>批次訓練</strong>；模型部署上線後進入<strong>線上訓練</strong>，持續吃即時資料、更新參數（p.4）。</li>
+<li><strong>資料流</strong>（p.4, Figure 4–5）：<ul>
+<li>用 Kafka 收集使用者行為（點擊、按讚、轉換…）和特徵。</li>
+<li>用 Flink 的「線上 joiner」把特徵和行為配對，產生訓練樣本。</li>
+</ul>
+</li>
+<li><strong>負樣本抽樣與修正</strong>：負樣本遠多於正樣本，所以先抽樣，服務時再做 log odds 修正，避免預測偏高（p.5）。</li>
+</ul>
+<h3 id="3-參數同步223-p5">3. 參數同步（§2.2.3, p.5）</h3>
+<ul>
+<li>線上模型有<strong>好幾 TB</strong>，不能停機整個替換（p.5）。</li>
+<li><strong>只同步「被動過」的參數</strong>：短時間內只有少數 ID 被訓練到，所以只把這些 ID 的 embedding 以<strong>分鐘級</strong>間隔推到線上（p.5）。</li>
+<li><strong>稀疏參數</strong>（embedding）頻繁同步；<strong>密集參數</strong>（神經網路權重）變化慢，每天同步一次（p.5, p.9）。</li>
+</ul>
+<h3 id="4-容錯用可靠性換即時性23-p6322-p9">4. 容錯：用可靠性換即時性（§2.3, p.6；§3.2.2, p.9）</h3>
+<ul>
+<li>參數伺服器每天只做一次快照，壞掉時最多損失一天的更新（p.6）。</li>
+<li>作者的估算（p.9）：<ul>
+<li>假設參數分散在 1000 台伺服器、每台每天故障率 0.01%，平均每 10 天才會壞一台（p.9）。</li>
+<li>以 DAU 1500 萬計算，等於每 10 天損失 1.5 萬名使用者一天的回饋，影響很小（p.9）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="關鍵數字與結果皆為作者報告">關鍵數字與結果（皆為作者報告）</h2>
+<ul>
+<li><strong>碰撞實驗（MovieLens ml-25m 公開資料集）</strong>（p.6, Table 1）：<ul>
+<li>資料規模：約 2500 萬筆評分、約 16.2 萬名使用者、約 6.2 萬部電影（p.6）。</li>
+<li>雜湊後的碰撞率：使用者 ID 7.73%、電影 ID 2.86%（p.6, Table 1）。</li>
+<li>無碰撞版本從第一個 epoch 起 AUC 就比較高，收斂值也比較高（p.7, Figure 7）。</li>
+</ul>
+</li>
+<li><strong>內部正式環境模型</strong>：約 1000 個 embedding 表；無碰撞版本的線上 AUC 持續較高（p.6–7, Figure 8）。</li>
+<li>
+<p><strong>線上訓練實驗（Criteo 廣告資料集）</strong>（p.7–8）：</p>
+<ul>
+<li>設定：7 天資料，前 5 天做批次訓練、後 2 天模擬線上訓練。</li>
+<li>平均 AUC（Table 2, p.8；表中數值皆出自此表）：</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>同步間隔</th>
+<th>線上訓練</th>
+<th>只做批次訓練</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 小時</td>
+<td>79.66</td>
+<td>約 79.42–79.44</td>
+</tr>
+<tr>
+<td>1 小時</td>
+<td>79.78</td>
+<td>約 79.42–79.44</td>
+</tr>
+<tr>
+<td>30 分鐘</td>
+<td>79.80</td>
+<td>約 79.42–79.44</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>結論：同步越頻繁越好。</li>
+<li><strong>線上 A/B 實驗（某個正式廣告模型）</strong>：線上訓練相對批次訓練的「AUC Improvement %」7 天介於 <strong>14.0%–18.1%</strong>（Table 3, p.9）。</li>
+<li>⚠️ 論文沒有定義這個「提升百分比」怎麼計算。和離線實驗不到 0.4 個百分點的差距相比，落差非常大，引用時要註明。</li>
+<li><strong>傳輸量估算</strong>：每分鐘更新 10 萬個 ID、embedding 維度 1024 時，每分鐘約傳 400MB（p.9）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="限制與注意事項">限制與注意事項</h2>
+<ul>
+<li><strong>Workshop 論文</strong>，不是主會議論文；程式碼在論文發表時寫「即將釋出」（p.1 註腳）。</li>
+<li>論文說 Monolith 已經用在 <strong>BytePlus Recommend</strong>（字節的對外推薦服務），並<strong>沒有明說用在 TikTok／抖音</strong>。摘要只提到短影音排序和線上廣告是這類需求的例子（p.1）。</li>
+<li>線上 A/B 實驗是<strong>廣告模型</strong>，不是內容推薦模型（p.7, p.9）。</li>
+<li>重點在系統工程（如何即時訓練），不是推薦什麼內容；論文沒有討論社會影響。</li>
+</ul>
+<h2 id="與其他來源的關係">與其他來源的關係</h2>
+<ul>
+<li><strong>呼應</strong> <a href="youtube-dnn-2016.html">YouTube 2016</a> 的「新鮮度」難題（p.1）：YouTube 用「樣本年齡」特徵補償模型偏向過去的問題；Monolith 則直接讓模型即時更新。兩種做法都在對付「使用者興趣會變」。</li>
+<li><strong>對照</strong> <a href="x-algorithm.html">X 開源 README</a>：X 也使用雜湊 embedding（多個雜湊函數），理由是「不用維護詞彙表、新貼文可以立刻被表示」（#Key Design Decisions）。Monolith 則主張碰撞會傷害品質。這個張力見 <a href="../concepts/embedding.html">嵌入向量</a> 的爭議區塊。</li>
+<li><strong>同一家母公司</strong>：<a href="tiktok-foryou.html">TikTok 2020</a> 是 TikTok 的平台自述，兩者都出自字節跳動，但沒有證據顯示是同一套系統，見 <a href="../entities/bytedance.html">字節跳動</a>。</li>
+</ul>
+<h2 id="相關頁面">相關頁面</h2>
+<ul>
+<li><a href="../entities/bytedance.html">字節跳動</a>、<a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a>、<a href="../concepts/embedding.html">嵌入向量</a>、<a href="../concepts/ab-testing.html">A/B 測試與離線指標</a>、<a href="../concepts/ranking.html">排序</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a><span>概念</span></li><li><a href="../concepts/cold-start.html">冷啟動</a><span>概念</span></li><li><a href="../concepts/embedding.html">嵌入向量</a><span>概念</span></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a><span>概念</span></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a><span>概念</span></li><li><a href="../concepts/ranking.html">排序</a><span>概念</span></li><li><a href="../entities/bytedance.html">字節跳動</a><span>實體</span></li><li><a href="../entities/tiktok.html">TikTok</a><span>實體</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="hstu.html">HSTU 2024</a><span>來源</span></li><li><a href="onerec.html">OneRec 2025</a><span>來源</span></li><li><a href="tiktok-foryou.html">TikTok 2020</a><span>來源</span></li><li><a href="x-algorithm.html">X 開源 README</a><span>來源</span></li><li><a href="youtube-dnn-2016.html">YouTube 2016</a><span>來源</span></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a><span>整合</span></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a><span>教學</span></li><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a><span>教學</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/sources/monolith.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

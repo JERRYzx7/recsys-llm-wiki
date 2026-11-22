@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guess 2023｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="guess-2023.html" aria-current="page">Guess 2023</a></li><li><a href="hstu.html">HSTU 2024</a></li><li><a href="haroon-2023.html">Haroon 2023</a></li><li><a href="milli-2025.html">Milli</a></li><li><a href="monolith.html">Monolith 2022</a></li><li><a href="onerec.html">OneRec 2025</a></li><li><a href="tiktok-foryou.html">TikTok 2020</a></li><li><a href="tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="x-algorithm.html">X 開源 README</a></li><li><a href="youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="../concepts/user-controls.html">使用者控制工具</a></li><li><a href="../concepts/optimization-objective.html">優化目標</a></li><li><a href="../concepts/cold-start.html">冷啟動</a></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="../concepts/retrieval.html">召回／候選生成</a></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="../concepts/embedding.html">嵌入向量</a></li><li><a href="../concepts/ranking.html">排序</a></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="../concepts/polarization.html">極化</a></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="../concepts/scaling-law.html">規模定律</a></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Sources</p>
+<div class="meta-row"><span class="chip type">來源</span><span class='chip-label'>引用來源</span><a class="chip" href="guess-2023.html">Guess 2023</a><span class="chip-label">更新 2026-11-17</span><span class="chip-label">原始檔 raw/08-guess-2023.pdf（未公開）</span></div>
+<h1 id="guess-2023把-facebookinstagram-動態改回時間序政治態度會變嗎">Guess 2023：把 Facebook／Instagram 動態改回時間序，政治態度會變嗎？</h1>
+<p><strong>一句話</strong>：2020 年美國大選期間，研究團隊隨機把約 2 萬多名 Facebook 和 Instagram 使用者的動態改成「<strong>最新的排最前面</strong>」（時間序），持續 3 個月（p.3）。結果：使用時間和互動<strong>大幅下降</strong>，看到的內容也明顯改變，但<strong>政治極化、政治知識等態度沒有可偵測的變化</strong>。</p>
+<blockquote>
+<p>頁碼說明：引用 <strong>PDF 頁碼</strong>。PDF p.1–7 = 期刊 pp.398–404；p.8 是 2024-12 勘誤，p.9–10 是 2026-03 勘誤，p.11 是引用資訊頁。</p>
+</blockquote>
+<h2 id="背景它想解決什麼問題">背景：它想解決什麼問題</h2>
+<ul>
+<li>大眾普遍認為演算法會造成過濾泡泡、極化、假訊息擴散，但演算法不透明，存在很多「<strong>民間理論（folk theories）</strong>」（p.1）。</li>
+<li>平台內部的 A/B 測試通常只測單一元素，很難評估「整個排序演算法」的總效果（p.1）。</li>
+<li>時間序動態是政策辯論中常被提出的替代方案（p.1）。</li>
+</ul>
+<h2 id="研究設計p3">研究設計（p.3）</h2>
+<ul>
+<li><strong>合作模式</strong>：Meta 與 Meta 以外的學者合作。<ul>
+<li>研究費用（受試者酬勞、招募、資料蒐集）由 <strong>Meta 支付</strong>；學者沒有拿 Meta 的報酬（p.6）。</li>
+<li><strong>Meta 沒有發表前審查權</strong>，學術主筆擁有最終控制權（p.6）。</li>
+</ul>
+</li>
+<li><strong>受試者</strong>：在美國、18 歲以上、同意參加的使用者，從動態頂端的問卷邀請招募。他們比一般使用者更活躍（p.3）。</li>
+<li><strong>樣本</strong>：Facebook n = 23,391、Instagram n = 21,373（p.3）。</li>
+<li><strong>介入方式</strong>：2020-09-24 到 12-23，實驗組改成時間序動態，對照組維持原本的演算法（p.3）。<ul>
+<li>影響範圍包括朋友、粉專、社團的貼文，<strong>不包括廣告</strong>。</li>
+<li>估計約有 80% 的內容受到影響（p.3）。</li>
+</ul>
+</li>
+<li>研究設計、測量方式和分析計畫都<strong>事先註冊</strong>（p.3）。</li>
+</ul>
+<h2 id="主要結果">主要結果</h2>
+<h3 id="1-使用行為大幅改變p3-figure-1">1. 使用行為大幅改變（p.3, Figure 1）</h3>
+<ul>
+<li><strong>時間</strong>：<ul>
+<li>Facebook：演算法組的使用時間比一般美國使用者多 73%，時間序組只多 37%（p.3）。</li>
+<li>Instagram：107% 對比 84%（p.3）。</li>
+</ul>
+</li>
+<li><strong>轉去用別的平台</strong>：時間序組的 Instagram 使用者，花在 TikTok 的時間增加 36%、YouTube 增加 20%（p.3）。</li>
+<li><strong>互動</strong>：Facebook 按讚率從 6.7% 降到 3.1%（p.3）。</li>
+<li><strong>來自朋友的內容</strong>：Facebook 上減少 24 個百分點（p.3）。</li>
+</ul>
+<h3 id="2-看到的內容改變p4-figure-2">2. 看到的內容改變（p.4, Figure 2）</h3>
+<p>時間序動態相對演算法動態的變化（Facebook；表中數值皆出自 p.4 正文與 Figure 2）：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>內容</th>
+<th>演算法 → 時間序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>政治內容</td>
+<td>+15.2%</td>
+</tr>
+<tr>
+<td><strong>不可信來源</strong></td>
+<td><strong>2.6% → 4.4%（+68.8%）</strong></td>
+</tr>
+<tr>
+<td><strong>不文明內容</strong></td>
+<td><strong>3.2% → 1.8%（−43%）</strong></td>
+</tr>
+<tr>
+<td>含歧視字眼</td>
+<td>0.03% → 0.019%</td>
+</tr>
+<tr>
+<td>立場相同的來源</td>
+<td>53.7% → 48.1%</td>
+</tr>
+<tr>
+<td>立場相反的來源</td>
+<td>20.7% → 18.7%</td>
+</tr>
+<tr>
+<td>溫和或立場混合的來源</td>
+<td>22.6% → 30.9%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>作者認為，「立場相同的內容減少」和「中間內容增加」的幅度，都比「立場相反的內容減少」更大，這「<strong>可以說符合</strong>」演算法造成同溫層或過濾泡泡效應的說法（p.4）。</li>
+<li>Instagram 的不可信來源也增加（1.3% → 1.6%），不文明內容沒有變化（p.4）。</li>
+</ul>
+<h3 id="3-態度和行為沒有可偵測的變化p45-figure-3">3. 態度和行為沒有可偵測的變化（p.4–5, Figure 3）</h3>
+<ul>
+<li><strong>議題極化、情感極化</strong>：沒有顯著差異（p ≈ 1）（p.4）。</li>
+<li><strong>選舉知識、新聞知識</strong>：沒有差異（p &gt; 0.63）（p.4）。</li>
+<li><strong>自評的政治參與、投票率</strong>：沒有差異（p.4）。</li>
+<li><strong>例外</strong>：<ul>
+<li>平台上的政治互動<strong>下降</strong>：Facebook −0.117 SD、Instagram −0.090 SD（p.4）。作者認為主要是因為整體互動下降（p.5）。</li>
+<li>Facebook 時間序組點擊黨派新聞的次數增加（+0.107 SD）（p.5）。</li>
+</ul>
+</li>
+<li><strong>次要假設</strong>（信任媒體、對選舉正當性的看法、支持政治暴力等）：幾乎都沒有差異（p.5）。</li>
+<li>作者結論：可以<strong>排除連中等程度的效果</strong>。這降低了「動態演算法直接造成個人極化」的預期（p.6）。</li>
+</ul>
+<h2 id="限制作者自述p56">限制（作者自述，p.5–6）</h2>
+<ul>
+<li><strong>時間</strong>：3 個月可能不夠長，雖然已經比多數同類研究長（p.5）。</li>
+<li><strong>情境</strong>：在高度極化的美國大選期間進行，結果可能不適用於其他國家或其他時期（p.5–6）。</li>
+<li><strong>「一般均衡」效果測不到</strong>（p.6）：<ul>
+<li>演算法可能改變創作者、媒體、競選團隊生產什麼內容，這些又會回饋到演算法本身。</li>
+<li>實驗只改變個人的動態，看不到這種整體效應。</li>
+<li>時間序組看到的貼文，有一部分是由仍在使用演算法的其他使用者分享的。</li>
+</ul>
+</li>
+<li><strong>只比較了一種替代方案</strong>（時間序），換成其他排序方式結果可能不同（p.5）。</li>
+<li><strong>受試者比一般使用者更活躍</strong>（p.3）。</li>
+</ul>
+<h2 id="勘誤p810">勘誤（p.8–10）</h2>
+<ul>
+<li><strong>2024-12</strong>：Instagram 的「不可信來源」變數有處理錯誤。作者估計影響有限，<strong>Facebook 的結果不受影響</strong>（p.8）。</li>
+<li><strong>2026-03</strong>：Instagram 的「輪播貼文」計算方式不一致，不文明和歧視字眼的比例可能被<strong>低估</strong>。作者認為實驗效果的估計不受影響，Facebook 和問卷資料也不受影響（p.9–10）。</li>
+</ul>
+<h2 id="與其他來源的關係">與其他來源的關係</h2>
+<ul>
+<li><strong>對照</strong> <a href="milli-2025.html">Milli</a>：<ul>
+<li>Milli 發現 Twitter 的互動導向演算法會放大憤怒和敵視對立陣營的內容，讓讀者短期內對對立陣營感覺更差。</li>
+<li>Milli 也直接引用本研究，指出兩者的差異在於本研究測的是較長期的整體態度，而且沒有涵蓋一般均衡效果（<a href="milli-2025.html">Milli</a>, p.9）。</li>
+<li>見 <a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a>。</li>
+</ul>
+</li>
+<li><strong>呼應</strong> Milli 的發現：Facebook 演算法動態的不文明內容比時間序多（3.2% vs. 1.8%），方向一致（p.4）。</li>
+<li><strong>但也有反方向的證據</strong>：演算法動態的<strong>不可信來源比較少</strong>（2.6% vs. 4.4%）。作者推測可能和平台降低低品質來源排名的措施有關（p.5）。這讓「改回時間序就比較好」的主張變得複雜。</li>
+<li><strong>對照</strong> <a href="hstu.html">HSTU 2024</a> 的 Impact Statement：HSTU 宣稱更好的推薦可能減少假新聞（p.10）。本研究顯示，2020 年 Facebook 的演算法確實比時間序少了不可信來源，但這不等於證明 HSTU 的主張。</li>
+<li><strong>平台合作模式</strong>：見 <a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a> 和 <a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a>。</li>
+</ul>
+<h2 id="相關頁面">相關頁面</h2>
+<ul>
+<li><a href="../entities/meta.html">Meta</a>、<a href="../concepts/polarization.html">極化</a>、<a href="../concepts/filter-bubble.html">過濾泡泡</a>、<a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a>、<a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a>、<a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a><span>概念</span></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a><span>概念</span></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a><span>概念</span></li><li><a href="../concepts/optimization-objective.html">優化目標</a><span>概念</span></li><li><a href="../concepts/polarization.html">極化</a><span>概念</span></li><li><a href="../entities/meta.html">Meta</a><span>實體</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="haroon-2023.html">Haroon 2023</a><span>來源</span></li><li><a href="milli-2025.html">Milli</a><span>來源</span></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a><span>整合</span></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a><span>整合</span></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a><span>教學</span></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a><span>教學</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/sources/guess-2023.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube 2016｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="guess-2023.html">Guess 2023</a></li><li><a href="hstu.html">HSTU 2024</a></li><li><a href="haroon-2023.html">Haroon 2023</a></li><li><a href="milli-2025.html">Milli</a></li><li><a href="monolith.html">Monolith 2022</a></li><li><a href="onerec.html">OneRec 2025</a></li><li><a href="tiktok-foryou.html">TikTok 2020</a></li><li><a href="tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="x-algorithm.html">X 開源 README</a></li><li><a href="youtube-dnn-2016.html" aria-current="page">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="../concepts/user-controls.html">使用者控制工具</a></li><li><a href="../concepts/optimization-objective.html">優化目標</a></li><li><a href="../concepts/cold-start.html">冷啟動</a></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="../concepts/retrieval.html">召回／候選生成</a></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="../concepts/embedding.html">嵌入向量</a></li><li><a href="../concepts/ranking.html">排序</a></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="../concepts/polarization.html">極化</a></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="../concepts/scaling-law.html">規模定律</a></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Sources</p>
+<div class="meta-row"><span class="chip type">來源</span><span class='chip-label'>引用來源</span><a class="chip" href="youtube-dnn-2016.html">YouTube 2016</a><span class="chip-label">更新 2026-11-17</span><span class="chip-label">原始檔 raw/02-youtube-dnn-2016.pdf（未公開）</span></div>
+<h1 id="youtube-深度神經網路推薦deep-neural-networks-for-youtube-recommendations">YouTube 深度神經網路推薦（Deep Neural Networks for YouTube Recommendations）</h1>
+<p><strong>一句話</strong>：YouTube 把推薦拆成兩段：先用一個神經網路從數百萬支影片裡挑出幾百支（召回），再用另一個神經網路精細打分、排序（排序）。排序的目標是「預期觀看時間」，不是點擊率。這篇是業界「兩階段推薦漏斗」的經典範本。</p>
+<h2 id="背景它想解決什麼問題">背景：它想解決什麼問題</h2>
+<p>YouTube 推薦有三大難題（p.1）：</p>
+<ul>
+<li><strong>規模（Scale）</strong>：使用者超過十億、影片庫極大，很多在小資料上有效的演算法在這裡跑不動。</li>
+<li><strong>新鮮度（Freshness）</strong>：每秒都有好幾小時的新影片上傳，系統要能快速反映新內容和使用者的最新行為，這是「探索／利用（exploration/exploitation）」的平衡問題。</li>
+<li><strong>雜訊（Noise）</strong>：很少能取得「使用者滿意度」的真實答案，只能用帶雜訊的<strong>隱式回饋</strong>來建模。</li>
+</ul>
+<p>模型約有<strong>十億個參數</strong>，用<strong>數千億筆樣本</strong>訓練（p.1）。</p>
+<h2 id="核心做法">核心做法</h2>
+<h3 id="1-兩階段漏斗2-p2-figure-2">1. 兩階段漏斗（§2, p.2, Figure 2）</h3>
+<p>數百萬支影片 →（候選生成）→ 數百支 →（排序）→ 數十支。</p>
+<ul>
+<li><strong>候選生成</strong>：只做粗略的個人化（協同過濾），重點是「大致相關」。</li>
+<li><strong>排序</strong>：用大量特徵細分候選影片的相對重要性。</li>
+<li>兩階段設計也讓系統可以混入其他來源的候選（p.2）。</li>
+</ul>
+<h3 id="2-候選生成把推薦當成超多類別分類31-p2">2. 候選生成：把推薦當成「超多類別分類」（§3.1, p.2）</h3>
+<ul>
+<li>問題定義成：給定使用者和情境，預測他「下一支會看哪一支影片」，數百萬支影片各算一個類別。</li>
+<li>使用者和影片都被表示成 <strong>embedding（嵌入向量）</strong>（p.2）。</li>
+<li>訓練資料用<strong>隱式回饋</strong>：看完影片算正例。理由是隱式資料比明確回饋（按讚／倒讚、問卷）多好幾個數量級（p.2）。</li>
+<li>訓練時只抽樣幾千個負類別（candidate sampling），比傳統 softmax 快 100 倍以上（p.2）。</li>
+<li>上線時改用「最近鄰搜尋」快速找出分數最高的影片，延遲必須控制在數十毫秒內（p.3）。</li>
+</ul>
+<h3 id="3-輸入特徵3233-p3-figure-3">3. 輸入特徵（§3.2–3.3, p.3, Figure 3）</h3>
+<ul>
+<li><strong>觀看歷史</strong>：把看過的影片 embedding 取平均。實驗中「平均」比加總、取最大值等做法好（p.3）。</li>
+<li><strong>搜尋歷史</strong>：把搜尋詞切成 token，各自 embed 後取平均。</li>
+<li><strong>人口統計特徵</strong>：地區、裝置、性別、年齡、是否登入，主要用來讓新使用者也能拿到合理的推薦（p.3）。</li>
+<li><strong>「樣本年齡（Example Age）」特徵</strong>（p.3, Figure 4）：<ul>
+<li>問題：機器學習系統是用過去資料預測未來，因此天生偏向過去。</li>
+<li>做法：訓練時把樣本的年齡當作特徵輸入，上線時設成 0。</li>
+<li>效果：模型能反映「新影片剛上架時特別熱門」的時間動態。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-標籤與情境的選擇代理問題surrogate-problem34-p35">4. 標籤與情境的選擇：代理問題（Surrogate Problem）（§3.4, p.3–5）</h3>
+<ul>
+<li>推薦常常是在解一個「代理問題」，再把結果套用到實際情境（p.3）。</li>
+<li><strong>用所有觀看紀錄訓練</strong>，不只用推薦帶來的觀看，否則新內容很難浮上來，系統也會過度偏向「利用」（p.3）。</li>
+<li><strong>每位使用者取固定數量的樣本</strong>，避免少數重度使用者主導模型（p.3）。</li>
+<li><strong>刻意隱藏資訊</strong>（p.3–4）：如果模型知道你剛搜尋「taylor swift」，就會直接把搜尋結果頁複製到首頁，效果很差。</li>
+<li><strong>預測「下一支」而不是「隨機挖掉一支」</strong>（p.4–5, Figure 5）：<ul>
+<li>觀看有方向性，例如影集依序看、先看熱門再看小眾。</li>
+<li>預測未來的觀看在 A/B 測試中表現更好；隨機挖空則會洩漏未來資訊。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-排序預測觀看時間4-p57">5. 排序：預測觀看時間（§4, p.5–7）</h3>
+<ul>
+<li>排序階段只處理幾百支影片，可以使用多很多特徵，通常有<strong>數百個</strong>（p.5）。</li>
+<li>目標是<strong>每次曝光的預期觀看時間</strong>，不是點擊率（p.5）：<blockquote>
+<p>"Ranking by click-through rate often promotes deceptive videos that the user does not complete ("clickbait") whereas watch time better captures engagement."
+（以點擊率排序常會推升使用者不會看完的誘騙影片——標題黨；觀看時間更能反映投入程度。）</p>
+</blockquote>
+</li>
+<li><strong>最重要的訊號</strong>是使用者過去和這部影片、相似影片的互動，例如「你在這個頻道看過幾支影片？上次看這個主題是什麼時候？」（p.6）。</li>
+<li><strong>曝光頻率特徵</strong>：推過但沒被點的影片下次會自然降級，讓推薦列表有變化（churn）（p.6）。</li>
+<li><strong>加權邏輯迴歸</strong>（§4.2, p.7）：點擊的正例用觀看時間加權，未點擊的負例權重為 1，模型學到的勝算（odds）就近似預期觀看時間。</li>
+</ul>
+<h2 id="關鍵數字與結果">關鍵數字與結果</h2>
+<ul>
+<li>候選生成實驗用 <strong>100 萬支影片</strong>和 <strong>100 萬個搜尋詞</strong>的詞彙表，每個 embed 成 256 維；最多取最近 50 次觀看和 50 次搜尋（§3.5, p.4）。</li>
+<li>加入更多特徵、加深網路都能提高離線 MAP（平均精確率）（p.5, Figure 6）。</li>
+<li>排序模型的「加權 per-user loss」（越低越好，作者報告，以隔天的保留資料測試）（Table 1, p.7）：<ul>
+<li>無隱藏層：41.6%（Table 1, p.7）</li>
+<li>1024→512→256 三層 ReLU：34.6%（最佳，且在 CPU 預算內）（Table 1, p.7）</li>
+</ul>
+</li>
+<li>拿掉連續特徵的次方項，loss 增加 0.2%；正負例權重相同時，loss 大幅增加 4.1%（p.7）。</li>
+<li>一百萬個 ID 用 32 維 embedding，參數量是 2048 寬全連接層的 7 倍。可見模型參數<strong>大多在 embedding</strong>（p.6）。</li>
+<li>「樣本年齡」特徵讓新上傳影片的觀看時間在 A/B 測試中「大幅增加」，論文未給具體數字（p.7）。</li>
+</ul>
+<h2 id="限制與注意事項">限制與注意事項</h2>
+<ul>
+<li><strong>2016 年的系統</strong>：只代表當時的 YouTube，後續架構已有很大變化。</li>
+<li><strong>沒有給 A/B 測試的具體數字</strong>，多數線上成效只有定性描述。</li>
+<li><strong>目標仍是「互動／觀看時間」</strong>：論文沒有討論使用者福祉或社會影響。</li>
+<li>論文也坦承：離線指標和 A/B 測試結果「不一定相關」（p.2）。</li>
+</ul>
+<h2 id="與其他來源的關係">與其他來源的關係</h2>
+<ul>
+<li><strong>漏斗架構的原型</strong>：<a href="x-algorithm.html">X 開源 README</a> 在 2026 年仍是「候選來源 → 打分 → 過濾 → 選取」的多階段管線（#System Architecture）。</li>
+<li><strong>優化目標的延續</strong>：YouTube 用觀看時間取代點擊率；<a href="x-algorithm.html">X 開源 README</a> 進一步預測十多種行為再加權；<a href="tiktok-foryou.html">TikTok 2020</a> 也把「看完長影片」視為強訊號（p.2）。演變過程見 <a href="../concepts/optimization-objective.html">優化目標</a>。</li>
+<li><strong>embedding 詞彙表的處理方式不同</strong>：YouTube 截取最常見的前 N 個 ID，其他 ID 對應到零向量（p.6）；<a href="monolith.html">Monolith 2022</a> 用無碰撞雜湊表；<a href="x-algorithm.html">X 開源 README</a> 用多個雜湊函數。比較見 <a href="../concepts/embedding.html">嵌入向量</a>。</li>
+</ul>
+<h2 id="相關頁面">相關頁面</h2>
+<ul>
+<li><a href="../entities/youtube.html">YouTube</a>、<a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a>、<a href="../concepts/retrieval.html">召回／候選生成</a>、<a href="../concepts/ranking.html">排序</a>、<a href="../concepts/embedding.html">嵌入向量</a>、<a href="../concepts/collaborative-filtering.html">協同過濾</a>、<a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a>、<a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a><span>概念</span></li><li><a href="../concepts/cold-start.html">冷啟動</a><span>概念</span></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a><span>概念</span></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a><span>概念</span></li><li><a href="../concepts/embedding.html">嵌入向量</a><span>概念</span></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a><span>概念</span></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a><span>概念</span></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a><span>概念</span></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a><span>概念</span></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a><span>概念</span></li><li><a href="../concepts/optimization-objective.html">優化目標</a><span>概念</span></li><li><a href="../concepts/ranking.html">排序</a><span>概念</span></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a><span>概念</span></li><li><a href="../concepts/retrieval.html">召回／候選生成</a><span>概念</span></li><li><a href="../entities/youtube.html">YouTube</a><span>實體</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="haroon-2023.html">Haroon 2023</a><span>來源</span></li><li><a href="hstu.html">HSTU 2024</a><span>來源</span></li><li><a href="monolith.html">Monolith 2022</a><span>來源</span></li><li><a href="onerec.html">OneRec 2025</a><span>來源</span></li><li><a href="tiktok-foryou.html">TikTok 2020</a><span>來源</span></li><li><a href="tiktok-transparency.html">TikTok 說明頁 2025</a><span>來源</span></li><li><a href="x-algorithm.html">X 開源 README</a><span>來源</span></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a><span>整合</span></li><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a><span>整合</span></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a><span>整合</span></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a><span>教學</span></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a><span>教學</span></li><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a><span>教學</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/sources/youtube-dnn-2016.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

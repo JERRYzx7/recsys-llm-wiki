@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A/B 測試與離線指標｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="ab-testing.html" aria-current="page">A/B 測試與離線指標</a></li><li><a href="transformer.html">Transformer 與注意力機制</a></li><li><a href="engagement-vs-stated-preference.html">互動</a></li><li><a href="user-controls.html">使用者控制工具</a></li><li><a href="optimization-objective.html">優化目標</a></li><li><a href="cold-start.html">冷啟動</a></li><li><a href="collaborative-filtering.html">協同過濾</a></li><li><a href="online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="retrieval.html">召回／候選生成</a></li><li><a href="visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="diversity-and-exploration.html">多樣性與探索</a></li><li><a href="embedding.html">嵌入向量</a></li><li><a href="ranking.html">排序</a></li><li><a href="recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="polarization.html">極化</a></li><li><a href="algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="generative-recommendation.html">生成式推薦</a></li><li><a href="scaling-law.html">規模定律</a></li><li><a href="filter-bubble.html">過濾泡泡</a></li><li><a href="implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Concepts</p>
+<div class="meta-row"><span class="chip type">概念</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/youtube-dnn-2016.html">YouTube 2016</a><a class="chip" href="../sources/monolith.html">Monolith 2022</a><a class="chip" href="../sources/x-algorithm.html">X 開源 README</a><a class="chip" href="../sources/hstu.html">HSTU 2024</a><a class="chip" href="../sources/onerec.html">OneRec 2025</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="ab-測試與離線指標ab-testing-offline-metrics">A/B 測試與離線指標（A/B Testing &amp; Offline Metrics）</h1>
+<p><strong>一句話定義</strong>：平台判斷新演算法好不好有兩種方式。<strong>離線指標</strong>是用歷史資料考模型，<strong>A/B 測試</strong>是真的讓一部分使用者用新版、另一部分用舊版，再比較實際行為。最後拍板通常看 A/B 測試。</p>
+<h2 id="白話解釋">白話解釋</h2>
+<p><strong>比喻：新菜色要不要上菜單。</strong></p>
+<ul>
+<li><strong>離線評估</strong>：主廚自己試吃、照食譜打分。快、便宜，但不一定代表客人喜歡。</li>
+<li><strong>A/B 測試</strong>：一半的客人拿到新菜、一半拿到舊菜，看哪邊吃得比較乾淨、比較常回訪。</li>
+</ul>
+<h2 id="為什麼兩者會不一致">為什麼兩者會不一致</h2>
+<ul>
+<li>YouTube：A/B 測試的結果「不一定和離線實驗相關」，所以最終判斷靠線上實驗（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, §2, p.2）。</li>
+<li>YouTube：代理問題選得好不好，對 A/B 測試的影響很大，卻「很難用離線實驗衡量」（§3.4, p.3）。</li>
+</ul>
+<h2 id="常見指標">常見指標</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>指標</th>
+<th>意思</th>
+<th>來源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AUC</strong></td>
+<td>模型把「會互動的」排在「不會互動的」前面的機率（0.5＝亂猜，1＝完美）</td>
+<td><a href="../sources/monolith.html">Monolith 2022</a>, p.6</td>
+</tr>
+<tr>
+<td><strong>MAP</strong>（平均精確率）</td>
+<td>推薦清單中「猜對」的項目排得有多前面</td>
+<td><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.5</td>
+</tr>
+<tr>
+<td>點擊率、觀看時間</td>
+<td>線上 A/B 測試看的使用者行為</td>
+<td><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.2</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="讀數字時要小心教學重點">讀數字時要小心（教學重點）</h2>
+<ul>
+<li><strong>離線差距看起來很小</strong>：Monolith 在 Criteo 資料集上，線上訓練和批次訓練的 AUC 只差約 0.2–0.4 個百分點（<a href="../sources/monolith.html">Monolith 2022</a>, Table 2, p.8）。業界常認為這種差距在大規模系統上就有意義（背景知識，非本 wiki 來源）。</li>
+<li><strong>線上「提升 %」的定義常常不清楚</strong>：Monolith 報告 A/B 實驗的「AUC Improvement 14–18%」，但沒有說明怎麼計算（<a href="../sources/monolith.html">Monolith 2022</a>, Table 3, p.9）。</li>
+<li><strong>平台很少公開 A/B 數據</strong>：X 只說佔 10% 以上流量的實驗目標是在 repo 中可見，沒有公開結果（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Experiments and Configuration）。</li>
+</ul>
+<h3 id="各平台的顯著門檻作者自述">各平台的「顯著」門檻（作者自述）</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>平台</th>
+<th>門檻</th>
+<th>出處</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meta（HSTU）</td>
+<td>NE 降低 0.001 就算顯著，約等於 0.5% 的線上指標提升</td>
+<td><a href="../sources/hstu.html">HSTU 2024</a>, p.6</td>
+</tr>
+<tr>
+<td>快手（OneRec）</td>
+<td>App 停留時間 +0.1%、7 日留存 +0.01% 就算統計顯著</td>
+<td><a href="../sources/onerec.html">OneRec 2025</a>, p.23</td>
+</tr>
+</tbody>
+</table></div>
+<p>🧭 <strong>wiki 觀點</strong>：對數億使用者的平台，0.1% 就代表很多人和很多時間，所以論文裡「+0.54%」這種看起來很小的數字，對平台來說其實很大。教學時值得說明。</p>
+<h3 id="實驗範圍要看清楚">實驗範圍要看清楚</h3>
+<ul>
+<li>OneRec 的「部署到 25% 流量」，在附錄 B 說明是原本用快取應付的那部分流量（<a href="../sources/onerec.html">OneRec 2025</a>, p.30）。</li>
+<li>HSTU 的「+12.4%」是主要互動任務的相對提升，任務的具體定義沒有公開（<a href="../sources/hstu.html">HSTU 2024</a>, Table 7, p.7）。</li>
+</ul>
+<h2 id="社會面使用者其實一直在被實驗">社會面：使用者其實一直在被實驗</h2>
+<p>X 自述會「定期在一小部分流量上做實驗」（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Experiments and Configuration）。也就是說，你看到的動態可能和朋友不同，原因不只是個人化，也可能是你們被分到不同的實驗組（🧭 wiki 觀點）。</p>
+<h2 id="相關">相關</h2>
+<ul>
+<li><a href="optimization-objective.html">優化目標</a>、<a href="online-training.html">即時／線上訓練與概念漂移</a>、<a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a><span>概念</span></li><li><a href="online-training.html">即時／線上訓練與概念漂移</a><span>概念</span></li><li><a href="optimization-objective.html">優化目標</a><span>概念</span></li><li><a href="scaling-law.html">規模定律</a><span>概念</span></li><li><a href="../glossary.html">詞彙表</a><span>詞彙表</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="../sources/monolith.html">Monolith 2022</a><span>來源</span></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a><span>來源</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/concepts/ab-testing.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

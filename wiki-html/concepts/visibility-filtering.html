@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>可見度過濾與推薦資格｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="ab-testing.html">A/B 測試與離線指標</a></li><li><a href="transformer.html">Transformer 與注意力機制</a></li><li><a href="engagement-vs-stated-preference.html">互動</a></li><li><a href="user-controls.html">使用者控制工具</a></li><li><a href="optimization-objective.html">優化目標</a></li><li><a href="cold-start.html">冷啟動</a></li><li><a href="collaborative-filtering.html">協同過濾</a></li><li><a href="online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="retrieval.html">召回／候選生成</a></li><li><a href="visibility-filtering.html" aria-current="page">可見度過濾與推薦資格</a></li><li><a href="diversity-and-exploration.html">多樣性與探索</a></li><li><a href="embedding.html">嵌入向量</a></li><li><a href="ranking.html">排序</a></li><li><a href="recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="polarization.html">極化</a></li><li><a href="algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="generative-recommendation.html">生成式推薦</a></li><li><a href="scaling-law.html">規模定律</a></li><li><a href="filter-bubble.html">過濾泡泡</a></li><li><a href="implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Concepts</p>
+<div class="meta-row"><span class="chip type">概念</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/x-algorithm.html">X 開源 README</a><a class="chip" href="../sources/tiktok-foryou.html">TikTok 2020</a><a class="chip" href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="可見度過濾與推薦資格visibility-filtering">可見度過濾與推薦資格（Visibility Filtering）</h1>
+<p><strong>一句話定義</strong>：不管排序分數多高，有些內容會因為安全、法律、垃圾訊息或使用者設定，被禁止推薦、加上警告，或完全不顯示。這是和「排序」分開的一道關卡。</p>
+<h2 id="白話解釋">白話解釋</h2>
+<p><strong>比喻：電視台的播出審查。</strong></p>
+<ul>
+<li>節目收視率再高（<strong>排序分數高</strong>），沒通過審查（<strong>可見度過濾</strong>）就不能播。</li>
+<li>有些節目可以播，但要加上「輔導級」標示（<strong>警告標示</strong>）。</li>
+<li>有些節目只能在付費頻道播給主動訂閱的人看（<strong>只對追蹤者顯示</strong>）。</li>
+</ul>
+<h2 id="為什麼要和排序分開">為什麼要和排序分開</h2>
+<p>X 把這點列為關鍵設計決策：「排序決定順序，可見度過濾決定能不能顯示。不同服務、不同輸入、不同規則。」（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Key Design Decisions）</p>
+<p>🧭 <strong>wiki 觀點</strong>：分開設計可以讓「好不好看」和「該不該看」兩件事各自負責，也比較容易稽核。</p>
+<h2 id="怎麼運作x-的例子">怎麼運作（X 的例子）</h2>
+<ol>
+<li><strong>內容理解</strong>：分類器偵測垃圾訊息、成人內容、暴力內容；帳號則依被封鎖或檢舉的比例、不真實行為、信譽分數評分（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Labeling Path）。</li>
+<li><strong>貼標籤</strong>：規則引擎依事件或分數為帳號和貼文貼標籤（#Labeling Path）。</li>
+<li><strong>四種結果</strong>（#Labeling Path）：<ul>
+<li>ALLOW：正常顯示</li>
+<li>NOTICE：附注意標示</li>
+<li>INTERSTITIAL：遮罩，點了才看得到</li>
+<li>DROP：不顯示</li>
+</ul>
+</li>
+<li><strong>「推薦」比「追蹤」更嚴格</strong>：有些規則只對未追蹤帳號的推薦生效，同一則貼文，追蹤者看得到，非追蹤者可能看不到（#Labeling Path, #Filtering）。</li>
+<li><strong>法律要求</strong>：例如 2026 年巴西選舉期間的過濾器，選舉後移除（#August 14th, 2026；#October 26th, 2026）。</li>
+</ol>
+<h2 id="tiktok-的說法">TikTok 的說法</h2>
+<ul>
+<li>經審查、被認定可能令一般觀眾震驚的內容（例如寫實的醫療手術畫面、合法但受管制商品的消費）可能<strong>不符合推薦資格</strong>（<a href="../sources/tiktok-foryou.html">TikTok 2020</a>, p.3）。</li>
+<li>剛上傳或審查中的影片、刷流量的垃圾內容也可能不符合推薦資格（p.3）。</li>
+<li>新版說明（<a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a>）：<ul>
+<li>所有上傳的影片都要經過「機器學習加上人工」的審核。違規的刪除，「不適合廣大受眾」的不推薦（p.9）。</li>
+<li><strong>未滿 16 歲帳號</strong>做的內容不會被推上 For You；<strong>13–17 歲帳號</strong>看不到明顯的成人內容（p.10）。</li>
+<li>推薦規則要求推薦頁包含<strong>同地區創作者</strong>的內容（p.8）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="為什麼這跟社會影響有關">為什麼這跟社會影響有關</h2>
+<ul>
+<li>「不推薦」不等於「刪除」，但在以推薦為主的平台上，<strong>不被推薦幾乎等於沒人看到</strong>（🧭 wiki 觀點）。</li>
+<li>這引出透明度問題：使用者知道自己被限制了嗎？X 的「Under the Hood」工具就是在回應這個問題（<a href="../sources/x-algorithm.html">X 開源 README</a>, #Under the Hood Label Transparency Tool），見 <a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a>。</li>
+</ul>
+<h2 id="相關">相關</h2>
+<ul>
+<li><a href="recommendation-funnel.html">推薦漏斗／多階段管線</a>、<a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a>、<a href="../entities/x-twitter.html">X</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="recommendation-funnel.html">推薦漏斗／多階段管線</a><span>概念</span></li><li><a href="user-controls.html">使用者控制工具</a><span>概念</span></li><li><a href="../entities/x-twitter.html">X</a><span>實體</span></li><li><a href="../glossary.html">詞彙表</a><span>詞彙表</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a><span>來源</span></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a><span>來源</span></li><li><a href="../sources/x-algorithm.html">X 開源 README</a><span>來源</span></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a><span>教學</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/concepts/visibility-filtering.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

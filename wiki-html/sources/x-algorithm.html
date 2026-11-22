@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X 開源 README｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="guess-2023.html">Guess 2023</a></li><li><a href="hstu.html">HSTU 2024</a></li><li><a href="haroon-2023.html">Haroon 2023</a></li><li><a href="milli-2025.html">Milli</a></li><li><a href="monolith.html">Monolith 2022</a></li><li><a href="onerec.html">OneRec 2025</a></li><li><a href="tiktok-foryou.html">TikTok 2020</a></li><li><a href="tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="x-algorithm.html" aria-current="page">X 開源 README</a></li><li><a href="youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="../concepts/user-controls.html">使用者控制工具</a></li><li><a href="../concepts/optimization-objective.html">優化目標</a></li><li><a href="../concepts/cold-start.html">冷啟動</a></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="../concepts/retrieval.html">召回／候選生成</a></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="../concepts/embedding.html">嵌入向量</a></li><li><a href="../concepts/ranking.html">排序</a></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="../concepts/polarization.html">極化</a></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="../concepts/scaling-law.html">規模定律</a></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Sources</p>
+<div class="meta-row"><span class="chip type">來源</span><span class='chip-label'>引用來源</span><a class="chip" href="x-algorithm.html">X 開源 README</a><span class="chip-label">更新 2026-11-17</span><span class="chip-label">原始檔 raw/06-x-algorithm.md（未公開）</span></div>
+<h1 id="x前-twitterfor-you-演算法開源說明x-for-you-feed-algorithm">X（前 Twitter）For You 演算法開源說明（X For You Feed Algorithm）</h1>
+<p><strong>一句話</strong>：X 公開了 For You 動態的程式碼和架構說明。整個系統先從「你追蹤的人」和「你沒追蹤的人」兩邊撈貼文，再用 Transformer 模型預測你對每則貼文做出十多種反應的機率，加權成一個分數後排序，最後由獨立的「可見度過濾」決定哪些貼文可以顯示。</p>
+<blockquote>
+<p>出處標示：這是 Markdown 文件，以章節標題標示，例如 <code>#Overview</code>、<code>#Scoring and Ranking</code>。</p>
+</blockquote>
+<h2 id="背景它想解決什麼問題">背景：它想解決什麼問題</h2>
+<p>說明 X 的 For You 動態「如何決定你看到哪些貼文」，並透過開源程式碼與透明工具提高公眾信任，讓外界可以「稽核、批評，甚至幫忙改進」（#What's not in this repo?）。</p>
+<h2 id="核心做法">核心做法</h2>
+<h3 id="1-兩種候選來源overview-components">1. 兩種候選來源（#Overview, #Components）</h3>
+<ul>
+<li><strong>In-Network（追蹤中）</strong>：<code>Thunder</code> 把你追蹤帳號的近期貼文放在記憶體中。</li>
+<li><strong>Out-of-Network（未追蹤）</strong>：<ul>
+<li><strong>Phoenix retrieval</strong>：把使用者和貼文都 embed 成向量，找最接近的貼文，也就是「雙塔」召回。</li>
+<li><strong>SimClusters</strong>：依「誰和什麼互動」把帳號和貼文分群。</li>
+<li><strong>熱門貼文清單</strong>：一開始取自追蹤數最多的活躍帳號。</li>
+</ul>
+</li>
+<li>兩邊的候選<strong>用同一個模型一起排序</strong>（#Overview）。</li>
+</ul>
+<h3 id="2-請求路徑七步驟request-path">2. 請求路徑七步驟（#Request Path）</h3>
+<ol>
+<li><strong>Query Hydration</strong>：取得你最近的互動序列（模型的主要輸入）、追蹤清單、封鎖／靜音、看過的貼文等。</li>
+<li><strong>Candidate Sources</strong>：平行查詢上面的各個來源。</li>
+<li><strong>Candidate Hydration</strong>：補上貼文內容、作者資訊、互動數等。</li>
+<li><strong>Pre-Scoring Filters</strong>：<ul>
+<li>去除重複、超過 <strong>48 小時</strong>的舊貼文、自己的貼文、封鎖或靜音帳號、看過的貼文等（#Filtering）。</li>
+<li>共 18 種過濾器（#Filtering）。</li>
+</ul>
+</li>
+<li><strong>Scoring</strong>：<ul>
+<li><code>PhoenixScorer</code> 預測各種行為的機率。</li>
+<li><code>RankingScorer</code> 加權成分數。</li>
+<li><code>VMRanker</code> 做多樣性重排。</li>
+</ul>
+</li>
+<li><strong>Selection</strong>：依分數取前 K 則。</li>
+<li><strong>Post-Selection Filters</strong>：依可見度過濾的結果移除貼文，並收合同一串對話的分支。</li>
+</ol>
+<p>之後 <strong>Blending Pipeline</strong> 會把排好的貼文和廣告、「推薦追蹤」、提示等非貼文內容交錯排在一起（#Overview, #Request Path）。</p>
+<h3 id="3-打分多行為預測加權scoring-and-ranking">3. 打分：多行為預測加權（#Scoring and Ranking）</h3>
+<p>Phoenix 預測的行為分成五類：</p>
+<ul>
+<li><strong>互動</strong>：喜歡、回覆、轉發、引用、分享…</li>
+<li><strong>點擊</strong>：貼文、個人頁、連結…</li>
+<li><strong>注意力</strong>：停留（dwell）、停留時間、影片續看秒數…</li>
+<li><strong>作者</strong>：追蹤作者。</li>
+<li><strong>負面</strong>：不感興趣、靜音、封鎖、檢舉、沒停留。</li>
+</ul>
+<pre><code>Final Score = Σ (weight_i × P(action_i))
+</code></pre>
+<ul>
+<li>正面行為的權重為正，負面行為的權重為負。</li>
+<li><strong>常見誤解</strong>：權重乘的是「你本人做出該行為的預測機率」，不是全站的互動次數。所以「檢舉權重是喜歡的 468 倍」<strong>不等於</strong>「1 次檢舉抵銷 468 個讚」（#Scoring and Ranking；#August 14th, 2026）。</li>
+</ul>
+<p><strong>加權後的三個調整</strong>（#Scoring and Ranking）：</p>
+<ul>
+<li><strong>作者多樣性</strong>：同一位作者的第二則以後的貼文，分數乘上遞減係數。</li>
+<li><strong>未追蹤折扣</strong>：來自沒追蹤帳號的貼文乘上小於 1 的係數。</li>
+<li><strong>新作者加成</strong>：曝光數低於門檻的作者會被往前推。</li>
+</ul>
+<p><strong>多樣性重排</strong>：<code>vm-ranker</code> 用行列式點過程（DPP）重排，「犧牲一點分數，換取相鄰貼文不那麼相似」（#Components → Ranking）。</p>
+<h3 id="4-排序與可見度是分開的labeling-path-key-design-decisions">4. 排序與可見度是分開的（#Labeling Path, #Key Design Decisions）</h3>
+<ul>
+<li><strong>內容理解</strong>（持續運作，不在請求路徑上）：<ul>
+<li>分類器偵測垃圾訊息、成人內容、暴力內容。</li>
+<li>帳號評分：被封鎖或檢舉的比例、不真實行為、在追蹤圖上算 PageRank 得到的信譽分數（user-cred-v2）。</li>
+</ul>
+</li>
+<li><strong>標籤規則</strong>：依事件或模型分數為帳號和貼文貼標籤。</li>
+<li><strong>可見度過濾</strong>：對每則貼文和每位觀看者給出四種結果之一：<ul>
+<li>ALLOW（正常顯示）</li>
+<li>NOTICE（附注意標示）</li>
+<li>INTERSTITIAL（遮罩，點了才看得到）</li>
+<li>DROP（不顯示）</li>
+</ul>
+</li>
+<li><strong>有些規則只對「未追蹤帳號的推薦」生效</strong>：同一則貼文，追蹤者看得到，非追蹤者可能被過濾掉（#Labeling Path）。</li>
+</ul>
+<h3 id="5-關鍵設計決策key-design-decisions">5. 關鍵設計決策（#Key Design Decisions）</h3>
+<ol>
+<li><strong>多行為預測</strong>：不預測單一「相關性」，而是預測多種行為，最後再明確地合併。</li>
+<li><strong>候選隔離</strong>：Transformer 推論時，候選貼文之間不能互相 attend，只能看使用者情境，所以分數穩定、可以快取。</li>
+<li><strong>雜湊 embedding</strong>：用多個雜湊函數查表，不用維護詞彙表，新貼文可以立刻被表示。</li>
+<li><strong>排序和可見度分開</strong>：不同服務、不同輸入、不同規則。</li>
+<li><strong>可組合的管線架構</strong>。</li>
+</ol>
+<h2 id="近期更新紀錄notable-updates">近期更新紀錄（#Notable Updates）</h2>
+<ul>
+<li><strong>2026-08-13</strong>：公開設定參數（含權重）、可見度過濾程式碼、Phoenix 訓練程式碼、SimClusters。</li>
+<li><strong>2026-08-14</strong>：<ul>
+<li>說明權重的常見誤解。</li>
+<li>依巴西選舉法執行 <code>Brazil2026ElectionFilter</code>：移除被報告到巴西選舉法院的帳號貼文，除非觀看者有追蹤該帳號。</li>
+</ul>
+</li>
+<li><strong>2026-09-18</strong>：透明工具「Under the Hood」可以顯示貼文是否因法律要求而在某些國家被限制。</li>
+<li><strong>2026-10-08</strong>：排序模型更準確預測「花在每則貼文上的時間」。</li>
+<li><strong>2026-10-13</strong>：召回模型也開始訓練去找「人們會完整讀完的貼文」。</li>
+<li><strong>2026-10-26</strong>：選舉結束，移除巴西選舉過濾器。</li>
+</ul>
+<h2 id="關鍵數字與結果">關鍵數字與結果</h2>
+<ul>
+<li>貼文年齡上限 <strong>48 小時</strong>（#Filtering）。</li>
+<li>實驗若佔流量 <strong>10% 以上</strong>，目標是在 repo 中可見（#Experiments and Configuration）。</li>
+<li>「檢舉權重是喜歡的 468 倍」只是官方解釋誤解時用的例子（#Scoring and Ranking）。</li>
+<li><strong>沒有提供任何成效數據</strong>（沒有 A/B 測試結果，也沒有準確率）。</li>
+</ul>
+<h2 id="限制與注意事項">限制與注意事項</h2>
+<ul>
+<li><strong>平台自述加程式碼</strong>：README 是 X 自己寫的說明；程式碼可以檢查，但 README 本身沒有外部驗證。</li>
+<li><strong>不完全公開</strong>：部分 Grox LLM prompt 和 botmaker 規則沒有放出，理由是防止有人鑽漏洞（#What's not in this repo?）。</li>
+<li><strong>程式碼預設值 ≠ 線上實際值</strong>：參數預設值由 cron 腳本設成「主要正式環境值」，但實驗中的設定可能不同（#Experiments and Configuration）。</li>
+<li>本 wiki <strong>只讀了 README</strong>，沒有讀程式碼本身。</li>
+</ul>
+<h2 id="與其他來源的關係">與其他來源的關係</h2>
+<ul>
+<li><strong>延續</strong> <a href="youtube-dnn-2016.html">YouTube 2016</a> 的兩階段漏斗：候選來源 → 打分 → 選取。差別在於 X 在打分後還有重排、可見度過濾，以及和廣告的混排。</li>
+<li><strong>優化目標的演變</strong>：YouTube 2016 從點擊率改成觀看時間（p.5）；X 預測十多種行為，包含負面行為和停留時間。見 <a href="../concepts/optimization-objective.html">優化目標</a>。</li>
+<li><strong>對照</strong> <a href="tiktok-foryou.html">TikTok 2020</a>：<ul>
+<li>兩者都有「同一作者不連續出現」的多樣性規則。</li>
+<li>TikTok 說追蹤數不是直接因素（p.2）；X 則明確依「是否追蹤」給折扣。</li>
+</ul>
+</li>
+<li><strong>對照</strong> <a href="monolith.html">Monolith 2022</a>：雜湊 embedding 的取捨，見 <a href="../concepts/embedding.html">嵌入向量</a>。</li>
+</ul>
+<h2 id="相關頁面">相關頁面</h2>
+<ul>
+<li><a href="../entities/x-twitter.html">X</a>、<a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a>、<a href="../concepts/retrieval.html">召回／候選生成</a>、<a href="../concepts/ranking.html">排序</a>、<a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a>、<a href="../concepts/diversity-and-exploration.html">多樣性與探索</a>、<a href="../concepts/cold-start.html">冷啟動</a>、<a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a><span>概念</span></li><li><a href="../concepts/cold-start.html">冷啟動</a><span>概念</span></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a><span>概念</span></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a><span>概念</span></li><li><a href="../concepts/embedding.html">嵌入向量</a><span>概念</span></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a><span>概念</span></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a><span>概念</span></li><li><a href="../concepts/optimization-objective.html">優化目標</a><span>概念</span></li><li><a href="../concepts/ranking.html">排序</a><span>概念</span></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a><span>概念</span></li><li><a href="../concepts/retrieval.html">召回／候選生成</a><span>概念</span></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a><span>概念</span></li><li><a href="../concepts/user-controls.html">使用者控制工具</a><span>概念</span></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a><span>概念</span></li><li><a href="../entities/x-twitter.html">X</a><span>實體</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="hstu.html">HSTU 2024</a><span>來源</span></li><li><a href="milli-2025.html">Milli</a><span>來源</span></li><li><a href="monolith.html">Monolith 2022</a><span>來源</span></li><li><a href="onerec.html">OneRec 2025</a><span>來源</span></li><li><a href="tiktok-foryou.html">TikTok 2020</a><span>來源</span></li><li><a href="tiktok-transparency.html">TikTok 說明頁 2025</a><span>來源</span></li><li><a href="youtube-dnn-2016.html">YouTube 2016</a><span>來源</span></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a><span>整合</span></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a><span>整合</span></li><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a><span>整合</span></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a><span>整合</span></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a><span>教學</span></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a><span>教學</span></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a><span>教學</span></li><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a><span>教學</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/sources/x-algorithm.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

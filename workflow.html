@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>流程設計｜loop / graph</title>
+<meta name="description" content="資訊如何被取得、討論、寫進 wiki、檢查，再產生成簡報。">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="">
+<header class="site-header">
+  <a class="brand" href="index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="index.html">首頁</a><a href="wiki-html/index.html">Wiki</a><a href="slides.html">簡報</a><a href="workflow.html" aria-current="page">流程設計</a><a href="record.html">執行紀錄</a><a href="reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<main class="report prose"><h1 id="流程設計loop-graph">流程設計：loop / graph</h1>
+<p>一句話：<strong>取得資料 → 先討論 → 精讀 → 寫進 Wiki → 檢查（不過就退回）→ 人類確認 → 下一輪</strong>；四輪都做完，再 <strong>查 Wiki → 整理大綱 → 生成簡報 → 實際瀏覽檢查（不過就重新生成）→ 發佈</strong>。</p>
+<figure class="figure"><a href="assets/workflow.png"><img src="assets/workflow.png" alt="loop / graph 流程圖：階段一建 Wiki 的 9 個節點每輪重複，階段二產簡報的 6 個節點，以及檢查不過時退回的路線"></a>
+<figcaption>黑色實線是主流程，紅色虛線是檢查不過、退回重做，灰色點線是下一輪重複。<a href="assets/workflow.png">下載 PNG</a>｜<a href="assets/workflow.svg">SVG 原檔</a></figcaption>
+</figure>
+
+<h2 id="每個節點做什麼">每個節點做什麼</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>節點</th>
+<th>誰做</th>
+<th>產出／依據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>先討論規則</td>
+<td>人類＋LLM</td>
+<td><code>AGENTS.md</code>：主題、讀者深度、分三批、出處與爭議的寫法；3 個 skill</td>
+</tr>
+<tr>
+<td>1</td>
+<td>取得資料</td>
+<td>人類放檔、LLM 登記</td>
+<td><code>raw/</code>（唯讀）、<code>.raw-manifest.md5</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>先討論</td>
+<td><strong>人類關卡</strong></td>
+<td>列 3–5 個重點、和現有 wiki 的關係，人類決定要強調什麼</td>
+</tr>
+<tr>
+<td>3</td>
+<td>精讀＋記筆記</td>
+<td>LLM</td>
+<td>PDF 抽文字到暫存區；數字一律記下 PDF 頁碼</td>
+</tr>
+<tr>
+<td>4</td>
+<td>寫 source 頁</td>
+<td>LLM</td>
+<td><code>wiki/sources/*.md</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>交叉整合</td>
+<td>LLM</td>
+<td>concept／entity／synthesis／teaching 頁；不同來源說法不一致時寫 ⚠️ 爭議區塊</td>
+</tr>
+<tr>
+<td>6</td>
+<td>更新索引</td>
+<td>LLM</td>
+<td><code>glossary.md</code>、<code>index.md</code>、<code>log.md</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>結構檢查</td>
+<td><strong>腳本</strong></td>
+<td><code>lint.py</code> 5 項：斷鏈、孤兒頁、index 不一致、frontmatter、raw 完整性</td>
+</tr>
+<tr>
+<td>8</td>
+<td>內容檢查</td>
+<td><strong>LLM 判讀</strong></td>
+<td>5 項：數字缺頁碼、爭議未標、缺頁概念、缺白話解釋、觀點混雜</td>
+</tr>
+<tr>
+<td>9</td>
+<td>回報、等確認</td>
+<td><strong>人類關卡</strong></td>
+<td>變更摘要與待決問題；人類確認才進下一輪</td>
+</tr>
+<tr>
+<td>10</td>
+<td>簡報前 lint</td>
+<td>腳本＋LLM</td>
+<td>同 7–8，當作進入簡報的門檻</td>
+</tr>
+<tr>
+<td>11</td>
+<td>查詢 Wiki</td>
+<td>LLM</td>
+<td>先讀 <code>index.md</code> 找頁，再讀頁面；<strong>不直接讀 raw</strong></td>
+</tr>
+<tr>
+<td>12</td>
+<td>整理大綱</td>
+<td>LLM</td>
+<td>三個問題、28 頁；每頁標出處</td>
+</tr>
+<tr>
+<td>13</td>
+<td>生成 HTML</td>
+<td>LLM</td>
+<td><code>output/recsys-slides.html</code>（單一檔案、講者備忘、兩種主題）</td>
+</tr>
+<tr>
+<td>14</td>
+<td>實際瀏覽驗證</td>
+<td>headless Chrome</td>
+<td>截圖檢查深色、淺色、手機寬度；模擬按鍵；看 console</td>
+</tr>
+<tr>
+<td>15</td>
+<td>記 log、發佈</td>
+<td>LLM</td>
+<td>log 記下取材頁；<code>tools/build_site.py</code> 建網站，推上 GitHub Pages</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="哪些步驟會重複執行">哪些步驟會重複執行？</h2>
+<ul>
+<li><strong>步驟 1–9 是一個 loop，總共跑了 4 輪</strong>：批次 1（4 份工業界技術）→ 單篇 10（TikTok 官方說明頁）→ 批次 2（2 份生成式推薦）→ 批次 3（3 份社會影響研究）。每一輪都會回頭更新前幾輪寫好的頁面，例如批次 3 改寫了批次 1 建立的 <a href="wiki-html/concepts/filter-bubble.html">過濾泡泡</a>。</li>
+<li><strong>步驟 7–8（lint）每輪都跑</strong>，產簡報前再跑一次（步驟 10）。總共跑了 6 次。</li>
+<li><strong>步驟 13–14 是簡報的小 loop</strong>：生成 → 截圖檢查 → 有問題就改 → 再截圖，直到 28 頁在三種顯示條件下都正常。</li>
+</ul>
+<h2 id="哪些地方需要檢查或重新生成">哪些地方需要檢查或重新生成？</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>檢查點</th>
+<th>抓什麼</th>
+<th>不通過時退回到</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7 結構檢查</td>
+<td>斷鏈、孤兒頁、index 漏列、frontmatter 缺欄位、raw 檔被改</td>
+<td>4–6 修頁面，重跑腳本</td>
+</tr>
+<tr>
+<td>8 內容檢查</td>
+<td>數字沒有頁碼、說法衝突沒標爭議、wiki 觀點混進來源主張</td>
+<td>3 回 raw 查頁碼，再改頁面</td>
+</tr>
+<tr>
+<td>9 人類確認</td>
+<td>重點放錯、語氣不對、需要人判斷的爭議</td>
+<td>2 重新討論</td>
+</tr>
+<tr>
+<td>10 簡報前 lint</td>
+<td>同 7–8</td>
+<td>先修 wiki，不在簡報裡打補丁</td>
+</tr>
+<tr>
+<td>12 整理大綱</td>
+<td>想講的內容 wiki 裡沒有</td>
+<td>回階段一先補 wiki</td>
+</tr>
+<tr>
+<td>14 瀏覽驗證</td>
+<td>版面溢出、文字重疊、翻頁或備忘失效</td>
+<td>13 重新生成</td>
+</tr>
+<tr>
+<td>0 規則回饋</td>
+<td>同一種錯誤一再出現</td>
+<td>回頭修 <code>AGENTS.md</code> 或 skill</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="為什麼這樣設計">為什麼這樣設計？</h2>
+<ol>
+<li><strong>分批，而不是一次讀 10 篇</strong>：一次全讀，LLM 容易把不同論文的數字混在一起，錯了也很難找出是哪一篇。分批後每輪只處理 2–4 份，lint 抓到問題可以馬上回到那幾份原文查。</li>
+<li><strong>檢查放在每一輪的尾巴，而不是最後才查</strong>：wiki 是一層層往上蓋的，批次 2、3 會引用批次 1 寫的頁。錯誤如果留到最後，會被後面的頁面複製好幾次。</li>
+<li><strong>結構交給腳本，內容交給 LLM</strong>：斷鏈、frontmatter 這類問題有標準答案，腳本每次都抓得到、不會累；「這個數字有沒有出處」「這是來源的說法還是我們的推論」需要讀懂內容，才交給 LLM 判斷。</li>
+<li><strong>兩個人類關卡</strong>：重點要放哪裡、語氣要多有趣、爭議怎麼下結論，這些沒有標準答案，由人決定。實際上人類也在這裡改了方向（見<a href="record.html">執行紀錄</a>）。</li>
+<li><strong>簡報只從 wiki 取材</strong>：簡報上每一句話都能追回 wiki 頁，wiki 頁再追回原文頁碼，形成「簡報 → wiki → raw」的鏈。wiki 缺什麼就先補 wiki，知識庫才會跟著簡報一起變完整。</li>
+<li><strong>最後一定要實際打開來看</strong>：HTML 簡報的錯（字太長溢出、圖表標籤重疊）讀原始碼看不出來，必須截圖。</li>
+</ol>
+<blockquote>
+<p>說明：批次 1–3 的「先討論」，是在步驟 0 一次定好每批讀哪些、重點放在哪，再加上步驟 9 每批結束的確認；單篇 10 則是先跑步驟 2，跟人類討論 5 個重點，才開始寫。</p>
+</blockquote></main>
+<script src="assets/site.js"></script>
+</body>
+</html>

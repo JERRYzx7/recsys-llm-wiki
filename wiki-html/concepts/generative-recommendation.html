@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>生成式推薦｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs';
+const dark = document.documentElement.dataset.theme === 'dark' ||
+  (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+mermaid.initialize({startOnLoad: true, theme: dark ? 'dark' : 'neutral', fontFamily: 'PingFang TC, Noto Sans TC, sans-serif'});
+</script>
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="../sources/guess-2023.html">Guess 2023</a></li><li><a href="../sources/hstu.html">HSTU 2024</a></li><li><a href="../sources/haroon-2023.html">Haroon 2023</a></li><li><a href="../sources/milli-2025.html">Milli</a></li><li><a href="../sources/monolith.html">Monolith 2022</a></li><li><a href="../sources/onerec.html">OneRec 2025</a></li><li><a href="../sources/tiktok-foryou.html">TikTok 2020</a></li><li><a href="../sources/tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="../sources/x-algorithm.html">X 開源 README</a></li><li><a href="../sources/youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="ab-testing.html">A/B 測試與離線指標</a></li><li><a href="transformer.html">Transformer 與注意力機制</a></li><li><a href="engagement-vs-stated-preference.html">互動</a></li><li><a href="user-controls.html">使用者控制工具</a></li><li><a href="optimization-objective.html">優化目標</a></li><li><a href="cold-start.html">冷啟動</a></li><li><a href="collaborative-filtering.html">協同過濾</a></li><li><a href="online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="retrieval.html">召回／候選生成</a></li><li><a href="visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="diversity-and-exploration.html">多樣性與探索</a></li><li><a href="embedding.html">嵌入向量</a></li><li><a href="ranking.html">排序</a></li><li><a href="recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="polarization.html">極化</a></li><li><a href="algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="generative-recommendation.html" aria-current="page">生成式推薦</a></li><li><a href="scaling-law.html">規模定律</a></li><li><a href="filter-bubble.html">過濾泡泡</a></li><li><a href="implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Concepts</p>
+<div class="meta-row"><span class="chip type">概念</span><span class='chip-label'>引用來源</span><a class="chip" href="../sources/hstu.html">HSTU 2024</a><a class="chip" href="../sources/onerec.html">OneRec 2025</a><a class="chip" href="../sources/youtube-dnn-2016.html">YouTube 2016</a><span class="chip-label">更新 2026-11-17</span></div>
+<h1 id="生成式推薦generative-recommendation">生成式推薦（Generative Recommendation）</h1>
+<p><strong>一句話定義</strong>：用類似 ChatGPT「接龍」的方式做推薦。把你的行為紀錄當成一段「句子」，讓模型預測下一個「字」。這個「字」可以是你接下來會看的影片，也可以是你對某支影片的反應。</p>
+<h2 id="白話解釋">白話解釋</h2>
+<p><strong>比喻：手機輸入法的自動完成。</strong></p>
+<ul>
+<li>你打「今天天氣」，輸入法猜下一個詞是「很好」。</li>
+<li>生成式推薦也一樣：你的紀錄是「看了貓咪影片 → 看完 → 看了狗狗影片 → 按讚 → …」，模型猜下一步是「鸚鵡影片」。</li>
+</ul>
+<p>傳統推薦比較像「<strong>考選擇題</strong>」：先由召回挑出幾百個選項，再對每個選項打分。
+生成式推薦比較像「<strong>寫申論題</strong>」：直接寫出答案。</p>
+<h2 id="為什麼需要它">為什麼需要它</h2>
+<ul>
+<li><strong>傳統模型加算力也不會變好</strong>：Meta 指出，業界的深度推薦模型（DLRM）大多無法隨算力擴展，大約 2000 億參數就飽和（<a href="../sources/hstu.html">HSTU 2024</a>, p.1, p.8）。</li>
+<li><strong>想搭上大型語言模型的技術紅利</strong>：scaling law、強化學習在語言模型上很成功，但傳統多階段架構很難套用（<a href="../sources/onerec.html">OneRec 2025</a>, p.3）。</li>
+<li><strong>少一點人工特徵</strong>：HSTU 拿掉了大量人工設計的數值特徵，讓模型自己從行為序列學（<a href="../sources/hstu.html">HSTU 2024</a>, §2.1, p.2）。</li>
+</ul>
+<h2 id="怎麼運作">怎麼運作</h2>
+<h3 id="hstumeta-2024">HSTU（Meta, 2024）</h3>
+<ul>
+<li><strong>把行為排成序列</strong>：內容₀、反應₀、內容₁、反應₁…（<a href="../sources/hstu.html">HSTU 2024</a>, Table 1, p.3）</li>
+<li><strong>排序</strong> = 預測「你對下一則內容的反應」。</li>
+<li><strong>召回</strong> = 預測「你下一個會喜歡的內容」。</li>
+<li>架構是改良版的 Transformer（HSTU 層），見 <a href="transformer.html">Transformer 與注意力機制</a>。</li>
+</ul>
+<h3 id="onerec快手-2025">OneRec（快手, 2025）</h3>
+<ol>
+<li><strong>影片變成語意 ID</strong>：每支影片編成 3 個由粗到細的 token，例如 (3, 4, 1)，相似影片的前綴相同（<a href="../sources/onerec.html">OneRec 2025</a>, §2.1, p.5–7）。</li>
+<li><strong>編碼器</strong>讀你的歷史，<strong>解碼器</strong>逐個 token「寫出」推薦影片（§2.2–2.3, p.7–10）。</li>
+<li><strong>強化學習</strong>：用獎勵模型評分，鼓勵模型生成「好的」推薦（§2.4, p.10–13）。</li>
+</ol>
+<pre class="mermaid">flowchart LR
+  H[你的行為紀錄&lt;br/&gt;看了什麼、怎麼反應] --&gt; E[編碼器&lt;br/&gt;理解你]
+  E --&gt; D[解碼器&lt;br/&gt;逐 token 生成]
+  D --&gt; S[&quot;語意 ID (3,4,1)&quot;]
+  S --&gt; V[對應到真實影片]
+  R[獎勵模型] -.強化學習.-&gt; D
+</pre>
+<p>（依 <a href="../sources/onerec.html">OneRec 2025</a>, Figure 2, p.4 簡化）</p>
+<h2 id="和傳統推薦的比較">和傳統推薦的比較</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>面向</th>
+<th>傳統（YouTube 2016 型 DLRM）</th>
+<th>生成式（HSTU、OneRec）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>問題形式</td>
+<td>對每個候選打分（<a href="../sources/youtube-dnn-2016.html">YouTube 2016</a>, p.2）</td>
+<td>序列接龍：預測下一個 token</td>
+</tr>
+<tr>
+<td>特徵</td>
+<td>數百到上萬個人工特徵</td>
+<td>主要是原始行為序列</td>
+</tr>
+<tr>
+<td>架構</td>
+<td>多個專用模組串接</td>
+<td>單一 Transformer 類模組</td>
+</tr>
+<tr>
+<td>加大模型</td>
+<td>很快飽和</td>
+<td>符合 scaling law（<a href="scaling-law.html">規模定律</a>）</td>
+</tr>
+<tr>
+<td>多階段漏斗</td>
+<td>必須</td>
+<td>HSTU 仍分召回和排序；OneRec 主張端到端取代</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="注意">⚠️ 注意</h2>
+<ul>
+<li><strong>生成式 ≠ 用 ChatGPT 推薦</strong>。HSTU 和 OneRec 都是從頭訓練的<strong>行為模型</strong>，不是拿現成的語言模型來推薦。HSTU 指出，以語言模型做推薦的研究在大規模情境下「還沒有贏過協同過濾」（<a href="../sources/hstu.html">HSTU 2024</a>, p.9）；OneRec 也說還沒整合 LLM（<a href="../sources/onerec.html">OneRec 2025</a>, p.25）。</li>
+<li><strong>生成的東西可能不存在</strong>：OneRec 加入強化學習後，超過一半生成的 ID 對不到真實影片，需要額外的格式獎勵修正（<a href="../sources/onerec.html">OneRec 2025</a>, p.12–13, p.21）。這和語言模型的「幻覺」很像（🧭 wiki 觀點的類比）。</li>
+<li>兩篇都是<strong>平台自己報告</strong>的成效。</li>
+</ul>
+<h2 id="相關">相關</h2>
+<ul>
+<li><a href="transformer.html">Transformer 與注意力機制</a>、<a href="scaling-law.html">規模定律</a>、<a href="recommendation-funnel.html">推薦漏斗／多階段管線</a>、<a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a>、<a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="ranking.html">排序</a><span>概念</span></li><li><a href="recommendation-funnel.html">推薦漏斗／多階段管線</a><span>概念</span></li><li><a href="retrieval.html">召回／候選生成</a><span>概念</span></li><li><a href="scaling-law.html">規模定律</a><span>概念</span></li><li><a href="transformer.html">Transformer 與注意力機制</a><span>概念</span></li><li><a href="../entities/kuaishou.html">快手</a><span>實體</span></li><li><a href="../entities/meta.html">Meta</a><span>實體</span></li><li><a href="../glossary.html">詞彙表</a><span>詞彙表</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="../sources/hstu.html">HSTU 2024</a><span>來源</span></li><li><a href="../sources/onerec.html">OneRec 2025</a><span>來源</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/concepts/generative-recommendation.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

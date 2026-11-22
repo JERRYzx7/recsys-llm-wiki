@@ -84,3 +84,11 @@
 - 照人類決定：漏斗 vs. 端到端只用一頁（第 15 頁）；wiki 觀點標示為「本課整理的觀點」（第 23 頁）
 - 驗證：headless Chrome 截圖檢查 28 頁（深色、淺色、600px 寬），修正 CSS 權重衝突（出處和頁碼被放大）、圖表標籤重疊、參考資料溢出；用模擬按鍵測試翻頁、逐步揭曉、備忘和主題切換，沒有 JS 錯誤；28 頁都有講者備忘
 - 尚缺：沒有 TikTok 和快手的獨立社會影響研究；TikTok 美國合資公司（2026）沒有 raw 來源，所以沒放進簡報
+
+## [2026-11-22] lint | 手動（建網站前）
+- 結構：5 項全數 OK（49 頁）
+- 另做簡報 ↔ wiki 追溯檢查：簡報 28 頁中的 32 個數字，全部能在 wiki 找到
+
+## [2026-11-22] schema | 新增「發佈網站」步驟
+- 變更：新增 tools/build_site.py（wiki/ 與 report/ 轉成 GitHub Pages 網站，上方導覽列可切換 Wiki、簡報、流程設計、執行紀錄、反思）、tools/make_workflow.py（流程圖 assets/workflow.png）、report/{workflow, record, reflection}.md；AGENTS.md §2 補目錄、§9 新增「發佈網站」；README 補網站連結
+- 驗證：54 個 HTML 檔、4,340 個內部連結沒有斷鏈；headless Chrome 截圖檢查桌面、390px 手機寬度、深色，沒有橫向溢出

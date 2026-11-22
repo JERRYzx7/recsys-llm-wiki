@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSTU 2024｜推薦演算法 Wiki</title>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+</head>
+<body class="wiki">
+<header class="site-header">
+  <a class="brand" href="../../index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="../../index.html">首頁</a><a href="../../wiki-html/index.html" aria-current="page">Wiki</a><a href="../../slides.html">簡報</a><a href="../../workflow.html">流程設計</a><a href="../../record.html">執行紀錄</a><a href="../../reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<div class="wiki-layout">
+<aside class="wiki-side">
+<details class="side-details" open>
+<summary>全部頁面（49）</summary>
+<input class="side-search" type="search" placeholder="搜尋頁面…" aria-label="搜尋頁面">
+<div class="side-group"><ul><li><a href="../index.html">目錄 index</a></li><li><a href="../glossary.html">詞彙表 glossary</a></li><li><a href="../log.html">操作紀錄 log</a></li></ul></div>
+<div class="side-group"><h3>Sources 來源<span>10</span></h3><ul><li><a href="guess-2023.html">Guess 2023</a></li><li><a href="hstu.html" aria-current="page">HSTU 2024</a></li><li><a href="haroon-2023.html">Haroon 2023</a></li><li><a href="milli-2025.html">Milli</a></li><li><a href="monolith.html">Monolith 2022</a></li><li><a href="onerec.html">OneRec 2025</a></li><li><a href="tiktok-foryou.html">TikTok 2020</a></li><li><a href="tiktok-transparency.html">TikTok 說明頁 2025</a></li><li><a href="x-algorithm.html">X 開源 README</a></li><li><a href="youtube-dnn-2016.html">YouTube 2016</a></li></ul></div><div class="side-group"><h3>Concepts 概念<span>20</span></h3><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a></li><li><a href="../concepts/engagement-vs-stated-preference.html">互動</a></li><li><a href="../concepts/user-controls.html">使用者控制工具</a></li><li><a href="../concepts/optimization-objective.html">優化目標</a></li><li><a href="../concepts/cold-start.html">冷啟動</a></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a></li><li><a href="../concepts/retrieval.html">召回／候選生成</a></li><li><a href="../concepts/visibility-filtering.html">可見度過濾與推薦資格</a></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a></li><li><a href="../concepts/embedding.html">嵌入向量</a></li><li><a href="../concepts/ranking.html">排序</a></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a></li><li><a href="../concepts/polarization.html">極化</a></li><li><a href="../concepts/algorithmic-audit.html">演算法稽核：外界怎麼研究不透明的推薦系統</a></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a></li><li><a href="../concepts/scaling-law.html">規模定律</a></li><li><a href="../concepts/filter-bubble.html">過濾泡泡</a></li><li><a href="../concepts/implicit-feedback.html">隱式回饋與互動訊號</a></li></ul></div><div class="side-group"><h3>Entities 平台與公司<span>6</span></h3><ul><li><a href="../entities/meta.html">Meta</a></li><li><a href="../entities/tiktok.html">TikTok</a></li><li><a href="../entities/x-twitter.html">X</a></li><li><a href="../entities/youtube.html">YouTube</a></li><li><a href="../entities/bytedance.html">字節跳動</a></li><li><a href="../entities/kuaishou.html">快手</a></li></ul></div><div class="side-group"><h3>Syntheses 跨來源整合<span>4</span></h3><ul><li><a href="../syntheses/platform-pipeline-comparison.html">三個平台的推薦管線比較：YouTube 2016、TikTok 2020／2025、X 2026</a></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li><li><a href="../syntheses/platform-transparency.html">平台透明度：部落格、論文、開源程式碼各能告訴我們什麼</a></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a></li></ul></div><div class="side-group"><h3>Teaching 教學素材<span>6</span></h3><ul><li><a href="../teaching/what-the-feed-learns-from-you.html">你滑手機時，演算法從你身上學到什麼</a></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a></li><li><a href="../teaching/funnel-analogy.html">用「選秀節目」解釋推薦漏斗</a></li><li><a href="../teaching/chronological-feed-debate.html">課堂辯論：該不該把動態改回「時間序」？</a></li><li><a href="../teaching/guess-the-signal.html">課堂遊戲：猜猜演算法在預測什麼？</a></li></ul></div>
+</details>
+</aside>
+<main class="wiki-main prose">
+<p class="crumbs"><a href="../index.html">Wiki</a> / Sources</p>
+<div class="meta-row"><span class="chip type">來源</span><span class='chip-label'>引用來源</span><a class="chip" href="hstu.html">HSTU 2024</a><span class="chip-label">更新 2026-11-17</span><span class="chip-label">原始檔 raw/04-hstu.pdf（未公開）</span></div>
+<h1 id="hstumeta-的生成式推薦actions-speak-louder-than-words">HSTU：Meta 的生成式推薦（Actions Speak Louder than Words）</h1>
+<p><strong>一句話</strong>：Meta 把「你的行為紀錄」當成一種語言，用類似 ChatGPT 的方式訓練推薦模型，提出 HSTU 架構。模型做到 <strong>1.5 兆參數</strong>後，效果仍隨算力穩定提升（<strong>scaling law</strong>）。作者稱這可能是推薦系統的「ChatGPT 時刻」（p.2）。</p>
+<blockquote>
+<p>頁碼說明：PDF 共 26 頁。正文 p.1–9，Impact Statement 在 p.10，參考文獻 p.10–14，附錄 p.15–26（GPU 實作與額外實驗）。</p>
+</blockquote>
+<h2 id="背景它想解決什麼問題">背景：它想解決什麼問題</h2>
+<ul>
+<li><strong>傳統深度推薦模型（DLRM）加算力也不會變好</strong>：業界的 DLRM 用上千個人工設計的特徵和龐大資料，但「大多數無法隨算力擴展」（p.1）。DLRM 的品質大約在 2000 億參數時就飽和（p.8）。</li>
+<li><strong>三個難點</strong>（p.1–2）：<ol>
+<li>推薦特徵沒有明確結構，有 ID、計數、比例等各種形式。</li>
+<li>詞彙表是<strong>十億級、而且一直在變</strong>；語言模型的詞彙表只有約 10 萬個詞，而且是固定的（p.2）。</li>
+<li>計算量巨大：大平台每天的使用者行為「token」數量，比 GPT-3 訓練 1–2 個月處理的 3000 億 token 還多好幾個數量級（p.2）。</li>
+</ol>
+</li>
+</ul>
+<h2 id="核心做法">核心做法</h2>
+<h3 id="1-把推薦變成序列接龍generative-recommenders-grs2-p23">1. 把推薦變成「序列接龍」（Generative Recommenders, GRs）（§2, p.2–3）</h3>
+<ul>
+<li><strong>把各種特徵整合成一條時間序列</strong>（p.2, Figure 2）：<ul>
+<li>以「你互動過的內容」為主軸。</li>
+<li>人口統計、追蹤的創作者這類變化慢的特徵，壓縮後插進主序列。</li>
+<li>數值特徵（例如過去的點擊率）直接<strong>拿掉</strong>，交給模型自己從序列學。</li>
+</ul>
+</li>
+<li><strong>召回和排序都改寫成序列轉換任務</strong>（Table 1, p.3）：<ul>
+<li>輸入序列像「內容₀、你的反應₀、內容₁、你的反應₁…」。</li>
+<li><strong>排序</strong> = 預測你對下一則內容的<strong>反應</strong>（按讚、略過、看完、分享…）。</li>
+<li><strong>召回</strong> = 預測你<strong>下一個會正面互動的內容</strong>。</li>
+</ul>
+</li>
+<li><strong>生成式訓練</strong>：一個使用者的序列可以一次產生多個訓練目標，計算量降低一個 O(N) 因子（§2.3, p.3–4）。</li>
+</ul>
+<h3 id="2-hstu-架構3-p46">2. HSTU 架構（§3, p.4–6）</h3>
+<ul>
+<li>HSTU（Hierarchical Sequential Transduction Unit）是改良過的 Transformer 層，一種模組取代 DLRM 裡五花八門的模組（p.4, Figure 3）。</li>
+<li><strong>把 softmax 注意力改成「逐點聚合」注意力</strong>（§3.1, p.4–5）：<ul>
+<li>softmax 會正規化，模型因此難以看出「你對某主題的互動有多<strong>頻繁</strong>」，而這正是偏好強度的重要線索。</li>
+<li>在合成資料上，兩種注意力的差距最高達 44.7%（Table 2, p.5）。</li>
+</ul>
+</li>
+<li><strong>Stochastic Length（隨機長度）</strong>：訓練時隨機截短很長的歷史序列。去掉 80% 以上的 token，品質幾乎不變（p.5–7）。</li>
+<li><strong>M-FALCON</strong>：推論時把大量候選分成小批次，共用計算結果，讓排序階段能用複雜很多的模型（§3.4, p.6）。</li>
+</ul>
+<h2 id="關鍵數字與結果皆為作者報告">關鍵數字與結果（皆為作者報告）</h2>
+<ul>
+<li><strong>公開資料集</strong>：相對 SASRec 基準，HSTU-large 的 NDCG@10 在 Amazon Books 上提升最多 <strong>65.8%</strong>（Table 4, p.7）。</li>
+<li><strong>速度</strong>：在 8192 長度的序列上比 FlashAttention2 版 Transformer 快 <strong>5.3–15.2 倍</strong>（p.1–2）；訓練效率最高 15.2 倍、推論 5.6 倍（p.7）。</li>
+<li><strong>線上 A/B 測試</strong>（Table 7, p.7）：<ul>
+<li>排序：GR 相對 DLRM，主要互動任務（E-Task）<strong>+12.4%</strong>、主要消費任務（C-Task）<strong>+4.4%</strong>（Table 7, p.7）。</li>
+<li>召回：把 GR 加為新來源 +6.2%／+5.0%（Table 6, p.7）。</li>
+</ul>
+</li>
+<li><strong>規模與效率</strong>：<ul>
+<li><strong>1.5 兆參數</strong>，部署在「一個擁有數十億使用者的大型網路平台」的多個介面上（p.1）。</li>
+<li>模型複雜度是原本的 <strong>285 倍</strong>，吞吐量仍高 1.50–2.99 倍（p.8）。</li>
+</ul>
+</li>
+<li><strong>Scaling law</strong>（§4.3.1, p.8–9, Figure 7）：<ul>
+<li>品質隨訓練算力呈冪律提升，跨越三個數量級。</li>
+<li>最大的模型所用算力接近 GPT-3 和 LLaMa-2 的總訓練量（p.8）。</li>
+<li>序列長度在推薦中比在語言模型中更重要（p.8–9）。</li>
+</ul>
+</li>
+<li><strong>只用內容特徵的版本表現差很多</strong>：召回 HR@100 只有 11.6%，GR 則是 36.9%（Table 6, p.7）。這顯示「使用者行為」本身才是關鍵訊號（p.8）。</li>
+<li><strong>判讀門檻</strong>：作者認為 NE 降低 0.001 就算顯著，通常對應約 0.5% 的線上指標提升（p.6）。</li>
+</ul>
+<h2 id="作者對社會影響的主張impact-statement-p10">作者對社會影響的主張（Impact Statement, p.10）</h2>
+<blockquote>
+<p>"...could reduce the prevalence of content that do not serve users' long term goals (including clickbaits and fake news) across the web, and better align incentives of platforms with user values."
+（……可能減少不符合使用者長期目標的內容（包括標題黨和假新聞），並讓平台的誘因更符合使用者的價值。）</p>
+</blockquote>
+<ul>
+<li>作者也主張，減少對大量異質特徵的依賴，可以讓系統<strong>更保護隱私</strong>（p.10）。</li>
+<li>⚠️ 這些是作者的<strong>展望</strong>，論文<strong>沒有提出實證</strong>。和批次 3 實證研究的對照見 <a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a>。</li>
+</ul>
+<h2 id="限制與注意事項">限制與注意事項</h2>
+<ul>
+<li><strong>沒有寫明部署平台</strong>：論文只說「一個擁有數十億使用者的大型網路平台」（p.1），作者都隸屬 Meta AI（p.1）。合理推測是 Meta 旗下產品，但論文沒有明說是哪一個。</li>
+<li><strong>「+12.4%」的意思要看清楚</strong>：這是主要互動任務在 A/B 測試中的相對提升（Table 7）。論文沒有公開任務的具體定義。</li>
+<li>公開資料集實驗用的是學界常見的「多輪、全打亂」設定，作者自己也說這和業界的串流訓練很不同（p.6）。</li>
+<li>程式碼有開源：github.com/facebookresearch/generative-recommenders（p.1）。</li>
+</ul>
+<h2 id="與其他來源的關係">與其他來源的關係</h2>
+<ul>
+<li><strong>直接挑戰</strong> <a href="youtube-dnn-2016.html">YouTube 2016</a> 代表的 DLRM 典範：HSTU 把 YouTube DNN 列為 DLRM 的起點（p.1, p.15），並主張要用生成式推薦取代它。</li>
+<li><strong>同一陣營</strong> <a href="onerec.html">OneRec 2025</a>：兩者都把推薦當作生成任務，也都觀察到 scaling law。差別在於 HSTU 仍保留召回和排序兩個任務，OneRec 則主張用單一模型端到端取代多階段漏斗。見 <a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a>。</li>
+<li><strong>和 X 的呼應</strong> <a href="x-algorithm.html">X 開源 README</a>：X 2026 的排序模型也是 Transformer，主要輸入是「使用者的互動序列」（#Request Path）。這和 HSTU「以行為序列為核心」的方向一致。</li>
+<li><strong>呼應</strong> <a href="monolith.html">Monolith 2022</a> 的「詞彙表很大而且一直在變」：HSTU 指出，100 億詞彙、512 維 embedding 光是存 embedding 加優化器狀態就要 60TB（p.5）。</li>
+</ul>
+<h2 id="相關頁面">相關頁面</h2>
+<ul>
+<li><a href="../entities/meta.html">Meta</a>、<a href="../concepts/generative-recommendation.html">生成式推薦</a>、<a href="../concepts/transformer.html">Transformer 與注意力機制</a>、<a href="../concepts/scaling-law.html">規模定律</a>、<a href="../concepts/ranking.html">排序</a>、<a href="../concepts/retrieval.html">召回／候選生成</a>、<a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a></li>
+</ul>
+<section class="backlinks"><h2>哪些頁面連到這裡</h2><ul><li><a href="../concepts/ab-testing.html">A/B 測試與離線指標</a><span>概念</span></li><li><a href="../concepts/collaborative-filtering.html">協同過濾</a><span>概念</span></li><li><a href="../concepts/diversity-and-exploration.html">多樣性與探索</a><span>概念</span></li><li><a href="../concepts/embedding.html">嵌入向量</a><span>概念</span></li><li><a href="../concepts/generative-recommendation.html">生成式推薦</a><span>概念</span></li><li><a href="../concepts/online-training.html">即時／線上訓練與概念漂移</a><span>概念</span></li><li><a href="../concepts/optimization-objective.html">優化目標</a><span>概念</span></li><li><a href="../concepts/ranking.html">排序</a><span>概念</span></li><li><a href="../concepts/recommendation-funnel.html">推薦漏斗／多階段管線</a><span>概念</span></li><li><a href="../concepts/retrieval.html">召回／候選生成</a><span>概念</span></li><li><a href="../concepts/scaling-law.html">規模定律</a><span>概念</span></li><li><a href="../concepts/transformer.html">Transformer 與注意力機制</a><span>概念</span></li><li><a href="../entities/meta.html">Meta</a><span>實體</span></li><li><a href="../index.html">Wiki 目錄</a><span></span></li><li><a href="guess-2023.html">Guess 2023</a><span>來源</span></li><li><a href="onerec.html">OneRec 2025</a><span>來源</span></li><li><a href="../syntheses/cascade-vs-end-to-end.html">多階段漏斗 vs. 端到端生成：推薦系統的架構之爭</a><span>整合</span></li><li><a href="../syntheses/do-algorithms-polarize.html">推薦演算法會讓社會更分裂嗎？三篇實證研究的整合</a><span>整合</span></li><li><a href="../teaching/autocomplete-analogy.html">推薦系統也在「接龍」：用輸入法和 ChatGPT 解釋生成式推薦</a><span>教學</span></li><li><a href="../teaching/myths-and-facts.html">推薦演算法的常見迷思與事實</a><span>教學</span></li></ul></section>
+<p class="src-note">這一頁由 <code>wiki/sources/hstu.md</code> 自動轉成網頁；原檔可用 Obsidian 開啟。</p>
+</main>
+</div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

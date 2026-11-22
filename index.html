@@ -4,21 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>推薦演算法 LLM Wiki</title>
-<style>
-body{margin:0;padding:48px 16px;background:#fff;color:#222;font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.7}
-main{max-width:640px;margin:0 auto}
-h1{font-family:"Kaiti TC","STKaiti","DFKai-SB","標楷體",serif;font-weight:400;font-size:36px;margin:0 0 12px}
-a{color:#d0202e}
-p{margin:0 0 14px}
-@media (prefers-color-scheme: dark){body{background:#1f2b26;color:#e9ece6}a{color:#f0d66b}}
-</style>
+<meta name="description" content="推薦演算法 LLM Wiki 與教學簡報">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
 </head>
-<body>
-<main>
-<h1>你滑到的影片，是誰決定的？</h1>
-<p>給大學生的推薦演算法入門。</p>
-<p><a href="output/recsys-slides.html">開啟教學簡報</a>（← → 翻頁，N 講者備忘，T 切換黑板／白紙）</p>
-<p><a href="https://github.com/JERRYzx7/recsys-llm-wiki">查看知識庫原始檔</a>：wiki/ 底下是依 Karpathy 的 LLM Wiki 構想整理的筆記。</p>
+<body class="">
+<header class="site-header">
+  <a class="brand" href="index.html">推薦演算法 <span>LLM Wiki</span></a>
+  <nav class="site-nav" aria-label="主要導覽"><a href="index.html" aria-current="page">首頁</a><a href="wiki-html/index.html">Wiki</a><a href="slides.html">簡報</a><a href="workflow.html">流程設計</a><a href="record.html">執行紀錄</a><a href="reflection.html">反思</a></nav>
+  <button class="theme-btn" type="button" aria-label="切換黑板／白紙">黑板</button>
+</header>
+<main class="home">
+<section class="hero">
+  <p class="eyebrow">LLM Wiki 作業｜主題：推薦演算法</p>
+  <h1>你滑到的影片，<br>是誰決定的？</h1>
+  <p class="lede">這個網站有兩部分：一個依 Karpathy「LLM Wiki」構想建立的知識庫，主題是短影音與社群平台的推薦演算法；以及一份只用這個知識庫做成的教學簡報。</p>
+  <p class="cta"><a class="btn primary" href="slides.html">看簡報</a><a class="btn" href="wiki-html/index.html">逛 Wiki</a></p>
+</section>
+<section class="cards"><a class="card" href="wiki-html/index.html"><span class="card-kicker">49 頁</span><h2>Wiki 知識庫</h2><p>10 份來源整理成 20 個概念、6 個平台、4 篇跨來源整合、6 份教學素材。每個數字都標了出處頁碼。</p></a><a class="card" href="slides.html"><span class="card-kicker">28 頁</span><h2>教學簡報</h2><p>給沒學過推薦系統的大學生：它怎麼挑、它想要什麼、會不會改變我們。← → 翻頁，N 看講者備忘。</p></a><a class="card" href="workflow.html"><span class="card-kicker">loop / graph</span><h2>流程設計</h2><p>資料怎麼取得、討論、寫進 wiki、檢查，再變成簡報；哪些步驟會重複、哪裡會退回重做。</p></a><a class="card" href="record.html"><span class="card-kicker">4 輪 ingest、6 次 lint</span><h2>執行紀錄</h2><p>一次完整執行的時間線、每次檢查抓到什麼、簡報和 wiki 的逐頁對照。</p></a><a class="card" href="reflection.html"><span class="card-kicker">哪裡最常錯</span><h2>反思</h2><p>最常出錯的節點、檢查往前移到哪裡，以及規則如何一輪輪補齊。</p></a></section>
+<section class="about prose">
+  <h2>關於這個 Wiki</h2>
+  <p><strong>主題</strong>：推薦演算法，也就是 TikTok、YouTube、X、Facebook 這類平台，怎麼從數百萬則內容裡挑出你會看到的那幾則，以及這件事對社會有什麼影響。</p>
+  <p><strong>資料</strong>：10 份來源，分成三類：工業界技術（YouTube 2016、Monolith、X 開源 README、TikTok 官方說明兩份）、生成式推薦（Meta HSTU、快手 OneRec）、社會影響實證研究（Guess 2023、Milli、Haroon 2023）。</p>
+  <p><strong>做法</strong>：人類負責挑來源、決定重點、確認每一批；LLM 負責閱讀、寫頁面、交叉連結、標出處與爭議，並跑檢查。規則寫在 <a href="https://github.com/JERRYzx7/recsys-llm-wiki/blob/main/AGENTS.md">AGENTS.md</a>。</p>
+  <p class="muted">原始論文 PDF 有版權，沒有放上網；每份來源的書目資訊在 Wiki 的 Sources 頁。原始檔：<a href="https://github.com/JERRYzx7/recsys-llm-wiki">GitHub repo</a>。</p>
+</section>
 </main>
+<script src="assets/site.js"></script>
 </body>
 </html>
