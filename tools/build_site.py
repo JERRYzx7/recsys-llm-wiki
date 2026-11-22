@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""把 wiki/ 與 report/ 的 Markdown 建成 GitHub Pages 靜態網站。
+"""把 wiki/ 的 Markdown 建成 GitHub Pages 靜態網站。
 
 在 my-wiki/ 執行：  python3 tools/build_site.py
 需要：pip install markdown
@@ -7,9 +7,6 @@
 產出（全部可重建，不要手改）：
   index.html            首頁
   slides.html           簡報頁（上方導覽列 + 內嵌 output/recsys-slides.html）
-  workflow.html         ← report/workflow.md
-  record.html           ← report/record.md
-  reflection.html       ← report/reflection.md
   wiki-html/**.html     ← wiki/**.md
 """
 from __future__ import annotations
@@ -25,16 +22,11 @@ from markdown.extensions.toc import slugify_unicode
 
 ROOT = Path(__file__).resolve().parents[1]
 WIKI = ROOT / "wiki"
-REPORT = ROOT / "report"
 OUT_WIKI = ROOT / "wiki-html"
 
 NAV = [
-    ("home", "首頁", "index.html"),
     ("wiki", "Wiki", "wiki-html/index.html"),
     ("slides", "簡報", "slides.html"),
-    ("workflow", "流程設計", "workflow.html"),
-    ("record", "執行紀錄", "record.html"),
-    ("reflection", "反思", "reflection.html"),
 ]
 
 GROUPS = [
@@ -289,16 +281,6 @@ def build_wiki(site: Site):
                                    body_class="wiki", extra_head=extra), encoding="utf-8")
 
 
-def build_report(site: Site, name: str, active: str):
-    src = REPORT / f"{name}.md"
-    out_file = ROOT / f"{active}.html"
-    meta, text = split_frontmatter(src.read_text(encoding="utf-8"))
-    body = render_md(site, text, out_file)
-    content = f'<main class="report prose">{body}</main>'
-    extra = MERMAID if 'class="mermaid"' in body else ""
-    out_file.write_text(page(meta.get("title", name), active, 0, content, extra_head=extra,
-                             description=meta.get("description", "")), encoding="utf-8")
-
 
 def build_home(site: Site):
     counts = {k: sum(1 for p in site.pages if p.startswith(k + "/")) for k, _ in GROUPS}
@@ -310,12 +292,6 @@ def build_home(site: Site):
          f"{counts['teaching']} 份教學素材。每個數字都標了出處頁碼。"),
         ("slides.html", "教學簡報", f"{n_slides} 頁",
          "給沒學過推薦系統的大學生：它怎麼挑、它想要什麼、會不會改變我們。← → 翻頁，N 看講者備忘。"),
-        ("workflow.html", "流程設計", "loop / graph",
-         "資料怎麼取得、討論、寫進 wiki、檢查，再變成簡報；哪些步驟會重複、哪裡會退回重做。"),
-        ("record.html", "執行紀錄", "4 輪 ingest、6 次 lint",
-         "一次完整執行的時間線、每次檢查抓到什麼、簡報和 wiki 的逐頁對照。"),
-        ("reflection.html", "反思", "哪裡最常錯",
-         "最常出錯的節點、檢查往前移到哪裡，以及規則如何一輪輪補齊。"),
     ]
     card_html = "".join(
         f'<a class="card" href="{href}"><span class="card-kicker">{kicker}</span>'
@@ -354,11 +330,9 @@ def build_slides():
 def main():
     site = Site()
     build_wiki(site)
-    for name, active in [("workflow", "workflow"), ("record", "record"), ("reflection", "reflection")]:
-        build_report(site, name, active)
     build_home(site)
     build_slides()
-    print(f"OK：{len(site.pages)} 個 wiki 頁、3 個說明頁、首頁、簡報頁")
+    print(f"OK：{len(site.pages)} 個 wiki 頁、首頁、簡報頁")
 
 
 if __name__ == "__main__":

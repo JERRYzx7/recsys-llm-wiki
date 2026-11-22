@@ -21,7 +21,7 @@ my-wiki/
 │   ├── index.md  log.md  glossary.md
 │   ├── sources/  concepts/  entities/  syntheses/  teaching/
 ├── output/                   ← 產出物（簡報），不屬於 wiki
-├── report/                   ← 網站說明頁原稿（流程設計、執行紀錄、反思）
+├── report/                   ← 流程設計、執行紀錄、反思（繳交用，不放上網站）
 ├── tools/                    ← build_site.py（建網站）、make_workflow.py（流程圖）
 └── index.html、*.html、wiki-html/、assets/  ← GitHub Pages 網站（由 build_site.py 產生，不手改）
 ```
@@ -143,7 +143,7 @@ source 頁另加：`raw: raw/04-hstu.pdf`、`authors`、`year`、`venue`（未�
 
 ### 發佈網站
 
-- wiki、`report/` 或簡報有改動後，執行 `python3 tools/build_site.py` 重建網站（需要 `pip install markdown`）；流程圖有改則先跑 `tools/make_workflow.py`。
+- wiki 或簡報有改動後，執行 `python3 tools/build_site.py` 重建網站（需要 `pip install markdown`）；流程圖有改則先跑 `tools/make_workflow.py`。
 - 建完要實際瀏覽檢查（桌面、手機寬度、深淺色），並確認沒有斷鏈；commit／push 仍需人類同意（§12）。
 
 ## 10. index.md 與 log.md

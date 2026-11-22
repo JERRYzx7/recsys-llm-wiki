@@ -92,3 +92,6 @@
 ## [2026-11-22] schema | 新增「發佈網站」步驟
 - 變更：新增 tools/build_site.py（wiki/ 與 report/ 轉成 GitHub Pages 網站，上方導覽列可切換 Wiki、簡報、流程設計、執行紀錄、反思）、tools/make_workflow.py（流程圖 assets/workflow.png）、report/{workflow, record, reflection}.md；AGENTS.md §2 補目錄、§9 新增「發佈網站」；README 補網站連結
 - 驗證：54 個 HTML 檔、4,340 個內部連結沒有斷鏈；headless Chrome 截圖檢查桌面、390px 手機寬度、深色，沒有橫向溢出
+
+## [2026-11-22] schema | 網站只保留 Wiki 與簡報
+- 人類決定：GitHub Pages 只放 Wiki 和簡報；移除 workflow.html、record.html、reflection.html。report/ 原稿與 assets/workflow.png 保留在 repo 供繳交
